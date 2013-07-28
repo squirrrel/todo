@@ -1,0 +1,2 @@
+class ActiveTask < BasicTask
+end

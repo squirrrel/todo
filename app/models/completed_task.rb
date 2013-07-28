@@ -1,0 +1,2 @@
+class CompletedTask < BasicTask
+end
