@@ -1,0 +1,7 @@
+<div>
+<%= form_for(:new, url: {action: 'create'}) do |f| %>
+<%= f.text_field :new_task, placeholder: 'Your new task here...' %>
+<%= select("post", "person_id", @priorities.collect {|p|  p.id2name }) %>
+<%=submit_tag '+'%>
+<%end%>
+</div>

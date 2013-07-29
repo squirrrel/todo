@@ -1,4 +1,5 @@
 Todo::Application.routes.draw do
+  get "testingsome/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,6 +54,7 @@ Todo::Application.routes.draw do
     #for basic_task controller and it will be about editing 
     #the type column of the type column
     resources :completed_tasks, only: [:index, :show, :destroy]
+    resources :testingsome
     #reopen action maybe replaced by edit/update for basic_task 
     #controller and it will be about
     #editing the type column of the type column 
