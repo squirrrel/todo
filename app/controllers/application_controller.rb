@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   Types = %w{ActiveTask CompletedTask}
   
   protect_from_forgery with: :exception
-  #respond_to :json
+  respond_to :json, :html, :js
 
 end
