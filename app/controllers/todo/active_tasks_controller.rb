@@ -1,7 +1,6 @@
 class Todo::ActiveTasksController < ApplicationController
-	SCOPE = self
 	def index
-		@tasks = BasicTask.where(type:'ActiveTask')
+		@tasks = BasicTask.where(type:'ActiveTask').order('created_at DESC')
 		@priorities = Priorities
 		#render json: tasks 
 	end
@@ -12,20 +11,19 @@ class Todo::ActiveTasksController < ApplicationController
 	end
 
 	def create
-		#move it to the model?
 		new_task = ActiveTask.new
 		new_task.attributes.map do |attr, value|
 			new_task[attr] = params[:new][attr] if params[:new].include?(attr)	
 		end 
-		new_task.type = new_task.class.name
-		new_task.save
-		 #js: 
+		#new_task.type = new_task.class.name - no need as rails handles it on his own		
+		new_task.save if new_task.valid?
+		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}		
+		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items');"
+		 #install plugin for refactorying code adn higlighting stuff
 		 #todo: 
 		 #make a nice README
-		 #save it to the database, specifying self for the type column
-		 #WTF is it setting up type as ActiveTask???
-		 #complete ajax from the coffee script
-		 #update index action maybe using ajax
+		 #make date look like '%e %b, %H:%m %p' or +year mention if it was last year, update it at a application controller level
+		#move something to the model if needed
 	end
 
 	def show

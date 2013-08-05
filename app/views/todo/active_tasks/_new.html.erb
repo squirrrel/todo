@@ -1,5 +1,5 @@
 <div>
-<%= form_for(:new, url: {action: 'create'}) do |f| %>
+<%= form_for(:new, url: {action: 'create'}, :remote=> true) do |f| %>
 <%= f.text_field :description, placeholder: 'Your new task here...' %>
 <%= select(:new, :priority, @priorities.collect{|p| p.id2name }) %>
 <%=submit_tag '+', id: 'add_me'%>

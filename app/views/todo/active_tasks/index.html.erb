@@ -1,13 +1,13 @@
 <%= render 'new', locals: {:priority => @priority}%>
 <div>
-<%@tasks.each do |task|%>
 <table>
-<tr>
-	<td><%= task.description%></td>
-	<td><%= task.priority%></td>
-	<td><%= task.status%></td>
-	<td><%= task.created_at%></td>
-</tr>
-</table>
+<%@tasks.each do |task|%>
+<tr class='task-items'>
+<% %w{description priority status created_at}.each do |attr|%>
+<td><%= task.send attr %></td>
 <%end%>
+</tr>
+<%end%>
+</table>
+
 </div>
