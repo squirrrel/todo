@@ -49,12 +49,16 @@ Todo::Application.routes.draw do
   #   end
 
   namespace :todo do
-    resources :active_tasks, except: :destroy
+    resources :active_tasks do
+      member do
+        put 'complete'
+        #make same for destroy
+      end
+    end
     #complete action may be not needed cause i will write an edit/update 
     #for basic_task controller and it will be about editing 
     #the type column of the type column
     resources :completed_tasks, only: [:index, :show, :destroy]
-    resources :testingsome
     #reopen action maybe replaced by edit/update for basic_task 
     #controller and it will be about
     #editing the type column of the type column 

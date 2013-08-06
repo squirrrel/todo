@@ -1,6 +1,6 @@
 class Todo::ActiveTasksController < ApplicationController
 	def index
-		@tasks = BasicTask.where(type:'ActiveTask').order('created_at DESC')
+		@tasks = BasicTask.where(type:'ActiveTask').order('created_at DESC') #perhaps we can just ActiveTask it and it will guess
 		@priorities = Priorities
 		#render json: tasks 
 	end
@@ -21,18 +21,33 @@ class Todo::ActiveTasksController < ApplicationController
 		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items');"
 		 #install plugin for refactorying code adn higlighting stuff
 		 #todo: 
+		 #add search functionality to the framework to be able to search tasks faster?
 		 #make a nice README
 		 #make date look like '%e %b, %H:%m %p' or +year mention if it was last year, update it at a application controller level
-		#move something to the model if needed
+		 #move something to the model if needed
+		 #Delete Update and Complete will be than shown if the tr hovered so no need to add them as well
+		 #Find out why is destroyand complete require templates!!! 
 	end
 
-	def show
+	# def show
+	# end
+
+	# def edit
+	# end
+
+	# def update  
+	# end
+
+	def destroy
+		ActiveTask.find(params[:id]).destroy
+		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
 	end
 
-	def edit
-	end
-
-	def update  
-	end
+	def complete
+		completed = BasicTask.find(params[:id])
+		completed.type = 'CompletedTask'
+		completed.save
+		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
+	end	
 end
 

@@ -1,13 +1,18 @@
-<%= render 'new', locals: {:priority => @priority}%>
+<%= render 'new', locals: {priority: @priority}%>
 <div>
-<table>
+<table >
+<tbody>
+<tr class='task-items'></tr>
 <%@tasks.each do |task|%>
-<tr class='task-items'>
+<tr class="<%=task.id%>">
 <% %w{description priority status created_at}.each do |attr|%>
 <td><%= task.send attr %></td>
 <%end%>
+<td><%= link_to 'Complete', complete_todo_active_task_path(task.id), method: :put, class: 'complete',remote: true %></td>
+<%#<td><%= link_to 'Update', {action: '#'}%>
+<td><%= button_to 'Delete', "/todo/active_tasks/#{task.id}", method: :delete, class: 'delete',remote: true %></td>
 </tr>
 <%end%>
+</tbody>
 </table>
-
 </div>
