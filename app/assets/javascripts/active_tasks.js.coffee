@@ -4,5 +4,6 @@
 #REFACTOR
 
 jQuery -> 
-      $('.delete, .complete').click(-> $.ajax({ type: "GET", url: "/todo/active_tasks/delete", dataType: "script" });)
-	  $('.complete').click(-> $.ajax({ type: "GET", url: "/todo/active_tasks/complete", dataType: "script" });)      
+	  $('.delete').click(-> $.ajax({ type: "GET", url: "/todo/active_tasks/delete", dataType: "script" });)
+	  $('.complete').click(-> $.ajax({ type: "GET", url: "/todo/active_tasks/complete", dataType: "script" });) 
+

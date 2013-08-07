@@ -1,16 +1,16 @@
 <%= render 'new', locals: {priority: @priority}%>
 <div>
-<table >
+<table cellspacing="0">
 <tbody>
 <tr class='task-items'></tr>
 <%@tasks.each do |task|%>
-<tr class="<%=task.id%>">
+<tr class="<%=task.id%> to-be-hovered" onmouseover = "$('.<%=task.id%>_action').show()" onmouseout = "$('.<%=task.id%>_action').hide()" >
 <% %w{description priority status created_at}.each do |attr|%>
 <td><%= task.send attr %></td>
 <%end%>
-<td><%= link_to 'Complete', complete_todo_active_task_path(task.id), method: :put, class: 'complete',remote: true %></td>
+<td><%= button_to 'Delete', "/todo/active_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action",style: 'display: none;',remote: true %></td>
+<td><%= link_to 'Complete', complete_todo_active_task_path(task.id), method: :put, class: "complete #{task.id}_action",style: 'display: none;', remote: true %></td>
 <%#<td><%= link_to 'Update', {action: '#'}%>
-<td><%= button_to 'Delete', "/todo/active_tasks/#{task.id}", method: :delete, class: 'delete',remote: true %></td>
 </tr>
 <%end%>
 </tbody>

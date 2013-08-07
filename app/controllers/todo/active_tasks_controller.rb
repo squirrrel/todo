@@ -26,7 +26,7 @@ class Todo::ActiveTasksController < ApplicationController
 		 #make date look like '%e %b, %H:%m %p' or +year mention if it was last year, update it at a application controller level
 		 #move something to the model if needed
 		 #Delete Update and Complete will be than shown if the tr hovered so no need to add them as well
-		 #Find out why is destroyand complete require templates!!! 
+		 #Find out why is destroy and complete require templates!!! 
 	end
 
 	# def show
@@ -39,7 +39,7 @@ class Todo::ActiveTasksController < ApplicationController
 	# end
 
 	def destroy
-		ActiveTask.find(params[:id]).destroy
+		ActiveTask.find(params[:id]).destroy #ensure it is destroyed
 		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
 	end
 
