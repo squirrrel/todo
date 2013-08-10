@@ -58,7 +58,11 @@ Todo::Application.routes.draw do
     #complete action may be not needed cause i will write an edit/update 
     #for basic_task controller and it will be about editing 
     #the type column of the type column
-    resources :completed_tasks, only: [:index, :show, :destroy]
+    resources :completed_tasks, only: [:index, :show, :destroy] do
+      member do
+        put 'reopen'
+      end  
+    end  
     #reopen action maybe replaced by edit/update for basic_task 
     #controller and it will be about
     #editing the type column of the type column 
