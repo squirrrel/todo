@@ -8,9 +8,9 @@
 <% %w{description priority status created_at}.each do |attr|%>
 <td><%= task.send attr %></td>
 <%end%>
-<td><%= button_to 'Delete', "/todo/active_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action",style: 'display: none;',remote: true %></td>
-<td><%= link_to 'Complete', complete_todo_active_task_path(task.id), method: :put, class: "complete #{task.id}_action",style: 'display: none;', remote: true %></td>
-<%#<td><%= link_to 'Update', {action: '#'}%>
+<%@task = task%>
+<%#not yet implemented for the create action rendering %>
+<%= render 'delete_complete_update', locals: {task: @task}%>
 </tr>
 <%end%>
 </tbody>

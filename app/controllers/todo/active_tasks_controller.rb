@@ -1,6 +1,7 @@
 class Todo::ActiveTasksController < ApplicationController
 	def index
-		@tasks = BasicTask.where(type:'ActiveTask').order('created_at DESC') #perhaps we can just ActiveTask it and it will guess
+		@tasks = ActiveTask.all.order('created_at DESC')
+		#BasicTask.where(type:'ActiveTask').order('created_at DESC')
 		@priorities = Priorities
 		#render json: tasks 
 	end
@@ -11,6 +12,7 @@ class Todo::ActiveTasksController < ApplicationController
 	end
 
 	def create
+		p params
 		new_task = ActiveTask.new
 		new_task.attributes.map do |attr, value|
 			new_task[attr] = params[:new][attr] if params[:new].include?(attr)	
@@ -19,6 +21,8 @@ class Todo::ActiveTasksController < ApplicationController
 		new_task.save if new_task.valid?
 		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}		
 		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items');"
+		# $('.render-here').html('<%= escape_javascript(render :partial => 'delete_complete_update.html.erb', 
+		# 	:locals => {:task => @task}) %>');"
 		 #install plugin for refactorying code adn higlighting stuff
 		 #todo: 
 		 #add search functionality to the framework to be able to search tasks faster?
@@ -46,6 +50,7 @@ class Todo::ActiveTasksController < ApplicationController
 	def complete
 		completed = BasicTask.find(params[:id])
 		completed.type = 'CompletedTask'
+		completed.completed_at = Time.now #.strftime('%b %e, %l:%M %p')
 		completed.save
 		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
 	end	
