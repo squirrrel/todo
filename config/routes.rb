@@ -69,5 +69,4 @@ Todo::Application.routes.draw do
     #reopen action maybe replaced by edit/update for basic_task 
     #controller and it will be about
     #editing the type column of the type column 
-    ####
 end
