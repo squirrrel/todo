@@ -59,12 +59,16 @@ Todo::Application.routes.draw do
     #the type column of the type column
     resources :completed_tasks, only: [:index, :show, :destroy] do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 601044d... playing with filters n completed and edit on active
      # member do
         put 'reopen', on: :member
      # end 
        #collection do 
          get 'filter_by_time', on: :collection
       # end     
+<<<<<<< HEAD
     end  
   end  
 =======
@@ -77,4 +81,11 @@ Todo::Application.routes.draw do
     #controller and it will be about
     #editing the type column of the type column 
     ####
+=======
+    end  
+  end  
+    #reopen action maybe replaced by edit/update for basic_task 
+    #controller and it will be about
+    #editing the type column of the type column 
+>>>>>>> 601044d... playing with filters n completed and edit on active
 end

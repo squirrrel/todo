@@ -3,11 +3,17 @@ class Todo::CompletedTasksController < ApplicationController
 	def index
 	  @tasks = CompletedTask.all.order('created_at DESC')
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  @time_filter = TimeFilter
 	  @priorities = Priorities
 	  #p Rails.application.routes.url_helpers
 =======
 >>>>>>> 7a7754e... completed tasks controller scratch
+=======
+	  @time_filter = TimeFilter
+	  @priorities = Priorities
+	  #p Rails.application.routes.url_helpers
+>>>>>>> 601044d... playing with filters n completed and edit on active
 	end
 
 	# def show
@@ -27,10 +33,16 @@ class Todo::CompletedTasksController < ApplicationController
 	  #perhaps it is better to add some flag column to indicate that it's been open
 	end	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 601044d... playing with filters n completed and edit on active
 
 	def filter_by_time
 	  render js: "$('.to-be-removed').remove();"
 	end	
+<<<<<<< HEAD
 =======
 >>>>>>> 7a7754e... completed tasks controller scratch
+=======
+>>>>>>> 601044d... playing with filters n completed and edit on active
 end
