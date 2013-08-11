@@ -48,44 +48,21 @@ Todo::Application.routes.draw do
   #   end
 
   namespace :todo do
-    resources :active_tasks do 
-      member do
-        put 'complete'
+    resources :active_tasks do      
+        put 'complete', on: :member
         #make same for destroy
-      end
     end
     #complete action may be not needed cause i will write an edit/update 
     #for basic_task controller and it will be about editing 
     #the type column of the type column
     resources :completed_tasks, only: [:index, :show, :destroy] do
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 601044d... playing with filters n completed and edit on active
      # member do
         put 'reopen', on: :member
      # end 
        #collection do 
          get 'filter_by_time', on: :collection
-      # end     
-<<<<<<< HEAD
-    end  
+      # end      
+    end   
   end  
-=======
-      member do
-        put 'reopen'
-      end  
-    end  
->>>>>>> 7a7754e... completed tasks controller scratch
-    #reopen action maybe replaced by edit/update for basic_task 
-    #controller and it will be about
-    #editing the type column of the type column 
-    ####
-=======
-    end  
-  end  
-    #reopen action maybe replaced by edit/update for basic_task 
-    #controller and it will be about
-    #editing the type column of the type column 
->>>>>>> 601044d... playing with filters n completed and edit on active
+  
 end
