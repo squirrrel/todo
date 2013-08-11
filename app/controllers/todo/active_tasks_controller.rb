@@ -23,6 +23,7 @@ class Todo::ActiveTasksController < ApplicationController
 		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items');"
 		# $('.render-here').html('<%= escape_javascript(render :partial => 'delete_complete_update.html.erb', 
 		# 	:locals => {:task => @task}) %>');"
+
 		 #install plugin for refactorying code adn higlighting stuff
 		 #todo: 
 		 #add search functionality to the framework to be able to search tasks faster?

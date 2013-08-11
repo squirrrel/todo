@@ -1,3 +1,12 @@
+<td>
+<%#make the chosen values default for given dropdowns%>
+<button onclick = "$('div#description<%=@task.id.to_s%>').attr('contenteditable','true');
+ $('div#priority<%=@task.id.to_s%>').replaceWith('<select><option>high</option><option>medium</option><option>low</option></select>');
+ $('div#status<%=@task.id.to_s%>').replaceWith('<select><option>open</option><option>in progress</option></select>');",
+style = 'display: none;' class = '<%=@task.id%>_action'>
+Edit</button>
+</td>
+
 <td><%= button_to 'Delete', "/todo/active_tasks/#{@task.id}", method: :delete, class: "delete #{@task.id}_action",style: 'display: none;',remote: true %></td>
 <td><%= link_to 'Complete', complete_todo_active_task_path(@task.id), method: :put, class: "complete #{@task.id}_action",style: 'display: none;', remote: true %></td>
-<%#<td><%= link_to 'Update', {action: '#'}%>
+
