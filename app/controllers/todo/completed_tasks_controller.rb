@@ -2,6 +2,9 @@ class Todo::CompletedTasksController < ApplicationController
 
 	def index
 	  @tasks = CompletedTask.all.order('created_at DESC')
+	  @time_filter = TimeFilter
+	  @priorities = Priorities
+	  #p Rails.application.routes.url_helpers
 	end
 
 	# def show
@@ -19,5 +22,9 @@ class Todo::CompletedTasksController < ApplicationController
 	  reopened.save
 	  render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
 	  #perhaps it is better to add some flag column to indicate that it's been open
+	end	
+
+	def filter_by_time
+	  render js: "$('.to-be-removed').remove();"
 	end	
 end

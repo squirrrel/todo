@@ -1,4 +1,4 @@
-<%= render 'new', locals: {priority: @priority}%>
+<%= render 'new', locals: { priority: @priority }%>
 <div>
 <table cellspacing="0">
 <tbody>
@@ -6,11 +6,11 @@
 <%@tasks.each do |task|%>
 <tr class="<%=task.id%> to-be-hovered" onmouseover = "$('.<%=task.id%>_action').show()" onmouseout = "$('.<%=task.id%>_action').hide()" >
 <% %w{description priority status created_at}.each do |attr|%>
-<td><%= task.send attr %></td>
+<td><div id = "<%=attr+ task.id.to_s%>" onblur= "$(this).attr('contenteditable','false');"><%= task.send attr %></div></td>
 <%end%>
 <%@task = task%>
 <%#not yet implemented for the create action rendering %>
-<%= render 'delete_complete_update', locals: {task: @task}%>
+<%= render 'delete_complete_update', locals: { task: @task, priority: @priority }%>
 </tr>
 <%end%>
 </tbody>
