@@ -58,6 +58,7 @@ Todo::Application.routes.draw do
     #for basic_task controller and it will be about editing 
     #the type column of the type column
     resources :completed_tasks, only: [:index, :show, :destroy] do
+<<<<<<< HEAD
      # member do
         put 'reopen', on: :member
      # end 
@@ -66,6 +67,12 @@ Todo::Application.routes.draw do
       # end     
     end  
   end  
+=======
+      member do
+        put 'reopen'
+      end  
+    end  
+>>>>>>> 7a7754e... completed tasks controller scratch
     #reopen action maybe replaced by edit/update for basic_task 
     #controller and it will be about
     #editing the type column of the type column 

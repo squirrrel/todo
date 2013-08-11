@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <td>
 <%#make the chosen values default for given dropdowns%>
 <button onclick = "$('div#description<%=@task.id.to_s%>').attr('contenteditable','true');
@@ -10,3 +11,8 @@ Edit</button>
 <td><%= button_to 'Delete', "/todo/active_tasks/#{@task.id}", method: :delete, class: "delete #{@task.id}_action",style: 'display: none;',remote: true %></td>
 <td><%= link_to 'Complete', complete_todo_active_task_path(@task.id), method: :put, class: "complete #{@task.id}_action",style: 'display: none;', remote: true %></td>
 
+=======
+<td><%= button_to 'Delete', "/todo/active_tasks/#{@task.id}", method: :delete, class: "delete #{@task.id}_action",style: 'display: none;',remote: true %></td>
+<td><%= link_to 'Complete', complete_todo_active_task_path(@task.id), method: :put, class: "complete #{@task.id}_action",style: 'display: none;', remote: true %></td>
+<%#<td><%= link_to 'Update', {action: '#'}%>
+>>>>>>> 7a7754e... completed tasks controller scratch
