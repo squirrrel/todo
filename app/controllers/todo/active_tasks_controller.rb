@@ -36,11 +36,13 @@ class Todo::ActiveTasksController < ApplicationController
 	# def show
 	# end
 
-	# def edit
-	# end
+	 def edit
+	 	@post = ActiveTask.find params[:id]
+	 end
 
-	# def update  
-	# end
+	 def update
+	 p params  
+	 end
 
 	def destroy
 		ActiveTask.find(params[:id]).destroy #ensure it is destroyed

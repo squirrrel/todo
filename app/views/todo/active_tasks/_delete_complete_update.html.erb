@@ -2,7 +2,7 @@
 <%#make the chosen values default for given dropdowns%>
 <button onclick = "$('div#description<%=@task.id.to_s%>').attr('contenteditable','true');
  $('div#priority<%=@task.id.to_s%>').replaceWith('<div><select><option>high</option><option>medium</option><option>low</option></select></div>');
- $('div#status<%=@task.id.to_s%>').replaceWith('<select><option>open</option><option>in progress</option></select>'); $('#<%= @dropdown%>').show();",
+ $('div#status<%=@task.id.to_s%>').replaceWith('<select><option>open</option><option>in progress</option></select>'); $('#<%= @dropdown%>, .okay<%=@task.id.to_s%>').show();",
 style = 'display: none;' class = '<%=@task.id%>_action'>
 Edit</button>
 <%= render 'ok_cancel', locals: { task: @task, dropdown: @dropdown } %>

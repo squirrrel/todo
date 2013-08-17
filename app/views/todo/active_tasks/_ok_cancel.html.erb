@@ -1,16 +1,33 @@
 <button id='<%= @dropdown%>' style='display:none;'
 onclick="
-var cancel_id, drop_text, injection;
-injection = $(this).attr('id') + '_span'
-description_id = 'description' + injection;
-priority_id = 'priority'+ injection;
+var injection = $(this).attr('id') + '_span'
+var description_id = 'description' + injection;
+var priority_id = 'priority'+ injection;
+
 status_id = 'status' + injection;
+
 desc_text = document.getElementById(description_id).textContent;
 drop_text_1 = document.getElementById(priority_id).textContent;
 drop_text_2 = document.getElementById(status_id).textContent;
+
 $('div#description<%=@task.id.to_s%>').attr('contenteditable','false');
 $('div#description<%=@task.id.to_s%>').replaceWith('<div>'+desc_text+'</div>');
 $('select').slice(1,2).replaceWith('<div>'+drop_text_1+'</div>');
 $('select').slice(1,2).replaceWith('<div>'+drop_text_2+'</div>');
-$(this).hide();" 
+
+$(this).hide();
+$('.okay<%= @task.id.to_s%>').hide();" 
 >Cancel</button>
+<%=submit_tag 'OK', class: "okay#{@task.id.to_s}", style: 'display:none;', 
+onclick: "
+$('div#description#{@task.id.to_s}').attr('contenteditable','false');
+
+var selected_1 = $('select :selected').slice(1,2).text();
+var selected_2 = $('select :selected').slice(2,3).text(); 
+
+$('select').slice(1,2).replaceWith('<div>'+selected_1+'</div>');
+$('select').slice(1,2).replaceWith('<div>'+selected_2+'</div>');
+
+$(this).hide();
+$('##{@dropdown}').hide();" 
+%>
