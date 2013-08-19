@@ -12,7 +12,6 @@ class Todo::ActiveTasksController < ApplicationController
 	end
 
 	def create
-		p params
 		new_task = ActiveTask.new
 		new_task.attributes.map do |attr, value|
 			new_task[attr] = params[:new][attr] if params[:new].include?(attr)	
@@ -41,7 +40,12 @@ class Todo::ActiveTasksController < ApplicationController
 	 end
 
 	 def update
-	 p params  
+	 	p params
+	 	respond_to do |format|
+	 	 format.json {|prop| puts prop } 
+	 	end
+	 	#render nothing: true
+	 	#head :ok
 	 end
 
 	def destroy

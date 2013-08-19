@@ -2,15 +2,23 @@
 <div>
 <table cellspacing="0">
 <tbody>
+<tr>
+<th><div hidden id= "description" >Description</div></th>
+<th><div hidden id= "priority" >Priority</div></th></th>
+<th><div hidden id= "status">Status</th></div></th>
+<th><div hidden id= "created_at">When created</div></th>
+</tr>
 <tr class='task-items'></tr>
 <%@tasks.each do |task|%>
-<tr class="<%=task.id%> to-be-hovered" onmouseover = "$('.<%=task.id%>_action').show()" onmouseout = "$('.<%=task.id%>_action').hide()" >
+<tr class="<%=task.id%> to-be-hovered" onmouseover = "$('.<%=task.id%>_action').show();" onmouseout = "$('.<%=task.id%>_action').hide();" >
 <%  
 %w{ description priority status created_at }.each do |attr|%>
-<td><div id = "<%=attr + task.id.to_s%>" onblur= "$(this).attr('contenteditable','false');"><%= res= task.send attr %></div></td>
+<td ><div onmouseover= "$('div#<%=attr%>').removeAttr('hidden');" 
+ onmouseleave = "$('div#<%=attr%>').attr('hidden', 'true');" 
+id = "<%=attr + task.id.to_s%>" onblur= "$(this).attr('contenteditable','false');"><%= res= task.send attr %></div></td>
 <span id='<%=attr + task.id.to_s%>_span' style = 'display:none;'><%=res%></span>
 <% @dropdown ="#{task.id.to_s}" %>
-<%end%>
+<%end%> 
 <%@task = task%>
 <%#not yet implemented for the create action rendering %>
 <%= render 'delete_complete_update', locals: { task: @task, priority: @priority, dropdown: @dropdown }%>

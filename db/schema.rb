@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20130729151310) do
 
   create_table "basic_tasks", force: true do |t|
-    t.string   "description"
+    t.string   "description",  limit: 600
     t.string   "priority"
-    t.string   "status",       default: "open"
+    t.string   "status",                   default: "open"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
