@@ -3,14 +3,13 @@
 <table cellspacing="0">
 <tbody>
 <tr>
-<th><div hidden id= "description" >Description</div></th>
-<th><div hidden id= "priority" >Priority</div></th></th>
-<th><div hidden id= "status">Status</th></div></th>
-<th><div hidden id= "created_at">When created</div></th>
+<% %w{ description priority status created_at }.each do |header|%>
+<th><div hidden id= "<%=header%>" ><%=header.capitalize!%></div></th>
+<%end%>
 </tr>
 <tr class='task-items'></tr>
 <%@tasks.each do |task|%>
-<tr class="<%=task.id%> to-be-hovered" onmouseover = "$('.<%=task.id%>_action').show();" onmouseout = "$('.<%=task.id%>_action').hide();" >
+<tr class="<%=task.id%> to-be-hovered" onmouseover = "show_actions(<%=task.id%>)" onmouseout = "hide_actions(<%=task.id%>)" >
 <%  
 %w{ description priority status created_at }.each do |attr|%>
 <td ><div onmouseover= "$('div#<%=attr%>').removeAttr('hidden');" 

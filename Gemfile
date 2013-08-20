@@ -40,7 +40,10 @@ gem 'therubyracer'
   
 end
 
-gem 'thin'
+group :custom do 
+	gem 'thin'
+	gem 'sprockets-rails', :require => 'sprockets/railtie'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
