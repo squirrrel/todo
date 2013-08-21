@@ -50,7 +50,7 @@ Todo::Application.routes.draw do
   namespace :todo do
     resources :active_tasks do      
         put 'complete', on: :member
-        put 'update', on: :member
+        post 'update_task',  on: :collection
         #make same for destroy
     end
     #complete action may be not needed cause i will write an edit/update 

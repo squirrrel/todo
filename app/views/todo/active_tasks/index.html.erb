@@ -12,9 +12,9 @@
 <tr class="<%=task.id%> to-be-hovered" onmouseover = "show_actions(<%=task.id%>)" onmouseout = "hide_actions(<%=task.id%>)" >
 <%  
 %w{ description priority status created_at }.each do |attr|%>
-<td ><div onmouseover= "$('div#<%=attr%>').removeAttr('hidden');" 
- onmouseleave = "$('div#<%=attr%>').attr('hidden', 'true');" 
-id = "<%=attr + task.id.to_s%>" onblur= "$(this).attr('contenteditable','false');"><%= res= task.send attr %></div></td>
+<td ><div onmouseover= "show_header('div#<%=attr%>')" 
+ onmouseleave = "hide_header('div#<%=attr%>')" 
+id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= res= task.send attr %></div></td>
 <span id='<%=attr + task.id.to_s%>_span' style = 'display:none;'><%=res%></span>
 <% @dropdown ="#{task.id.to_s}" %>
 <%end%> 

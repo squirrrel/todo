@@ -18,13 +18,17 @@ class Todo::ActiveTasksController < ApplicationController
 		end 
 		#new_task.type = new_task.class.name - no need as rails handles it on his own		
 		new_task.save if new_task.valid?
-		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}		
+	
+		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}	
 		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items');"
-		# $('.render-here').html('<%= escape_javascript(render :partial => 'delete_complete_update.html.erb', 
-		# 	:locals => {:task => @task}) %>');"
+		#### RENDERING delete_complete_update partial ideally:
+		#1: respond_to {|format| format.js } 2: use correct syntax at create.js.erb and bingo
+		#$('.render-here').html('#{render :partial => 'delete_complete_update.html.erb', :locals => {:task => @task} }');
+		####
+
+
 		 #install plugin for refactorying code adn higlighting stuff
 		 #todo: 
-		 #add search functionality to the framework to be able to search tasks faster?
 		 #make a nice README
 		 #make date look like '%e %b, %H:%m %p' or +year mention if it was last year, update it at a application controller level
 		 #move something to the model if needed
@@ -39,13 +43,9 @@ class Todo::ActiveTasksController < ApplicationController
 	 	@post = ActiveTask.find params[:id]
 	 end
 
-	 def update
+	 def update_task
 	 	p params
-	 	respond_to do |format|
-	 	 format.json {|prop| puts prop } 
-	 	end
-	 	#render nothing: true
-	 	#head :ok
+	 	head :ok
 	 end
 
 	def destroy
