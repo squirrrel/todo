@@ -62,6 +62,7 @@ Todo::Application.routes.draw do
      # end 
        #collection do 
          get 'filter_by_time', on: :collection
+         get 'filter_by_priority', on: :collection
       # end      
     end   
   end  

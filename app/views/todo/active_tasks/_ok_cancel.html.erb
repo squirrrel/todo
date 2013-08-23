@@ -5,5 +5,5 @@ onclick="trigger_on_cancel(this,<%=@task.id.to_s%>)" >Cancel</button>
 <button class= "okay<%=@task.id.to_s%>", style= 'display:none;' onclick = " 
 task_id = <%=@task.id.to_s%> 
 dropdown =<%=@dropdown%>
-trigger_on_ok(this, task_id, dropdown)
-save_modified_task(task_id)">OK</button>  
+trigger_on_ok(this, task_id, dropdown)"
+>OK</button>  

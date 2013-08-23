@@ -34,6 +34,7 @@ class Todo::ActiveTasksController < ApplicationController
 		 #move something to the model if needed
 		 #Delete Update and Complete will be than shown if the tr hovered so no need to add them as well
 		 #Find out why is destroy and complete require templates!!! 
+
 	end
 
 	# def show
@@ -44,7 +45,9 @@ class Todo::ActiveTasksController < ApplicationController
 	 end
 
 	 def update_task
-	 	p params
+	 	subject = ActiveTask.find(params[:id])
+	 	subject.update_attributes(params.permit(:id, :description, :priority, :status))
+	 	
 	 	head :ok
 	 end
 
@@ -54,10 +57,13 @@ class Todo::ActiveTasksController < ApplicationController
 	end
 
 	def complete
-		completed = BasicTask.find(params[:id])
-		completed.type = 'CompletedTask'
-		completed.completed_at = Time.now #.strftime('%b %e, %l:%M %p')
-		completed.save
+		subject = BasicTask.find(params[:id])
+		### NOT WORKING HAVE TO FIX IT
+		#paramz = { type: 'CompletedTask', completed_at: Time.now }
+		#subject.update_attributes(paramz)
+		subject.type = 'CompletedTask'
+		subject.completed_at = Time.now
+		subject.save
 		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
 	end	
 end

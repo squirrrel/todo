@@ -1,5 +1,5 @@
 
-jQuery ->
+jQuery -> 
 	### on-click EDIT button handler ### 
 	@trigger_on_edit = trigger_on_edit=(task_id, dropdown)->
 		$('div#description' + task_id).attr('contenteditable','true')
@@ -17,14 +17,21 @@ jQuery ->
 	@trigger_on_ok = trigger_on_ok = (obj, task_id, dropdown)->
 		$('div#description' + task_id).attr('contenteditable','false')
 		
-		selected_1 = $('select :selected').slice(1,2).text()
-		selected_2 = $('select :selected').slice(2,3).text() 
+		description = $('div#description' + task_id).text()
+		priority = $('select :selected').slice(1,2).text()
+		status = $('select :selected').slice(2,3).text() 
 		
-		$('select').slice(1,2).replaceWith('<div>' + selected_1 + '</div>') 
-		$('select').slice(1,2).replaceWith('<div>' + selected_2 + '</div>')
+		$('select').slice(1,2).replaceWith('<div>' + priority + '</div>') 
+		$('select').slice(1,2).replaceWith('<div>' + status + '</div>')
 		
 		$(obj).hide()
 		$('#'+ dropdown).hide()
+
+		$.ajax({
+  		type: "POST",
+  		url: "http://localhost:3000/todo/active_tasks/update_task",
+  		data: { id: task_id, description: description, priority: priority, status: status }}).done(()-> alert 'Task has been updated;)')
+
 
 	### on-click CANCEL button handler ###
 	@trigger_on_cancel = trigger_on_cancel = (obj, task_id)->
@@ -67,15 +74,8 @@ jQuery ->
 	@set_noneditable = set_noneditable =(obj)->  
 		$(obj).attr('contenteditable','false')
 
-	@save_modified_task = save_modified_task=(task_id)->			
-		description = $('div#description' + task_id).text()	
-		priority = $('select :selected').slice(1,2).text()
-		status = $('select :selected').slice(2,3).text() 
 	
-		$.ajax({
-  		type: "POST",
-  		url: "http://localhost:3000/todo/active_tasks/update_task",
-  		data: { id: task_id, description: description, priority: priority, status: status }})
+
 
 
 

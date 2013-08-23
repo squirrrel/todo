@@ -15,10 +15,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-group :additional do
-  gem 'protected_attributes'
-  gem 'haml'
-end
+# group :additional do
+#   gem 'protected_attributes'
+#   gem 'haml'
+# end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -43,6 +43,9 @@ end
 group :custom do 
 	gem 'thin'
 	gem 'sprockets-rails', :require => 'sprockets/railtie'
+	gem 'protected_attributes'
+	gem 'strong_parameters' 
+	gem 'state_machine', '0.9.3'
 end
 
 # Use ActiveModel has_secure_password
