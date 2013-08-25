@@ -53,17 +53,11 @@ Todo::Application.routes.draw do
         post 'update_task',  on: :collection
         #make same for destroy
     end
-    #complete action may be not needed cause i will write an edit/update 
-    #for basic_task controller and it will be about editing 
-    #the type column of the type column
-    resources :completed_tasks, only: [:index, :show, :destroy] do
-     # member do
+
+    resources :completed_tasks, only: [:index, :destroy] do
         put 'reopen', on: :member
-     # end 
-       #collection do 
-         get 'filter_by_time', on: :collection
-         get 'filter_by_priority', on: :collection
-      # end      
+        get 'filter_by_time', on: :collection
+        get 'filter_by_priority', on: :collection
     end   
   end  
   

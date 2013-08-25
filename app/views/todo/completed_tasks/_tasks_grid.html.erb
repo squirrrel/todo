@@ -1,0 +1,15 @@
+<table cellspacing="0">
+<tbody>
+<tr class='task-items'></tr>
+<%@tasks.each do |task|%>
+<tr class="<%=task.id%> to-be-hovered" onmouseover = "$('.<%=task.id%>_action').show()" onmouseout = "$('.<%=task.id%>_action').hide()">
+<% %w{description priority status created_at completed_at}.each do |attr|%>
+<td><%= task.send attr %></td>
+<%end%>
+<td><%= button_to 'Delete', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action",style: 'display: none;',remote: true %></td>
+<td><%= link_to 'Reopen', reopen_todo_completed_task_path(task.id), method: :put, class: "reopen #{task.id}_action", style: 'display: none;', remote: true %></td>
+</tr>
+<%end%>
+</tbody>
+</table>
+
