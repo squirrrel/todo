@@ -3,9 +3,7 @@
 <table cellspacing="0">
 <tbody>
 <tr>
-<% %w{ description priority status created_at }.each do |header|%>
-<th><div hidden id= "<%=header%>" ><%=header.capitalize!%></div></th>
-<%end%>
+<%= render partial: '/todo/shared/headers' %>
 </tr>
 <tr class='task-items'></tr>
 <%@tasks.each do |task|%>

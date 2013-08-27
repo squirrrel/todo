@@ -62,6 +62,7 @@ class Todo::ActiveTasksController < ApplicationController
 		#paramz = { type: 'CompletedTask', completed_at: Time.now }
 		#subject.update_attributes(paramz)
 		subject.type = 'CompletedTask'
+		subject.status = 'completed'
 		subject.completed_at = Time.now
 		subject.save
 		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG

@@ -2,19 +2,22 @@
 <div>
 <select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
 <%@time_filter.each do |opt|%>
-<option><%= opt.id2name %></option>
+<option <%='selected=selected' if opt == @default_option%>><%= opt.id2name %></option>
 <%end%>
-</select>
+</select> 
 
 <select id= 'priority_set' onchange = "apply_priority_filter($(this).find('option:selected').text())">
+<option></option>
 <%@priorities.each do |opt|%>
 <option><%= opt.id2name %></option>
 <%end%>
 </select>
-
 </div>
+
 <div id='to-be-removed-by-filter-selection'>
-<% unless @tasks == nil %>
+<% if @tasks == nil %>
+<p>No record fetched</p>
+<%else%>
 <%= render 'tasks_grid', locals: {tasks: @tasks} %>
 <%end%>
 </div>
