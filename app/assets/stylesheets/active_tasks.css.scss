@@ -1,3 +1,67 @@
 // Place all the styles related to the ActiveTasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.headers {
+color: #848484;
+font-family: "Courier New", Courier, monospace;
+font-size: 12px;	
+font-weight: lighter;
+text-align:center;
+
+height: 30px;
+} 
+
+.items {
+color: #585858;
+font-family: "Tahoma", Monaco, sans-serif;
+font-size: 12px;	
+font-weight: lighter;
+text-align: center;
+text-shadow: 0.5px, 0.5px, #E6E6E6;	
+
+height: 25px;
+width: 60px;
+}
+
+#description {
+width: 200px;	
+}
+
+#created_at {
+width: 200px;	
+}
+
+button.edit {
+color: #DF3A01; 
+height: 25px; 
+width: 35px;
+font-size: 25px;
+font-weight: bolder;
+
+background: transparent;
+borderbrush: transparent;
+border: 0; 
+padding: 0;
+}
+
+button.edit:hover {
+cursor:pointer;
+color: #848484;
+}
+
+.delete {
+color: #DF3A01; 
+height: 25px; 
+width: 35px;
+
+background: transparent;
+borderbrush: transparent;
+border: 0; 
+padding: 0;
+}
+
+button.edit:before {
+
+
+}

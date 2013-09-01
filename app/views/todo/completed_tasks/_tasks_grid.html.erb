@@ -1,3 +1,6 @@
+<%if @tasks ==  nil%>
+<p>No records found</p>
+<%else%>
 <table cellspacing="0">
 <tbody>
 <tr class='task-items'></tr>
@@ -16,4 +19,5 @@
 <%end%>
 </tbody>
 </table>
+<%end%>
 

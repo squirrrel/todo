@@ -17,3 +17,5 @@
 
 * Implement advanced caching
 
+* Add checkbox-based 'mass-delete'/'mass-complete' functionality 
+

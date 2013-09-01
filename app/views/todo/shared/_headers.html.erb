@@ -1,4 +1,4 @@
 <% dynamic_header = @completed == true ? (['completed_at']) : (['status','created_at'])%>
 <% ['description', 'priority'].concat(dynamic_header).each do |header|%>
-<th><div hidden id= "<%=header%>" ><%=header.capitalize!%></div></th>
+<th class= 'headers'><div hidden id= "<%=header%>" ><%=header.capitalize!%></div></th>
 <%end%>

@@ -1,5 +1,5 @@
 class BasicTask < ActiveRecord::Base
-	include ActiveModel::ForbiddenAttributesProtection
+  include ActiveModel::ForbiddenAttributesProtection
 #attr_accessible :description, :priority, :status
 #attr_protected	:type, :created_at, :completed_at
 

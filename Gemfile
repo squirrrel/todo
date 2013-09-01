@@ -46,6 +46,7 @@ group :custom do
 	gem 'protected_attributes'
 	gem 'strong_parameters' 
 	gem 'state_machine', '0.9.3'
+	gem 'devise'
 end
 
 # Use ActiveModel has_secure_password

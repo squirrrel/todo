@@ -57,10 +57,12 @@ jQuery ->
 	### show ACTIONS that can be applied on a task ###	
 	@show_actions = show_actions = (task_id)->
 		$('.' + task_id + '_action').show()
+		$('.pipe' + task_id).show()
 
 	### hide ACTIONS that can be applied on a task ###		
 	@hide_actions = hide_actions = (task_id)->
 		$('.' + task_id + '_action').hide()
+		$('.pipe' + task_id).hide()
 
 	### show HEADERS ###
 	@show_header = show_header = (header_id)->

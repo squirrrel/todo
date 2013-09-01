@@ -41,6 +41,6 @@ Todo::Application.configure do
   # config.assets.digest = true
 
   # config.assets.debug = true
-
+  config.active_record.whitelist_attributes = false
   # config.assets.precompile += ['cancelokedit.js']
 end

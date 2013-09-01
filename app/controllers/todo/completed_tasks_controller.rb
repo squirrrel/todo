@@ -1,25 +1,27 @@
 class Todo::CompletedTasksController < ApplicationController
 
 #TODO: REFACTOR INDEX
-#TODO: there is a problem that after refreshing the page index action is called without passing time and priority set previously so settings are reset
+#RETEST IN 2 WEEKS CAUSE I AM TIRED TO DO IT
+
 	def index
 	  	@time_filter = TimeFilter
 	 	@priorities = Priorities
 	 	@default_option = DefaultTime
 
-	 	@tasks = CompletedTask.force_priority_filter == nil || CompletedTask.force_priority_filter == [] ? (CompletedTask.all.order('completed_at DESC')) : (CompletedTask.force_priority_filter)   		 		 
-     	
-     	filter = params[:filter].nil? ? (DefaultTime) : (params[:filter]) 
+	 	if params[:filter].nil? && CompletedTask.flag == true
+	 		@tasks = CompletedTask.force_time_filter
+	 	else	
+	 		@tasks = CompletedTask.force_priority_filter == nil || CompletedTask.force_priority_filter == [] ? (CompletedTask.all.order('completed_at DESC')) : (CompletedTask.force_priority_filter)   		 		      	
+     		filter = params[:filter].nil? ? (DefaultTime) : (params[:filter]) 
 	 	unless params[:filter] == 'forever' || params[:filter] == 'today' 
 			figure = (%r{\d{1,2}}.match(filter)).try(:[],0)
 			time_unit = %r{days|months}.match(filter).try(:[],0) 		   		  		
    			elapsed_time = params[:filter] == 'last year' ? (eval "1.years.ago") : (eval "#{figure.to_i}.#{time_unit}.ago")  		  
    		end
-
    		   		 	  		 	
 	    if params[:filter] == 'forever' 
 	        @tasks.delete_if{|task| task == nil }	
-	        p @tasks = @tasks.empty? == true ? (nil) : @tasks
+	        @tasks = @tasks.empty? == true ? (nil) : @tasks
 	    elsif params[:filter] == 'today' 	
       		@tasks.map! do |task| 
 			    task if task.completed_at.strftime('%m%d%y') == Time.now.strftime('%m%d%y') 
@@ -34,9 +36,11 @@ class Todo::CompletedTasksController < ApplicationController
 			elsif @tasks.count == 1	
 			  @tasks  if @tasks.first.completed_at.to_i >= elapsed_time.to_i			   	
 			end	 	  
+	 		end
 	 	end
 
 		CompletedTask.set_time_filter = @tasks
+		CompletedTask.set_flag = true
 
 	  	respond_to do |format|
       		format.js { render 'filter.js.erb' }
