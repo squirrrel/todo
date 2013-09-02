@@ -1,5 +1,5 @@
 <%= render 'new', locals: {priority: @priority}%>
-<div>
+<div id='tasks_container'>
 <table cellspacing="0">
 <tbody>
 <tr>
@@ -7,7 +7,7 @@
 </tr>
 <tr class='task-items'></tr>
 <%@tasks.each do |task|%>
-<tr class="<%=task.id%> to-be-hovered" onmouseover = "show_actions(<%=task.id%>)" onmouseout = "hide_actions(<%=task.id%>)" >
+<tr class="be_hovered <%=task.id%> <%=task.priority%>" onmouseover = "show_actions(<%=task.id%>), wrap(this)" onmouseout = "hide_actions(<%=task.id%>)" >
 <%  
 %w{ description priority status created_at }.each do |attr|%>
 <td id = '<%=attr%>' class='items' ><div onmouseover= "show_header('div#<%=attr%>')" 
@@ -17,11 +17,10 @@ id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= res= task.se
 <% @dropdown ="#{task.id.to_s}" %>
 <%end%> 
 <%@task = task%>
-<%#not yet implemented for the create action rendering %>
 <%= render 'delete_complete_update', locals: { task: @task, priority: @priority, dropdown: @dropdown }%>
 </tr>
 <%end%>
 </tbody>
 </table>
-<span data-icon="&#x21f7;">Shit me</span>
 </div>
+<div>⌚</div>

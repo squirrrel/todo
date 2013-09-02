@@ -1,9 +1,8 @@
-<button id='<%= @dropdown%>' style='display:none;' 
-onclick="trigger_on_cancel(this,<%=@task.id.to_s%>)" >Cancel</button>
-
-<%#<%= form_for :edit, url: { action: "update", id: @task.id  }, html: { method: "put", class: 'ok_form' } do |f| %>
-<button class= "okay<%=@task.id.to_s%>", style= 'display:none;' onclick = " 
+<button class= "okay<%=@task.id.to_s%> okay", style= 'display:none;' onclick = " 
 task_id = <%=@task.id.to_s%> 
 dropdown =<%=@dropdown%>
 trigger_on_ok(this, task_id, dropdown)"
 >OK</button>  
+<button id='<%= @dropdown%>' class='cancel' style='display:none;' 
+onclick="trigger_on_cancel(this,<%=@task.id.to_s%>)" >✖</button>
+

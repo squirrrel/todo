@@ -1,7 +1,7 @@
 
 jQuery -> 
 	### on-click EDIT button handler ### 
-	@trigger_on_edit = trigger_on_edit=(task_id, dropdown)->
+	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
 		
 		$('div#priority' + task_id).replaceWith('<div><select><option>' + 
@@ -12,7 +12,7 @@ jQuery ->
 		
 		$('.okay' + task_id).show()
 		$('#' + dropdown).show()
-
+		
 	### on-click OK button handler ###
 	@trigger_on_ok = trigger_on_ok = (obj, task_id, dropdown)->
 		$('div#description' + task_id).attr('contenteditable','false')
@@ -75,6 +75,9 @@ jQuery ->
 	### on-unfocus DESCRIPTION handler ###
 	@set_noneditable = set_noneditable =(obj)->  
 		$(obj).attr('contenteditable','false')
+
+	@wrap=wrap=(obj)->
+		$(obj).wrapAll('<div class="wrapper" />')	
 
 	
 
