@@ -14,7 +14,7 @@ height: 30px;
 
 .items {
 color: #585858;
-font-family: "Tahoma", Monaco, sans-serif;
+font-family: "Courier New", Courier, monospace;
 font-size: 12px;	
 font-weight: lighter;
 text-align: center;
@@ -25,12 +25,29 @@ width: 60px;
 }
 
 #description {
+font-family: "Courier New", Courier, monospace;
+text-align: left;
+padding-left: 10px;
 width: 200px;	
 }
 
 #created_at {
-width: 200px;	
+font-family: "Courier New", Courier, monospace;
+text-align: left;
+padding-left: 10px;
+width: 200px;
 }
+
+#priority{
+border-left: 1.7px dotted #848484;
+border-right: 1.7px dotted #848484;	
+width: 100px;
+}
+#status{
+border-right: 1.7px dotted #848484;	
+width: 100px;
+}
+
 
 button.edit {
 color: #BDBDBD; 
@@ -147,7 +164,7 @@ font-weight: bold;
 font-size: 20px;
 font-align: center;
 float: center;
-padding-bottom: 20px;
+padding-bottom: 26px;
 border: 1.7px solid #EF4C3E;
 border-bottom-right-radius: 2px;
 border-top-right-radius: 2px;
@@ -166,8 +183,9 @@ height: 25px;
 width: 200px;	
 border: 1px solid #FFFFFF;
 margin-top: 10px;
-padding-top: 1px;
+padding-top: 5px;
 padding-bottom: 1px;
+padding-left: 5px;
 float: center;
 border-bottom-left-radius: 2px;
 border-top-left-radius: 2px;
@@ -180,9 +198,15 @@ border-left: 1px solid #BDBDBD;
 }
 
 select{
-height: 25px;
+height: 20px;
+width: 55px;
 background: transparent no-repeat 60px center;
-border: 1px solid #FFFFFF;
+
+background: transparent;
+borderbrush: transparent;
+border: 0; 
+padding: 0;
+
 color: #848484;
 font-family: "Courier New", Courier, monospace;
 font-size: 13px;	
@@ -198,12 +222,33 @@ overflow: hidden;
     text-overflow: '⌄';
 }
 
-select:focus{
+select#new_priority{
+height: 30px;
+width: 20px;
+background: transparent no-repeat 60px center;
+border: 1px solid #FFFFFF;
+color: #848484;
+font-family: "Courier New", Courier, monospace;
+font-size: 13px;	
+font-weight: lighter;
+text-align:justify;	
+background-image: none;
+background-repeat: no-repeat;
+float: center;
+padding-top: 5px;
+margin-top: 10px;
+overflow: hidden;
+ -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '⌄';
+}
+
+select#new_priority:focus{
 border: 1px solid #EEEAEA;	
 cursor: pointer;
 }
 
-select:select{
+select#new_priority:select{
 background: transparent no-repeat 60px center;	
 }
 
@@ -230,14 +275,14 @@ width: 50px;
 }
 
 .fix-sized-2{
-width: 70px;	
+width: 120px;	
 }
 
 .fix-sized-3{
 width: 10px;	
 }
 
-.wrapper{
-border: 1px dotted #EEEAEA;	
+.edit_boxes{
+width: 35px;
+height:	20px;
 }
-

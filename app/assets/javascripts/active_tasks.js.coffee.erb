@@ -4,12 +4,14 @@ jQuery ->
 	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
 		
-		$('div#priority' + task_id).replaceWith('<div><select><option>' + 
+		$('div#priority' + task_id).replaceWith('<select><option>' + 
 			'high</option><option>medium</option>' + 
-			'<option>low</option></select></div>')
+			'<option>low</option></select>')
 		$('div#status' + task_id).replaceWith('<select><option>open</option>' +
 			'<option>in progress</option></select>')
-		
+			 
+		$('tr.' + task_id).removeAttr('onmouseout')
+		$(obj).attr('disabled','disabled')
 		$('.okay' + task_id).show()
 		$('#' + dropdown).show()
 		
@@ -26,6 +28,8 @@ jQuery ->
 		
 		$(obj).hide()
 		$('#'+ dropdown).hide()
+
+		### HERE WE HAVE TO ADD ONMOUSEOUT SCRIPT CALL AGAIN TO MAKE ICON SYMBOLS DISSAPEAR OR APPLY ANY OTHER METHOD TO DO IT ###      
 
 		$.ajax({
   		type: "POST",
@@ -64,6 +68,13 @@ jQuery ->
 		$('.' + task_id + '_action').hide()
 		$('.pipe' + task_id).hide()
 
+
+	### emphasize the concrete task onhover and turn it back to normal on unhover###	
+	@bold = bold =(obj)->
+		$(obj).find('.items').css('font-weight', 'bold')	
+	@unbold=unbold=(obj)->
+		$(obj).find('.items').css('font-weight', 'lighter')
+
 	### show HEADERS ###
 	@show_header = show_header = (header_id)->
 		$(header_id).removeAttr('hidden')
@@ -75,11 +86,6 @@ jQuery ->
 	### on-unfocus DESCRIPTION handler ###
 	@set_noneditable = set_noneditable =(obj)->  
 		$(obj).attr('contenteditable','false')
-
-	@wrap=wrap=(obj)->
-		$(obj).wrapAll('<div class="wrapper" />')	
-
-	
 
 
 
