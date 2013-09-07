@@ -1,5 +1,6 @@
 <%if @tasks ==  nil%>
 <p>No records found</p>
+
 <%else%>
 <table cellspacing="0">
 <tbody>
@@ -8,16 +9,28 @@
 <% @completed = true %>
 <%= render partial: '/todo/shared/headers' %>
 </tr>
+</tbody>
+</table>
+
+<div id='completed_tasks_container'>
+<table cellspacing="0">
+<tbody>
 <%@tasks.each do |task|%>
-<tr class="<%=task.id%> to-be-hovered" onmouseover = "$('.<%=task.id%>_action').show()" onmouseout = "$('.<%=task.id%>_action').hide()">
+<%if task == nil%>
+<%'do nothing'%>
+<%else%>
+<tr class="<%=task.id%> to-be-hovered completed" onmouseover = "show_actions(<%=task.id%>), bold(this)" onmouseout = "hide_actions(<%=task.id%>), unbold(this)">
 <% %w{description priority completed_at}.each do |attr|%>
-<td onmouseover= "show_header('div#<%=attr%>')" onmouseleave = "hide_header('div#<%=attr%>')"><%= task.send attr %></td>
+<td id='<%=attr%>' class='items' onmouseover= "show_header('div#<%=attr%>')" onmouseleave = "hide_header('div#<%=attr%>')"><%= task.send attr %></td>
 <%end%>
-<td><%= button_to 'Delete', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none;',remote: true %></td>
-<td><%= link_to 'Reopen', reopen_todo_completed_task_path(task.id), method: :put, class: "reopen #{task.id}_action", style: 'display: none;', remote: true %></td>
+<td class = 'fix-sized-1'><%= button_to '✘', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none;',remote: true %></td>
+<td class = 'fix-sized-3'><span style = 'display: none;' class='pipe<%=task.id%> separator' >❘</span></td>
+<td class = 'fix-sized-1'><%= link_to '↺', reopen_todo_completed_task_path(task.id), method: :put, class: "reopen #{task.id}_action", style: 'display: none;', remote: true %></td>
 </tr>
+<%end%>
 <%end%>
 </tbody>
 </table>
+</div>
 <%end%>
 

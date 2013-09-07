@@ -1,11 +1,17 @@
 <%= render 'new', locals: {priority: @priority}%>
-<div id='tasks_container'>
+
 <table cellspacing="0">
 <tbody>
 <tr>
 <%= render partial: '/todo/shared/headers' %>
 </tr>
 <tr class='task-items'></tr>
+</tbody>
+</table>
+
+<div id='tasks_container'>
+<table cellspacing="0">
+<tbody>
 <%@tasks.each do |task|%>
 <tr id = "for_edit_<%=task.id.to_s%>" class="be_hovered <%=task.id%> <%=task.priority%>" onmouseover = "show_actions(<%=task.id%>), bold(this)" onmouseout = "hide_actions(<%=task.id%>), unbold(this)" >
 <%  
@@ -23,4 +29,3 @@ id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= res= task.se
 </tbody>
 </table>
 </div>
-<div>⌚</div>

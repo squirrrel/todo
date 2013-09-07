@@ -1,19 +1,20 @@
 <%#for view last records i add the awesome clock icon%>
-<div>
+<div id='filters_container'>
 <select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
+<option selected='selected'>⌚<option>
 <%@time_filter.each do |opt|%>
-<option <%='selected=selected' if opt == @default_option%>><%= opt.id2name %></option>
+<option><%= opt.id2name %></option>
 <%end%>
 </select> 
 
 <select id= 'priority_set' onchange = "apply_priority_filter($(this).find('option:selected').text())">
-<option></option>
+<option selected="selected" >!</option>
 <%@priorities.each do |opt|%>
 <option><%= opt.id2name %></option>
 <%end%>
 </select>
 </div>
 
-<div id='to-be-removed-by-filter-selection'>
+<div>
 <%= render 'tasks_grid', locals: {tasks: @tasks} %>
 </div>
