@@ -19,3 +19,7 @@
 
 * Add checkbox-based 'mass-delete'/'mass-complete' functionality 
 
+* Add 'sort by any column' functionality
+
+== There is sooo much #todo;)
+
