@@ -1,5 +1,5 @@
 <%#for view last records i add the awesome clock icon%>
-<div id='filters_container'>
+<div id='filters_container' style="margin-top: 30px;">
 <select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
 <option selected='selected'>⌚<option>
 <%@time_filter.each do |opt|%>

@@ -19,7 +19,7 @@
 <td id = '<%=attr%>' class='items' ><div onmouseover= "show_header('div#<%=attr%>')" 
  onmouseleave = "hide_header('div#<%=attr%>')" 
 id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= res= task.send attr %></div></td>
-<span id='<%=attr + task.id.to_s%>_span' style = 'display:none;'><%=res%></span>
+<span id='<%=attr + task.id.to_s%>_span' style = 'display:none'><%=res%></span>
 <% @dropdown ="#{task.id.to_s}" %>
 <%end%> 
 <%@task = task%>

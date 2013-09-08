@@ -20,10 +20,10 @@ class Todo::ActiveTasksController < ApplicationController
 		new_task.save if new_task.valid?
 	
 		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}	
-		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items');"
+		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items')"
 		#### RENDERING delete_complete_update partial ideally:
 		#1: respond_to {|format| format.js } 2: use correct syntax at create.js.erb and bingo
-		#$('.render-here').html('#{render :partial => 'delete_complete_update.html.erb', :locals => {:task => @task} }');
+		#$('.render-here').html('#{render :partial => 'delete_complete_update.html.erb', :locals => {:task => @task} }')
 		####
 
 
@@ -53,7 +53,7 @@ class Todo::ActiveTasksController < ApplicationController
 
 	def destroy
 		ActiveTask.find(params[:id]).destroy #ensure it is destroyed
-		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
+		render js: "$('.#{params[:id]}').remove()" #ADD SOME MSSG
 	end
 
 	def complete
@@ -65,7 +65,7 @@ class Todo::ActiveTasksController < ApplicationController
 		subject.status = 'completed'
 		subject.completed_at = Time.now
 		subject.save
-		render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
+		render js: "$('.#{params[:id]}').remove()" #ADD SOME MSSG
 	end	
 end
 

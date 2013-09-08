@@ -34,7 +34,7 @@ jQuery ->
 		$.ajax({
   		type: "POST",
   		url: "http://localhost:3000/todo/active_tasks/update_task",
-  		data: { id: task_id, description: description, priority: priority, status: status }}).done(()-> alert 'Task has been updated;)')
+  		data: { id: task_id, description: description, priority: priority, status: status }}).done(()-> alert 'Task has been updated)')
 
 
 	### on-click CANCEL button handler ###

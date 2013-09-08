@@ -50,14 +50,14 @@ class Todo::CompletedTasksController < ApplicationController
 
 	def destroy
 	  CompletedTask.find(params[:id]).destroy #ensure it is destroyed
-	  render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
+	  render js: "$('.#{params[:id]}').remove()" #ADD SOME MSSG
 	end
 
 	def reopen
       subject = BasicTask.find(params[:id])
       paramz = { type: 'ActiveTask', completed_at: Time.new(1000,01,01, 1,1,1) }
 	  subject.update_attributes(paramz)
-	  render js: "$('.#{params[:id]}').remove();" #ADD SOME MSSG
+	  render js: "$('.#{params[:id]}').remove()" #ADD SOME MSSG
 	  #perhaps it is better to add some flag column to indicate that it's been open
 	end	 
 

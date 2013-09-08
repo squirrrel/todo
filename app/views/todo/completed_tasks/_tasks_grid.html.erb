@@ -23,9 +23,9 @@
 <% %w{description priority completed_at}.each do |attr|%>
 <td id='<%=attr%>' class='items' onmouseover= "show_header('div#<%=attr%>')" onmouseleave = "hide_header('div#<%=attr%>')"><%= task.send attr %></td>
 <%end%>
-<td class = 'fix-sized-1'><%= button_to '✘', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none;',remote: true %></td>
-<td class = 'fix-sized-3'><span style = 'display: none;' class='pipe<%=task.id%> separator' >❘</span></td>
-<td class = 'fix-sized-1'><%= link_to '↺', reopen_todo_completed_task_path(task.id), method: :put, class: "reopen #{task.id}_action", style: 'display: none;', remote: true %></td>
+<td class = 'fix-sized-1'><%= button_to '✘', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none',remote: true %></td>
+<td class = 'fix-sized-3'><span style = 'display: none' class='pipe<%=task.id%> separator' >❘</span></td>
+<td class = 'fix-sized-1'><%= link_to '↺', reopen_todo_completed_task_path(task.id), method: :put, class: "reopen #{task.id}_action", style: 'display: none', remote: true %></td>
 </tr>
 <%end%>
 <%end%>

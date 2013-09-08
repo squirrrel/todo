@@ -1,0 +1,310 @@
+//COMPLETED
+div#new_tasks_form
+	margin:
+		top: 30px
+		left: 300px
+
+div#tasks_container
+	margin-top: 0px	
+	width: 880px
+
+
+div#tasks_container
+	overflow: hidden	
+	height: 350px
+
+div#tasks_container:hover
+	overflow: auto
+
+div#completed_tasks_container
+	@extend div#tasks_container
+	width: 630px
+
+
+.completed 
+	background-color: #E0FFFF
+
+
+//ACTIVE
+
+
+.add_me
+	height: 29px
+	background-color: #EF4C3E
+	width: 45px	
+	color: #FFFFFF
+	font:
+		weight: bold
+		size: 20px
+		align: center	
+	float: center
+	padding-bottom: 26px
+	border: 1.7px solid #EF4C3E
+	border-bottom-right-radius: 2px
+	border-top-right-radius: 2px
+
+.add_me:hover
+	cursor: pointer	
+	border: 1.7px solid #C53E32 
+
+
+button.edit 
+	color: #BDBDBD 
+	height: 20px 
+	width: 35px
+	font:
+		size: 25px
+		weight: bolder
+	background: transparent
+	borderbrush: transparent
+	border: 0 
+	padding: 0
+
+button.edit:hover 
+	cursor: pointer
+	color: #FF9933
+
+.okay
+	font:
+		family: "Courier New", Courier, monospace
+		size: 13px	
+		weight: bolder
+	color: #BDBDBD 
+	background: transparent
+	borderbrush: transparent
+	border: 0 
+	margin-top: 2px
+
+.okay:hover
+	cursor: pointer	
+	color: #04B4AE 
+
+.cancel
+	font:
+		family: "Courier New", Courier, monospace
+		size: 20px	
+		weight: bolder
+	color: #BDBDBD
+	background: transparent
+	borderbrush: transparent
+	border: 0 
+	padding: 0
+
+.cancel:hover
+	cursor: pointer
+	color: #DF3A01	
+
+.high
+	background-color: #FFE5B4 
+
+.medium
+	background-color: #FFF8C6 
+	
+.low
+	background-color: rgb(255, 255, 233) 
+
+.fix-sized-2
+	width: 120px	
+
+.spare_space
+	padding: 1px 8px 0 	
+
+
+//COMMON
+::-webkit-scrollbar 
+	width: 12px
+
+::-webkit-scrollbar-track 
+	border: 1px solid rgba( 255, 0, 0, 0.1)
+ 
+::-webkit-scrollbar-thumb
+	border-radius: 1px
+	background-color: rgba( 255, 0, 0, 0.1)
+	border-radius: 10px 
+
+input
+	font:
+		family: "Courier New", Courier, monospace
+		size: 13px	
+		weight: lighter
+	height: 25px
+	width: 200px	
+	border: 1px solid #FFFFFF
+	margin-top: 10px
+	padding:
+		top: 5px
+		bottom: 1px
+		left: 5px
+	float: center
+	border-bottom-left-radius: 2px
+	border-top-left-radius: 2px
+
+input:hover
+	border:
+		top: 1px solid #BDBDBD
+		bottom: 1px solid #BDBDBD	 
+		left: 1px solid #BDBDBD	
+
+.delete 
+	font:
+		size: 18px
+		weight: bolder
+	color: #BDBDBD 
+	height: 20px 
+	width: 35px
+	margin-top: 1px
+	background: transparent
+	borderbrush: transparent
+	border: none 
+	padding: 0
+
+.delete:hover 
+	cursor: pointer
+	color: #DF3A01	
+	border: none
+
+.complete
+	color: #BDBDBD 
+	height: 15px 
+	width: 25px
+	font:
+		size: 17px
+		weight: bolder
+	padding: 3px 0 0
+	text-decoration: none
+
+.complete:hover
+	cursor: pointer
+	color: #04B4AE		
+
+.reopen
+	@extend .complete
+
+
+span.separator 
+	color: #BDBDBD
+	height: 20px 
+	width: 35px	
+
+
+#completed_at
+	width: 170px
+
+#created_at
+	@extend #completed_at	
+
+#description
+	width: 190px
+
+#description_th
+	width: 200px
+
+#priority
+	border:
+		left: 1.7px dotted #848484
+		right: 1.7px dotted #848484	
+	width: 100px
+
+
+#status
+	border-right: 1.7px dotted #848484	
+	width: 100px
+
+
+#completed_at
+	font-family: "Courier New", Courier, monospace
+	text-align: left
+	padding-left: 10px
+
+#created_at
+	@extend #completed_at
+
+#description
+	@extend #completed_at
+
+p#copyright
+	font:
+		family: "Courier New", Courier, monospace
+		size: 12px	
+		weight: lighter
+	color: #848484
+	margin-left: 300px	
+
+.fix-sized-1
+	width: 50px	
+
+.fix-sized-3
+	width: 20px	
+
+.headers
+	color: #848484
+	font:
+		family: "Courier New", Courier, monospace
+		size: 12px	
+		weight: lighter
+	text-align: center
+	height: 30px
+
+
+.items
+	color: #585858
+	font:
+		family: "Courier New", Courier, monospace
+		size: 12px	
+		weight: lighter
+	text:
+		align: center
+		shadow: 0.5px, 0.5px, #E6E6E6	
+	height: 30px
+	width: 60px
+
+
+@mixin classic_props	
+	background: transparent no-repeat 60px center
+	font:
+		family: "Courier New", Courier, monospace
+		size: 13px
+		weight: lighter
+	color: #848484
+	background:
+		image: none
+		repeat: no-repeat
+	text-align: justify
+	float: center
+	margin-top: 10px
+	overflow: hidden
+	-moz-appearance: none
+	text:
+		indent: 0.01px
+		overflow: '⌄'
+
+select
+	height: 20px
+	width: 55px
+	borderbrush: transparent
+	border: 0
+	padding: 0
+	@include classic_props		
+
+
+select#new_priority
+	width: 20px
+	height: 30px
+	border: 1px solid #FFFFFF
+	padding-top: 5px
+	@include classic_props
+
+select#new_priority:focus
+	border: 1px solid #EEEAEA	
+	cursor: pointer
+
+select#new_priority:select
+	background: transparent no-repeat 60px center	
+
+select#elapsed_time 
+	@extend select#new_priority
+	width: 90px
+
+select#priority_set
+	@extend select#elapsed_time
+
