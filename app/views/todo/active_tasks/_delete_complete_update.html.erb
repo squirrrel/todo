@@ -1,8 +1,8 @@
-<td class = 'fix-sized-1'><div class='spare_space'><%= link_to '✔', complete_todo_active_task_path(@task.id), method: :put, class: "complete #{@task.id}_action",style: 'display: none', remote: true %></div></td>
-<td class = 'fix-sized-3' ><span style = 'display: none' class='pipe<%=@task.id%> separator'>❘</span></td>
-<td class = 'fix-sized-1'><%= button_to '✘', "/todo/active_tasks/#{@task.id}", method: :delete, class: "delete #{@task.id}_action",style: 'display: none',remote: true %></td>
-<td class = 'fix-sized-3'><span style = 'display: none' class='pipe<%=@task.id%> separator' >❘</span></td>
-<td class = 'fix-sized-2'>
+<td style = "width: 50px;"><div style="padding: 1px 8px 0;"><%= link_to '✔', complete_todo_active_task_path(@task.id), method: :put, class: "complete #{@task.id}_action",style: 'display: none', remote: true %></div></td>
+<td style = "width: 20px;" ><span style = 'display: none' class='pipe<%=@task.id%> separator'>❘</span></td>
+<td style = "width: 50px;"><%= button_to '✘', "/todo/active_tasks/#{@task.id}", method: :delete, class: "delete #{@task.id}_action",style: 'display: none',remote: true %></td>
+<td style="width: 20px;"><span style = 'display: none' class='pipe<%=@task.id%> separator' >❘</span></td>
+<td style="width: 120px;">
 <button onclick = "trigger_on_edit(<%=@task.id.to_s%>,<%= @dropdown%>,this)",
 style = 'display: none' class = '<%=@task.id%>_action edit'>✎</button>
 <%= render 'ok_cancel', locals: { task: @task, dropdown: @dropdown } %>

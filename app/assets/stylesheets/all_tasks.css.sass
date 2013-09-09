@@ -1,4 +1,123 @@
-//COMPLETED
+//GLOBAL MIXIN
+@mixin fonts($size,$weight)
+	font:
+		family: "Courier New", Courier, monospace
+		size: $size
+		weight: $weight
+
+
+
+input
+	@include fonts(13px,lighter)
+	height: 25px
+	width: 200px	
+	border: 1px solid #FFFFFF
+	margin-top: 10px
+	padding:
+		top: 5px
+		bottom: 1px
+		left: 5px
+	float: center
+	border-bottom-left-radius: 2px
+	border-top-left-radius: 2px
+
+input:hover
+	border:
+		top: 1px solid #BDBDBD
+		bottom: 1px solid #BDBDBD	 
+		left: 1px solid #BDBDBD			
+
+
+
+@mixin classic_props	
+	@include fonts(13px,lighter)
+	background: transparent no-repeat 60px center
+	color: #848484
+	background:
+		image: none
+		repeat: no-repeat
+	text-align: justify
+	float: center
+	margin-top: 10px
+	overflow: hidden
+	-moz-appearance: none
+	text:
+		indent: 0.01px
+		overflow: '⌄'
+
+select
+	height: 20px
+	width: 55px
+	borderbrush: transparent
+	border: 0
+	padding: 0
+	@include classic_props		
+
+select#new_priority
+	width: 20px
+	height: 30px
+	border: 1px solid #FFFFFF
+	padding-top: 5px
+	@include classic_props
+
+select#new_priority:focus
+	border: 1px solid #EEEAEA	
+	cursor: pointer
+
+select#new_priority:select
+	background: transparent no-repeat 60px center	
+
+select#elapsed_time 
+	@extend select#new_priority
+	width: 90px
+
+select#priority_set
+	@extend select#elapsed_time
+
+th.headers
+	@include fonts(12px, lighter)
+	color: #848484
+	text-align: center
+	height: 30px
+
+th.status
+	width: 100px
+
+th.description
+	width: 200px
+
+th.priority
+	width: 100px
+
+th.created_at
+	width: 170px
+
+th.completed_at
+	width: 170px	
+
+
+td.items
+	@include fonts(12px, lighter)
+	color: #585858
+	text:
+		align: center
+		shadow: 0.5px, 0.5px, #E6E6E6	
+	height: 30px
+	width: 60px
+
+tr.completed 
+	background-color: #E0FFFF
+
+tr.high
+	background-color: #FFE5B4 
+
+tr.medium
+	background-color: #FFF8C6 
+	
+tr.low
+	background-color: rgb(255, 255, 233) 	
+
+
 div#new_tasks_form
 	margin:
 		top: 30px
@@ -7,7 +126,6 @@ div#new_tasks_form
 div#tasks_container
 	margin-top: 0px	
 	width: 880px
-
 
 div#tasks_container
 	overflow: hidden	
@@ -20,14 +138,15 @@ div#completed_tasks_container
 	@extend div#tasks_container
 	width: 630px
 
+p#copyright
+	font:
+		family: "Courier New", Courier, monospace
+		size: 12px	
+		weight: lighter
+	color: #848484
+	margin-left: 300px		
 
-.completed 
-	background-color: #E0FFFF
-
-
-//ACTIVE
-
-
+//ADD button 
 .add_me
 	height: 29px
 	background-color: #EF4C3E
@@ -47,6 +166,11 @@ div#completed_tasks_container
 	cursor: pointer	
 	border: 1.7px solid #C53E32 
 
+//ICONS
+span.separator 
+	color: #BDBDBD
+	height: 20px 
+	width: 35px	
 
 button.edit 
 	color: #BDBDBD 
@@ -65,10 +189,7 @@ button.edit:hover
 	color: #FF9933
 
 .okay
-	font:
-		family: "Courier New", Courier, monospace
-		size: 13px	
-		weight: bolder
+	@include fonts(13px,bolder)
 	color: #BDBDBD 
 	background: transparent
 	borderbrush: transparent
@@ -80,10 +201,7 @@ button.edit:hover
 	color: #04B4AE 
 
 .cancel
-	font:
-		family: "Courier New", Courier, monospace
-		size: 20px	
-		weight: bolder
+	@include fonts(20px,bolder)
 	color: #BDBDBD
 	background: transparent
 	borderbrush: transparent
@@ -93,57 +211,6 @@ button.edit:hover
 .cancel:hover
 	cursor: pointer
 	color: #DF3A01	
-
-.high
-	background-color: #FFE5B4 
-
-.medium
-	background-color: #FFF8C6 
-	
-.low
-	background-color: rgb(255, 255, 233) 
-
-.fix-sized-2
-	width: 120px	
-
-.spare_space
-	padding: 1px 8px 0 	
-
-
-//COMMON
-::-webkit-scrollbar 
-	width: 12px
-
-::-webkit-scrollbar-track 
-	border: 1px solid rgba( 255, 0, 0, 0.1)
- 
-::-webkit-scrollbar-thumb
-	border-radius: 1px
-	background-color: rgba( 255, 0, 0, 0.1)
-	border-radius: 10px 
-
-input
-	font:
-		family: "Courier New", Courier, monospace
-		size: 13px	
-		weight: lighter
-	height: 25px
-	width: 200px	
-	border: 1px solid #FFFFFF
-	margin-top: 10px
-	padding:
-		top: 5px
-		bottom: 1px
-		left: 5px
-	float: center
-	border-bottom-left-radius: 2px
-	border-top-left-radius: 2px
-
-input:hover
-	border:
-		top: 1px solid #BDBDBD
-		bottom: 1px solid #BDBDBD	 
-		left: 1px solid #BDBDBD	
 
 .delete 
 	font:
@@ -180,24 +247,16 @@ input:hover
 .reopen
 	@extend .complete
 
-
-span.separator 
-	color: #BDBDBD
-	height: 20px 
-	width: 35px	
-
-
+ 
+//NEEDS DEBUGGING
 #completed_at
 	width: 170px
 
 #created_at
-	@extend #completed_at	
+	width: 170px
 
 #description
 	width: 190px
-
-#description_th
-	width: 200px
 
 #priority
 	border:
@@ -205,11 +264,9 @@ span.separator
 		right: 1.7px dotted #848484	
 	width: 100px
 
-
 #status
 	border-right: 1.7px dotted #848484	
 	width: 100px
-
 
 #completed_at
 	font-family: "Courier New", Courier, monospace
@@ -217,94 +274,31 @@ span.separator
 	padding-left: 10px
 
 #created_at
-	@extend #completed_at
+	font-family: "Courier New", Courier, monospace
+	text-align: left
+	padding-left: 10px
 
 #description
-	@extend #completed_at
-
-p#copyright
-	font:
-		family: "Courier New", Courier, monospace
-		size: 12px	
-		weight: lighter
-	color: #848484
-	margin-left: 300px	
-
-.fix-sized-1
-	width: 50px	
-
-.fix-sized-3
-	width: 20px	
-
-.headers
-	color: #848484
-	font:
-		family: "Courier New", Courier, monospace
-		size: 12px	
-		weight: lighter
-	text-align: center
-	height: 30px
+	font-family: "Courier New", Courier, monospace
+	text-align: left
+	padding-left: 10px
 
 
-.items
-	color: #585858
-	font:
-		family: "Courier New", Courier, monospace
-		size: 12px	
-		weight: lighter
-	text:
-		align: center
-		shadow: 0.5px, 0.5px, #E6E6E6	
-	height: 30px
-	width: 60px
+//SCROLL
+::-webkit-scrollbar 
+	width: 12px
+
+::-webkit-scrollbar-track 
+	border: 1px solid rgba( 255, 0, 0, 0.1)
+ 
+::-webkit-scrollbar-thumb
+	border-radius: 1px
+	background-color: rgba( 255, 0, 0, 0.1)
+	border-radius: 10px
 
 
-@mixin classic_props	
-	background: transparent no-repeat 60px center
-	font:
-		family: "Courier New", Courier, monospace
-		size: 13px
-		weight: lighter
-	color: #848484
-	background:
-		image: none
-		repeat: no-repeat
-	text-align: justify
-	float: center
-	margin-top: 10px
-	overflow: hidden
-	-moz-appearance: none
-	text:
-		indent: 0.01px
-		overflow: '⌄'
-
-select
-	height: 20px
-	width: 55px
-	borderbrush: transparent
-	border: 0
-	padding: 0
-	@include classic_props		
 
 
-select#new_priority
-	width: 20px
-	height: 30px
-	border: 1px solid #FFFFFF
-	padding-top: 5px
-	@include classic_props
 
-select#new_priority:focus
-	border: 1px solid #EEEAEA	
-	cursor: pointer
 
-select#new_priority:select
-	background: transparent no-repeat 60px center	
-
-select#elapsed_time 
-	@extend select#new_priority
-	width: 90px
-
-select#priority_set
-	@extend select#elapsed_time
 
