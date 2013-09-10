@@ -1,15 +1,15 @@
-=== TODO
+=== BACKLOG
 
 
-* Send completed_tasks filters values on #index refresh
+* Send completed_tasks filters values on #index refresh DONE
 
-* Add CSS 
+* Add CSS IN PROGRESS
 
-* Make fix-sized div containing the #index view
+* Make fix-sized div containing the #index view  DONE
 
 * Put active_tasks/completed_tasks #index together using liquid-carousel-jquery kind of thing
 
-* Apply an onhover-visible light scroll
+* Make scroll semitransparent-black IN PROGRESS
 
 * Set up logging    
 

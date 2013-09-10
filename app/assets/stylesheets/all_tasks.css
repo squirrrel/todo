@@ -121,9 +121,9 @@ div#new_tasks_form {
 
 div#tasks_container, div#completed_tasks_container {
   margin-top: 0px;
-  width: 880px; }
-
-div#tasks_container, div#completed_tasks_container {
+  width: 870px;
+  float: left;
+  position: relative;
   overflow: hidden;
   height: 350px; }
 
@@ -270,12 +270,16 @@ button.edit:hover {
   padding-left: 10px; }
 
 ::-webkit-scrollbar {
-  width: 12px; }
+  width: 10px;
+  position: absolute; }
 
 ::-webkit-scrollbar-track {
-  border: 1px solid rgba(255, 0, 0, 0.1); }
+  border: 1px solid rgba(189, 189, 189, 0.4); }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 1px;
-  background-color: rgba(255, 0, 0, 0.1);
-  border-radius: 10px; }
+  background-color: rgba(189, 189, 189, 0.4);
+  min-width: 10px; }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(189, 189, 189, 0.7); }
