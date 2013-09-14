@@ -27,6 +27,19 @@ input:hover
 		bottom: 1px solid #BDBDBD	 
 		left: 1px solid #BDBDBD			
 
+input.pick 
+	width: 1em
+	height: 1em
+	display: none
+	position: relative
+	margin-left: 13px
+	margin-bottom: 8px
+	float: center
+	border: 1px solid #2e2e2e
+	background-color: #BDBDBD 
+
+input.pick:hover
+	cursor: pointer	
 
 
 @mixin classic_props	
@@ -79,6 +92,13 @@ th.headers
 	color: #848484
 	text-align: center
 	height: 30px
+	background-color: #E7E9D3
+
+th.headers:hover
+	color: rgba( 34, 2, 0, 0.8)
+	font-weight: bold
+	cursor: pointer
+	background-color: rgba(231, 233, 211, 0.5)	
 
 th.status
 	width: 100px
@@ -95,6 +115,9 @@ th.created_at
 th.completed_at
 	width: 170px	
 
+th.checkbox
+	width: 40px	
+
 
 td.items
 	@include fonts(12px, lighter)
@@ -103,7 +126,7 @@ td.items
 		align: center
 		shadow: 0.5px, 0.5px, #E6E6E6	
 	height: 30px
-	width: 60px
+	width: 60px	
 
 tr.completed 
 	background-color: #E0FFFF
@@ -125,7 +148,7 @@ div#new_tasks_form
 
 div#tasks_container
 	margin-top: 0px	
-	width: 870px
+	width: 913px
 	float: left
 	position: relative
 	overflow: hidden	
@@ -137,6 +160,10 @@ div#tasks_container:hover
 div#completed_tasks_container
 	@extend div#tasks_container
 	width: 630px
+
+div.box_container
+	height: 30px
+	width: 40px
 
 p#copyright
 	font:
@@ -280,8 +307,15 @@ button.edit:hover
 
 #description
 	font-family: "Courier New", Courier, monospace
+	text-alin: left
+	padding-left: 10px
+
+#checkbox
+	font-family: "Courier New", Courier, monospace
 	text-align: left
 	padding-left: 10px
+	width: 90px
+
 
 
 //SCROLL
@@ -290,18 +324,13 @@ button.edit:hover
 	position: absolute
 
 ::-webkit-scrollbar-track 
-	border: 1px solid rgba( 189, 189, 189, 0.4)
+	border:
+		left: 1px dotted rgba(34, 2, 0, 0.1)
+		right: 1px dotted rgba(34, 2, 0, 0.1)
  
 ::-webkit-scrollbar-thumb
-	border-radius: 1px
-	background-color: rgba( 189, 189, 189, 0.4)
+	background-color: rgba( 34, 2, 0, 0.3)
 	min-width: 10px
 
 ::-webkit-scrollbar-thumb:hover
-	background-color: rgba( 189, 189, 189, 0.7)		
-
-
-
-
-
-
+	background-color: rgba( 34, 2, 0, 0.6)		

@@ -21,5 +21,7 @@
 
 * Add 'sort by any column' functionality
 
+* Add black tooltips where needed
+
 == There is sooo much #todo;)
 

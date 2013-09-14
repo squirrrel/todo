@@ -87,6 +87,18 @@ jQuery ->
 	@set_noneditable = set_noneditable =(obj)->  
 		$(obj).attr('contenteditable','false')
 
+	### onhover and onchange CHECKBOXES handler ###	
+	@show_boxes=show_boxes=(task_id)->
+		$("input[type='checkbox']").show()
+
+	@hide_boxes=hide_boxes=(task_id)->
+		box = "input[type='checkbox']"	
+		if $("#{box}:checked").length > 0 
+			$(box).show()
+		else	
+			$(box).hide()
+
+
 
 
 
