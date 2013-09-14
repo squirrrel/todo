@@ -9,7 +9,7 @@
 
 * Put active_tasks/completed_tasks #index together using liquid-carousel-jquery kind of thing
 
-* Make scroll semitransparent-black IN PROGRESS
+* Make scroll semitransparent-black DONE
 
 * Set up logging    
 
@@ -17,9 +17,9 @@
 
 * Implement advanced caching
 
-* Add checkbox-based 'mass-delete'/'mass-complete' functionality 
+* Add checkbox-based 'mass-delete'/'mass-complete' functionality IN PROGRESS: style checkboxes, make task font bold when a corresponding checkbox is checked
 
-* Add 'sort by any column' functionality
+* Add sorting functionality
 
 * Add black tooltips where needed
 

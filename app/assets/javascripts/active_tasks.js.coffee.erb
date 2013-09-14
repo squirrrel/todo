@@ -1,4 +1,3 @@
-
 jQuery -> 
 	### on-click EDIT button handler ### 
 	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
@@ -97,6 +96,14 @@ jQuery ->
 			$(box).show()
 		else	
 			$(box).hide()
+
+	@set_arrow_position=set_arrow_position=(obj)->
+		if $(obj).hasClass('arrow_down')
+			$(obj).find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
+			$(obj).removeClass('arrow_down')
+		else
+			$(obj).find('span.filtered').replaceWith("<span class='unfiltered'> ⌵</span>")
+			$(obj).addClass('arrow_down')
 
 
 

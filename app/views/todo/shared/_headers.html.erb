@@ -1,4 +1,4 @@
 <% dynamic_header = @completed == true ? (['completed_at']) : (['status','created_at'])%>
 <% ['checkbox','description', 'priority'].concat(dynamic_header).each do |header|%>
-<th class= "headers <%=header%>" id = '<%='description_th' if header=='description'%>'><div class='headers_container' hidden id= "<%=header%>" ><span><%=header.capitalize!%> ⌵</span></div></th>
+<th class= "headers <%=header%>" id = '<%='description_th' if header=='description'%>'><div class='headers_container arrow_down' hidden id= "<%=header%>" onclick="set_arrow_position(this)" ><%=header.capitalize!%><span class='unfiltered'> ⌵</span></div></th>
 <%end%>

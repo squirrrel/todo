@@ -20,6 +20,9 @@
 <%'do nothing'%>
 <%else%>
 <tr class="<%=task.id%> to-be-hovered completed" onmouseover = "show_actions(<%=task.id%>), bold(this)" onmouseout = "hide_actions(<%=task.id%>), unbold(this)">
+<% @task = task %>
+<%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
+
 <% %w{description priority completed_at}.each do |attr|%>
 <td id='<%=attr%>' class='items' onmouseover= "show_header('div#<%=attr%>')" onmouseleave = "hide_header('div#<%=attr%>')"><%= task.send attr %></td>
 <%end%>
