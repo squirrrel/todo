@@ -155,11 +155,45 @@ div#tasks_container:hover, div#completed_tasks_container:hover {
   overflow: auto; }
 
 div#completed_tasks_container {
-  width: 630px; }
+  width: 665px; }
 
 div.box_container {
   height: 30px;
   width: 40px; }
+
+div#complete_for_checkbox {
+  height: 25px;
+  width: 50px;
+  cursor: pointer;
+  float: left;
+  margin-top: 15px;
+  background-color: #bfe9be;
+  border: 1px solid #bfe9be;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  vertical-align: middle;
+  text-align: center;
+  color: #92f184; }
+
+div#complete_for_checkbox:hover {
+  border: 1px solid #92f184; }
+
+div#delete_for_checkbox {
+  height: 25px;
+  width: 50px;
+  cursor: pointer;
+  float: left;
+  margin-top: 15px;
+  background-color: #f39ba8;
+  border: 1px solid #f39ba8;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  vertical-align: middle;
+  text-align: center;
+  color: #ee7872; }
+
+div#delete_for_checkbox:hover {
+  border: 1px solid #ee7872; }
 
 p#copyright {
   font-family: "Courier New", Courier, monospace;

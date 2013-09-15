@@ -2,12 +2,15 @@
 <p>No records found</p>
 
 <%else%>
-<table cellspacing="0">
+<table cellspacing="0" style="width:653px;">
 <tbody>
 <tr class='task-items'></tr>
-<tr>
+<tr style="width:653px;">
 <% @completed = true %>
 <%= render partial: '/todo/shared/headers' %>
+<th style='width:50px;background-color: #E7E9D3;'></th>
+<th style='width:20px;background-color: #E7E9D3;'></th>
+<th style='width:50px;background-color: #E7E9D3;'></th>
 </tr>
 </tbody>
 </table>
@@ -24,7 +27,7 @@
 <%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
 
 <% %w{description priority completed_at}.each do |attr|%>
-<td id='<%=attr%>' class='items' onmouseover= "show_header('div#<%=attr%>')" onmouseleave = "hide_header('div#<%=attr%>')"><%= task.send attr %></td>
+<td id='<%=attr%>' class='items'><%= task.send attr %></td>
 <%end%>
 <td style = 'width: 50px;'><%= button_to '✘', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none',remote: true %></td>
 <td style = 'width: 20px;'><span style = 'display: none' class='pipe<%=task.id%> separator' >❘</span></td>

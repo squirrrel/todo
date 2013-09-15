@@ -100,9 +100,13 @@ jQuery ->
 	@set_arrow_position=set_arrow_position=(obj)->
 		if $(obj).hasClass('arrow_down')
 			$(obj).find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
+			$(obj).css('font-weight', 'bold')
+			$(obj).css('color', 'rgba( 34, 2, 0, 0.8)')
 			$(obj).removeClass('arrow_down')
 		else
 			$(obj).find('span.filtered').replaceWith("<span class='unfiltered'> ⌵</span>")
+			$(obj).css('font-weight', 'lighter')
+			$(obj).css('color', '#848484')
 			$(obj).addClass('arrow_down')
 
 
