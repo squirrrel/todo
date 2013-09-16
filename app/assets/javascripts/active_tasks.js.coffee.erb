@@ -1,4 +1,10 @@
 jQuery -> 
+	do default_sorting = -> 
+		$('div#created_at').find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
+		$('div#created_at').css('font-weight', 'bold')
+		$('div#created_at').css('color', 'rgba( 34, 2, 0, 0.8)')
+		$('div#created_at').removeClass('arrow_down')
+
 	### on-click EDIT button handler ### 
 	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
@@ -97,8 +103,16 @@ jQuery ->
 		else	
 			$(box).hide()
 
+	### onchange CHECKBOXES handler ###
+	@show_or_hide_buttons=show_or_hide_buttons=()->
+
+
 	@set_arrow_position=set_arrow_position=(obj)->
 		if $(obj).hasClass('arrow_down')
+			$('.headers_container').find('span').replaceWith("<span class='unfiltered'> ⌵</span>")
+			$('.headers_container').css('font-weight', 'lighter')
+			$('.headers_container').css('color', '#848484')
+
 			$(obj).find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
 			$(obj).css('font-weight', 'bold')
 			$(obj).css('color', 'rgba( 34, 2, 0, 0.8)')
@@ -108,8 +122,3 @@ jQuery ->
 			$(obj).css('font-weight', 'lighter')
 			$(obj).css('color', '#848484')
 			$(obj).addClass('arrow_down')
-
-
-
-
-

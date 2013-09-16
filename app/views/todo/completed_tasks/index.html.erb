@@ -1,4 +1,4 @@
-<%#for view last records i add the awesome clock icon%>
+<%= render '/todo/shared/checkbox_buttons' %>
 <div id='filters_container' style="margin-top: 30px;">
 <select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
 <option selected='selected'>⌚<option>

@@ -166,14 +166,16 @@ div#complete_for_checkbox {
   width: 50px;
   cursor: pointer;
   float: left;
-  margin-top: 15px;
+  margin-top: 10px;
   background-color: #bfe9be;
   border: 1px solid #bfe9be;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   vertical-align: middle;
   text-align: center;
-  color: #92f184; }
+  color: #04b4ae;
+  padding-top: 5px;
+  display: inline; }
 
 div#complete_for_checkbox:hover {
   border: 1px solid #92f184; }
@@ -183,14 +185,17 @@ div#delete_for_checkbox {
   width: 50px;
   cursor: pointer;
   float: left;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-left: 8px;
   background-color: #f39ba8;
   border: 1px solid #f39ba8;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   vertical-align: middle;
   text-align: center;
-  color: #ee7872; }
+  color: #df3a01;
+  padding-top: 5px;
+  display: inline; }
 
 div#delete_for_checkbox:hover {
   border: 1px solid #ee7872; }

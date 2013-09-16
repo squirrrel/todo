@@ -1,3 +1,4 @@
 <td class='checkbox' style='height:30px;' onmouseover="show_boxes(<%@task.id%>)" onmouseout="hide_boxes(<%@task.id%>)" ><div class='box_container'>
-<input type="checkbox" class='pick' id="<%=@task.id.to_s%>" value='' onchange= '' />
+<input type="checkbox" class='pick' id="<%=@task.id.to_s%>" value='' 
+onchange= "$('div.checkbox_button').css('display','none');" />
 </div></td>

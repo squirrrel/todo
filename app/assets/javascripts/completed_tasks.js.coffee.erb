@@ -1,9 +1,16 @@
 jQuery -> 
+  do default_sorting = -> 
+    $('div#completed_at').find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
+    $('div#completed_at').css('font-weight', 'bold')
+    $('div#completed_at').css('color', 'rgba( 34, 2, 0, 0.8)')
+    $('div#completed_at').removeClass('arrow_down')
+
 	@apply_time_filter = apply_time_filter=(selected)->
 		$.ajax({
   		type: "GET",
   		url: "http://localhost:3000/todo/completed_tasks/",
   		data: { filter: selected }})
+
 	@apply_priority_filter = apply_priority_filter=(selected)->
 		time = $('#elapsed_time').find('option:selected').text()
 		$.ajax({
