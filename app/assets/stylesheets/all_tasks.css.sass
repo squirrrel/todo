@@ -1,4 +1,7 @@
 //GLOBAL MIXIN
+body
+	background: url('images/retina_dust.png')
+
 @mixin fonts($size,$weight)
 	font:
 		family: "Courier New", Courier, monospace
@@ -41,7 +44,7 @@ input.pick:hover
 	cursor: pointer	
 
 
-@mixin classic_props	
+@mixin dropdown_sample
 	@include fonts(13px,lighter)
 	background: transparent no-repeat 60px center
 	color: #848484
@@ -63,14 +66,14 @@ select
 	borderbrush: transparent
 	border: 0
 	padding: 0
-	@include classic_props		
+	@include dropdown_sample		
 
 select#new_priority
 	width: 20px
 	height: 30px
 	border: 1px solid #FFFFFF
 	padding-top: 5px
-	@include classic_props
+	@include dropdown_sample
 
 select#new_priority:focus
 	border: 1px solid #EEEAEA	
@@ -153,6 +156,7 @@ div#tasks_container
 	overflow: hidden	
 	height: 350px
 
+
 div#tasks_container:hover
 	overflow: auto
 
@@ -164,42 +168,43 @@ div.box_container
 	height: 30px
 	width: 40px
 
-div#complete_for_checkbox
+div.shadow
+	height: 450px
+	width: 960px
+	margin-left: 50px
+	background: url('images/little_pluses.png')
+	box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
+	-moz-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
+	-webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
+
+
+@mixin buttons_sample($background, $border, $color)
 	height: 25px
-	width: 50px
+	width: 50px		
 	cursor: pointer
 	float: left
 	margin-top: 10px
-	background-color: #BFE9BE
-	border: 1px solid #BFE9BE
-	-webkit-border-radius: 2px
-	-moz-border-radius: 2px
-	vertical-align: middle
-	text-align: center
-	color: #04B4AE	
-	padding-top: 5px
-	display: inline
-
-div#complete_for_checkbox:hover
-	border: 1px solid #92F184
-
-div#delete_for_checkbox	
-	height: 25px
-	width: 50px
-	cursor: pointer
-	float: left
-	margin-top: 10px
-	margin-left: 8px
-	background-color: #F39BA8
-	border: 1px solid #F39BA8
 	-webkit-border-radius: 2px
 	-moz-border-radius: 2px
 	vertical-align: middle 
 	text-align: center
-	color: #DF3A01
 	padding-top: 5px
 	display: inline
+	background-color: $background
+	border: 1px solid $border
+	color: $color
 
+
+div#complete_for_checkbox
+	@include buttons_sample(#BFE9BE, #BFE9BE, #04B4AE) 
+
+div#complete_for_checkbox:hover
+	border: 1px solid #92F184
+
+
+div#delete_for_checkbox	
+	@include buttons_sample(#F39BA8, #F39BA8, #DF3A01) 
+	margin-left: 8px
 	
 div#delete_for_checkbox:hover
 	border: 1px solid #EE7872

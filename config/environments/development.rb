@@ -27,18 +27,18 @@ Todo::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  # config.assets.debug = true
+  config.assets.debug = false
 
   # config.serve_static_assets = false
 
   # # Compress JavaScripts and CSS
-  # config.assets.compress = false
+  config.assets.compress = true
 
   # # Don't fallback to assets pipeline if a precompiled asset is missed
-  # config.assets.compile = true
+  config.assets.compile = true
 
   # # Generate digests for assets URLs
-  # config.assets.digest = true
+  config.assets.digest = true
 
   # config.assets.debug = true
   config.active_record.whitelist_attributes = false

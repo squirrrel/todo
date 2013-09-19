@@ -1,7 +1,9 @@
 <%= render '/todo/shared/checkbox_buttons' %>
 <%= render 'new', locals: {priority: @priority}%>
 
-<table cellspacing="0">
+<div class='shadow'>
+<ul id="mycarousel" class="jcarousel-skin-tango">
+<li><table cellspacing="0">
 <tbody>
 <tr>
 <%= render partial: '/todo/shared/headers' %>
@@ -24,7 +26,8 @@
 <% @task = task %>
 <%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
 <% %w{ description priority status created_at }.each do |attr|%>
-<td id = '<%=attr%>' class='items' ><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= res= task.send attr %></div></td>
+<% res = task.send attr %>
+<td id = '<%=attr%>' class='items <%=res%>'><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= res %></div></td>
 <span id='<%=attr + task.id.to_s%>_span' style = 'display:none'><%=res%></span>
 <% @dropdown ="#{task.id.to_s}" %>
 <%end%> 
@@ -35,4 +38,7 @@
 </tbody>
 </table>
 </div>
-<div>⌃⌄</div>
+</li>
+<li>hELLO</li>
+</ul>
+</div>

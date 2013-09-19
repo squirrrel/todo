@@ -1,0 +1,67 @@
+jQuery ->
+	do default_sorting = -> 
+		$('div#created_at, div#completed_at').find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
+		$('div#created_at, div#completed_at').css('font-weight', 'bold')
+		$('div#created_at, div#completed_at').css('color', 'rgba( 34, 2, 0, 0.8)')
+		$('div#created_at, div#completed_at').removeClass('arrow_down')	
+
+	do carousel = -> 
+		$('#mycarousel').jcarousel({ vertical: false, size: 2, scroll: 2, animation: 'slow', visible: 1 })	
+
+	do initialize_left_arrow = ->
+		$('div.jcarousel-prev').text("❰")	
+
+	do initialize_right_arrow = ->
+		$('div.jcarousel-next').text("❱")	
+
+	### show ACTIONS that can be applied on a task ###	
+	@show_actions = show_actions = (task_id)->
+		$('.' + task_id + '_action').show()
+		$('.pipe' + task_id).show()
+
+	### hide ACTIONS that can be applied on a task ###		
+	@hide_actions = hide_actions = (task_id)->
+		$('.' + task_id + '_action').hide()
+		$('.pipe' + task_id).hide()
+
+	### emphasize the concrete task onhover and turn it back to normal on unhover###	
+	@bold = bold =(obj)->
+		$(obj).find('.items').css('font-weight', 'bold')
+
+	@unbold=unbold=(obj)->
+		$(obj).find('.items').css('font-weight', 'lighter')
+
+	### show HEADERS ###
+	@show_header = show_header = (header_id)->
+		$(header_id).removeAttr('hidden')
+
+	### hide HEADERS ###
+	@hide_header = hide_header = (header_id)->
+		$(header_id).attr('hidden', 'true')
+
+	### onhover and onchange CHECKBOXES handler ###	
+	@show_boxes=show_boxes=(task_id)->
+		$("input[type='checkbox']").show()
+
+	@hide_boxes=hide_boxes=(task_id)->
+		box = "input[type='checkbox']"	
+		if $("#{box}:checked").length > 0 
+			$(box).show()
+		else	
+			$(box).hide()
+
+	@set_arrow_position=set_arrow_position=(obj)->
+		if $(obj).hasClass('arrow_down')
+			$('.headers_container').find('span').replaceWith("<span class='unfiltered'> ⌵</span>")
+			$('.headers_container').css('font-weight', 'lighter')
+			$('.headers_container').css('color', '#848484')
+
+			$(obj).find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
+			$(obj).css('font-weight', 'bold')
+			$(obj).css('color', 'rgba( 34, 2, 0, 0.8)')
+			$(obj).removeClass('arrow_down')
+		else
+			$(obj).find('span.filtered').replaceWith("<span class='unfiltered'> ⌵</span>")
+			$(obj).css('font-weight', 'lighter')
+			$(obj).css('color', '#848484')
+			$(obj).addClass('arrow_down')

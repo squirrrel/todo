@@ -14,12 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-
-
-
-
-
-
-
-
+//= require jsor-jcarousel-247c651/lib/jquery-1.9.1.min
+//= require jsor-jcarousel-247c651/lib/jquery.jcarousel.min 

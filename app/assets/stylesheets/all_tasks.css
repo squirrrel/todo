@@ -1,4 +1,7 @@
 @charset "UTF-8";
+body {
+  background: url("images/retina_dust.png"); }
+
 input {
   font-family: "Courier New", Courier, monospace;
   font-size: 13px;
@@ -161,21 +164,30 @@ div.box_container {
   height: 30px;
   width: 40px; }
 
+div.shadow {
+  height: 450px;
+  width: 960px;
+  margin-left: 50px;
+  background: url("images/little_pluses.png");
+  box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
+  -moz-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5); }
+
 div#complete_for_checkbox {
   height: 25px;
   width: 50px;
   cursor: pointer;
   float: left;
   margin-top: 10px;
-  background-color: #bfe9be;
-  border: 1px solid #bfe9be;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   vertical-align: middle;
   text-align: center;
-  color: #04b4ae;
   padding-top: 5px;
-  display: inline; }
+  display: inline;
+  background-color: #bfe9be;
+  border: 1px solid #bfe9be;
+  color: #04b4ae; }
 
 div#complete_for_checkbox:hover {
   border: 1px solid #92f184; }
@@ -186,16 +198,16 @@ div#delete_for_checkbox {
   cursor: pointer;
   float: left;
   margin-top: 10px;
-  margin-left: 8px;
-  background-color: #f39ba8;
-  border: 1px solid #f39ba8;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   vertical-align: middle;
   text-align: center;
-  color: #df3a01;
   padding-top: 5px;
-  display: inline; }
+  display: inline;
+  background-color: #f39ba8;
+  border: 1px solid #f39ba8;
+  color: #df3a01;
+  margin-left: 8px; }
 
 div#delete_for_checkbox:hover {
   border: 1px solid #ee7872; }

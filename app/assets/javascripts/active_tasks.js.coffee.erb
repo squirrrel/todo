@@ -1,10 +1,4 @@
 jQuery -> 
-	do default_sorting = -> 
-		$('div#created_at').find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
-		$('div#created_at').css('font-weight', 'bold')
-		$('div#created_at').css('color', 'rgba( 34, 2, 0, 0.8)')
-		$('div#created_at').removeClass('arrow_down')
-
 	### on-click EDIT button handler ### 
 	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
@@ -19,6 +13,7 @@ jQuery ->
 		$(obj).attr('disabled','disabled')
 		$('.okay' + task_id).show()
 		$('#' + dropdown).show()
+
 		
 	### on-click OK button handler ###
 	@trigger_on_ok = trigger_on_ok = (obj, task_id, dropdown)->
@@ -63,62 +58,7 @@ jQuery ->
 		$(obj).hide()
 		$('.okay' + task_id).hide()
 
-	### show ACTIONS that can be applied on a task ###	
-	@show_actions = show_actions = (task_id)->
-		$('.' + task_id + '_action').show()
-		$('.pipe' + task_id).show()
-
-	### hide ACTIONS that can be applied on a task ###		
-	@hide_actions = hide_actions = (task_id)->
-		$('.' + task_id + '_action').hide()
-		$('.pipe' + task_id).hide()
-
-
-	### emphasize the concrete task onhover and turn it back to normal on unhover###	
-	@bold = bold =(obj)->
-		$(obj).find('.items').css('font-weight', 'bold')	
-	@unbold=unbold=(obj)->
-		$(obj).find('.items').css('font-weight', 'lighter')
-
-	### show HEADERS ###
-	@show_header = show_header = (header_id)->
-		$(header_id).removeAttr('hidden')
-
-	### hide HEADERS ###
-	@hide_header = hide_header = (header_id)->
-		$(header_id).attr('hidden', 'true')
 
 	### on-unfocus DESCRIPTION handler ###
 	@set_noneditable = set_noneditable =(obj)->  
 		$(obj).attr('contenteditable','false')
-
-	### onhover and onchange CHECKBOXES handler ###	
-	@show_boxes=show_boxes=(task_id)->
-		$("input[type='checkbox']").show()
-
-	@hide_boxes=hide_boxes=(task_id)->
-		box = "input[type='checkbox']"	
-		if $("#{box}:checked").length > 0 
-			$(box).show()
-		else	
-			$(box).hide()
-
-	### onchange CHECKBOXES handler ###
-	@show_or_hide_buttons=show_or_hide_buttons=()->
-
-
-	@set_arrow_position=set_arrow_position=(obj)->
-		if $(obj).hasClass('arrow_down')
-			$('.headers_container').find('span').replaceWith("<span class='unfiltered'> ⌵</span>")
-			$('.headers_container').css('font-weight', 'lighter')
-			$('.headers_container').css('color', '#848484')
-
-			$(obj).find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
-			$(obj).css('font-weight', 'bold')
-			$(obj).css('color', 'rgba( 34, 2, 0, 0.8)')
-			$(obj).removeClass('arrow_down')
-		else
-			$(obj).find('span.filtered').replaceWith("<span class='unfiltered'> ⌵</span>")
-			$(obj).css('font-weight', 'lighter')
-			$(obj).css('color', '#848484')
-			$(obj).addClass('arrow_down')

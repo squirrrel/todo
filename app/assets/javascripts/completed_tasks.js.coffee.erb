@@ -1,10 +1,4 @@
 jQuery -> 
-  do default_sorting = -> 
-    $('div#completed_at').find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
-    $('div#completed_at').css('font-weight', 'bold')
-    $('div#completed_at').css('color', 'rgba( 34, 2, 0, 0.8)')
-    $('div#completed_at').removeClass('arrow_down')
-
 	@apply_time_filter = apply_time_filter=(selected)->
 		$.ajax({
   		type: "GET",
@@ -17,6 +11,7 @@ jQuery ->
   		type: "GET",
   		url: "http://localhost:3000/todo/completed_tasks/filter_by_priority",
   		data: { priority: selected , time: time }})  	
+  
   ### See if I can pass the option text value as a param ###
   window.onload = select=()-> $("option[text='last 7 days']").attr('selected', 'selected')    	
   		
