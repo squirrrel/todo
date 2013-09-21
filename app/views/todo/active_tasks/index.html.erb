@@ -1,9 +1,9 @@
-<%= render '/todo/shared/checkbox_buttons' %>
-<%= render 'new', locals: {priority: @priority}%>
-
 <div class='shadow'>
 <ul id="mycarousel" class="jcarousel-skin-tango">
-<li><table cellspacing="0">
+<li>
+<%= render '/todo/shared/checkbox_buttons' %>
+<%= render 'new', locals: {priority: @priority}%>
+<table cellspacing="0" style='margin-top: 5px;'>
 <tbody>
 <tr>
 <%= render partial: '/todo/shared/headers' %>
@@ -39,6 +39,9 @@
 </table>
 </div>
 </li>
-<li>hELLO</li>
+<li id= 'second_item'>	
+<div id= 'to-be-removed-by-filter-selection'>
+</div>
+</li>
 </ul>
 </div>

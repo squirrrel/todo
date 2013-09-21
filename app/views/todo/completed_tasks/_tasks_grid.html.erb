@@ -2,7 +2,23 @@
 <p>No records found</p>
 
 <%else%>
-<table cellspacing="0" style="width:653px; margin-top:3px;">
+<div id='filters_container' style="margin-top: 5px; margin-left: 469px;">
+<select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
+<option selected='selected'>⌚<option>
+<%@time_filter.each do |opt|%>
+<option><%= opt.id2name %></option>
+<%end%>
+</select> 
+
+<select id= 'priority_set' onchange = "apply_priority_filter($(this).find('option:selected').text())">
+<option selected="selected" >!</option>
+<%@priorities.each do |opt|%>
+<option><%= opt.id2name %></option>
+<%end%>
+</select>
+</div>
+
+<table cellspacing="0" style="width:653px; margin-top:5px;">
 <tbody>
 <tr class='task-items'></tr>
 <tr style="width:653px;">

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>ToDo</title>
-  <%= stylesheet_link_tag "application", "jsor-jcarousel-247c651/skins/tango/skin" %> <%#cache:all to make all css fetched a sa single file %>
-  <%= javascript_include_tag 'application', 'jsor-jcarousel-247c651/lib/jquery-1.9.1.min','jsor-jcarousel-247c651/lib/jquery.jcarousel.min' %> <%#cache:all to make all js fetched a sa single file %>
+  <%= stylesheet_link_tag "application", "jcarousel-plugin/skins/tango/skin" %> <%#cache:all to make all css fetched a sa single file %>
+  <%= javascript_include_tag 'application', 'jcarousel-plugin/lib/jquery-1.9.1.min','jcarousel-plugin/lib/jquery.jcarousel.min' %> <%#cache:all to make all js fetched a sa single file %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,7 +11,7 @@
 <%= yield %>
 
 <div id="footer">
-  <p id="copyright">&copy Nina Moskalyk</p>
+  <p id="copyright">&copy Nina Moskalyk - August..September 2013</p>
 </div>
 </body>
 </html>

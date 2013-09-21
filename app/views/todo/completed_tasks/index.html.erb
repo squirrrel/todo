@@ -1,20 +1,3 @@
-<%= render '/todo/shared/checkbox_buttons' %>
-<div id='filters_container' style="margin-top: 30px;">
-<select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
-<option selected='selected'>⌚<option>
-<%@time_filter.each do |opt|%>
-<option><%= opt.id2name %></option>
-<%end%>
-</select> 
-
-<select id= 'priority_set' onchange = "apply_priority_filter($(this).find('option:selected').text())">
-<option selected="selected" >!</option>
-<%@priorities.each do |opt|%>
-<option><%= opt.id2name %></option>
-<%end%>
-</select>
-</div>
-
 <div>
 <%= render 'tasks_grid', locals: {tasks: @tasks} %>
 </div>

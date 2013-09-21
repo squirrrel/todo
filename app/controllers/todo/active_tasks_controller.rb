@@ -26,19 +26,11 @@ class Todo::ActiveTasksController < ApplicationController
 		#$('.render-here').html('#{render :partial => 'delete_complete_update.html.erb', :locals => {:task => @task} }')
 		####
 
-
-		 #install plugin for refactorying code adn higlighting stuff
 		 #todo: 
-		 #make a nice README
 		 #make date look like '%e %b, %H:%m %p' or +year mention if it was last year, update it at a application controller level
 		 #move something to the model if needed
 		 #Delete Update and Complete will be than shown if the tr hovered so no need to add them as well
-		 #Find out why is destroy and complete require templates!!! 
-
 	end
-
-	# def show
-	# end
 
 	 def edit
 	 	@post = ActiveTask.find params[:id]
@@ -50,12 +42,20 @@ class Todo::ActiveTasksController < ApplicationController
 	 	
 	 	head :ok
 	 end
-
+	## make destroy and mass destroy one single action at a later time
 	def destroy
 		ActiveTask.find(params[:id]).destroy #ensure it is destroyed
 		render js: "$('.#{params[:id]}').remove()" #ADD SOME MSSG
 	end
 
+	def mass_destroy
+		params[:id].each{|id| ActiveTask.find(id).destroy }
+	    respond_to do |format|
+		    format.js{ render 'mass_remove.js.erb' }
+      	end		
+	end
+
+	## make complete and mass complete one single action at a later time
 	def complete
 		subject = BasicTask.find(params[:id])
 		### NOT WORKING HAVE TO FIX IT
@@ -66,6 +66,23 @@ class Todo::ActiveTasksController < ApplicationController
 		subject.completed_at = Time.now
 		subject.save
 		render js: "$('.#{params[:id]}').remove()" #ADD SOME MSSG
+	end	
+
+	def mass_complete
+		params[:id].each do |id|
+			subject = BasicTask.find(id)
+			### NOT WORKING HAVE TO FIX IT
+			#paramz = { type: 'CompletedTask', completed_at: Time.now }
+			#subject.update_attributes(paramz)
+			subject.type = 'CompletedTask'
+			subject.status = 'completed'
+			subject.completed_at = Time.now
+			subject.save
+		end
+		
+		respond_to do |format|
+		    format.js{ render 'mass_remove.js.erb' }
+      	end
 	end	
 end
 

@@ -87,6 +87,9 @@ select#new_priority:select, select#elapsed_time:select, select#priority_set:sele
 select#elapsed_time, select#priority_set {
   width: 90px; }
 
+select#elapsed_time:hover, select#priority_set:hover {
+  cursor: pointer; }
+
 th.headers {
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
@@ -143,8 +146,9 @@ tr.low {
   background-color: #ffffe9; }
 
 div#new_tasks_form {
-  margin-top: 30px;
-  margin-left: 300px; }
+  margin-top: 5px;
+  margin-left: 620px;
+  margin-width: 150px; }
 
 div#tasks_container, div#completed_tasks_container {
   margin-top: 0px;
@@ -152,7 +156,7 @@ div#tasks_container, div#completed_tasks_container {
   float: left;
   position: relative;
   overflow: hidden;
-  height: 350px; }
+  height: 450px; }
 
 div#tasks_container:hover, div#completed_tasks_container:hover {
   overflow: auto; }
@@ -165,8 +169,8 @@ div.box_container {
   width: 40px; }
 
 div.shadow {
-  height: 450px;
-  width: 960px;
+  height: 500px;
+  width: 980px;
   margin-left: 50px;
   background: url("images/little_pluses.png");
   box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
@@ -178,10 +182,9 @@ div#complete_for_checkbox {
   width: 50px;
   cursor: pointer;
   float: left;
-  margin-top: 10px;
+  margin-top: 18px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  vertical-align: middle;
   text-align: center;
   padding-top: 5px;
   display: inline;
@@ -197,10 +200,9 @@ div#delete_for_checkbox {
   width: 50px;
   cursor: pointer;
   float: left;
-  margin-top: 10px;
+  margin-top: 18px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  vertical-align: middle;
   text-align: center;
   padding-top: 5px;
   display: inline;

@@ -8,6 +8,11 @@ jQuery ->
 	do carousel = -> 
 		$('#mycarousel').jcarousel({ vertical: false, size: 2, scroll: 2, animation: 'slow', visible: 1 })	
 
+	do load_completed_tasks = ->
+		$.ajax({
+			type: "GET",
+			url: "http://localhost:3000/todo/completed_tasks/"})
+
 	do initialize_left_arrow = ->
 		$('div.jcarousel-prev').text("❰")	
 
@@ -48,6 +53,7 @@ jQuery ->
 		if $("#{box}:checked").length > 0 
 			$(box).show()
 		else	
+			$('div.checkbox_button').hide()
 			$(box).hide()
 
 	@set_arrow_position=set_arrow_position=(obj)->
@@ -65,3 +71,19 @@ jQuery ->
 			$(obj).css('font-weight', 'lighter')
 			$(obj).css('color', '#848484')
 			$(obj).addClass('arrow_down')
+
+	@delete_items=delete_items=()->
+		collection = new Array
+		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
+		$.ajax({
+	  	type: "POST",
+	  	url: "http://localhost:3000/todo/active_tasks/mass_destroy",
+	  	data: { id: collection }}).done(()-> alert 'Tasks deleted')	
+
+	@complete_items=complete_items=()->
+		collection = new Array
+		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
+		$.ajax({
+	  	type: "POST",
+	  	url: "http://localhost:3000/todo/active_tasks/mass_complete",
+	  	data: { id: collection }}).done(()-> alert 'Tasks completed')	  	

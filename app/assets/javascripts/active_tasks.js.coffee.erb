@@ -1,4 +1,3 @@
-jQuery -> 
 	### on-click EDIT button handler ### 
 	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
@@ -33,7 +32,7 @@ jQuery ->
 
 		$.ajax({
   		type: "POST",
-  		url: "http://localhost:3000/todo/active_tasks/update_task",
+  		url: "http://localhost:3000/todo/active_tasks/mass_destroy",
   		data: { id: task_id, description: description, priority: priority, status: status }}).done(()-> alert 'Task has been updated)')
 
 
@@ -61,4 +60,4 @@ jQuery ->
 
 	### on-unfocus DESCRIPTION handler ###
 	@set_noneditable = set_noneditable =(obj)->  
-		$(obj).attr('contenteditable','false')
+		$(obj).attr('contenteditable','false')	
