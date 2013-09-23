@@ -1,4 +1,9 @@
 jQuery ->
+	do load_completed_tasks = ->
+		$.ajax({
+			type: "GET",
+			url: "http://localhost:3000/todo/completed_tasks/"})
+
 	do default_sorting = -> 
 		$('div#created_at, div#completed_at').find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
 		$('div#created_at, div#completed_at').css('font-weight', 'bold')
@@ -8,16 +13,11 @@ jQuery ->
 	do carousel = -> 
 		$('#mycarousel').jcarousel({ vertical: false, size: 2, scroll: 2, animation: 'slow', visible: 1 })	
 
-	do load_completed_tasks = ->
-		$.ajax({
-			type: "GET",
-			url: "http://localhost:3000/todo/completed_tasks/"})
-
 	do initialize_left_arrow = ->
 		$('div.jcarousel-prev').text("❰")	
 
 	do initialize_right_arrow = ->
-		$('div.jcarousel-next').text("❱")	
+		$('div.jcarousel-next').text("❱")    		
 
 	### show ACTIONS that can be applied on a task ###	
 	@show_actions = show_actions = (task_id)->
@@ -56,8 +56,11 @@ jQuery ->
 			$('div.checkbox_button').hide()
 			$(box).hide()
 
-	@set_arrow_position=set_arrow_position=(obj)->
+	@sort_table_by=sort_table_by=(obj, flag)->
 		if $(obj).hasClass('arrow_down')
+
+			sort_table(obj, flag, 'asc')
+
 			$('.headers_container').find('span').replaceWith("<span class='unfiltered'> ⌵</span>")
 			$('.headers_container').css('font-weight', 'lighter')
 			$('.headers_container').css('color', '#848484')
@@ -67,6 +70,8 @@ jQuery ->
 			$(obj).css('color', 'rgba( 34, 2, 0, 0.8)')
 			$(obj).removeClass('arrow_down')
 		else
+			sort_table(obj, flag, 'desc')
+
 			$(obj).find('span.filtered').replaceWith("<span class='unfiltered'> ⌵</span>")
 			$(obj).css('font-weight', 'lighter')
 			$(obj).css('color', '#848484')
@@ -77,7 +82,7 @@ jQuery ->
 		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
 		$.ajax({
 	  	type: "POST",
-	  	url: "http://localhost:3000/todo/active_tasks/mass_destroy",
+	  	url: "http://localhost:3000/todo/mass_destroy",
 	  	data: { id: collection }}).done(()-> alert 'Tasks deleted')	
 
 	@complete_items=complete_items=()->
@@ -85,5 +90,36 @@ jQuery ->
 		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
 		$.ajax({
 	  	type: "POST",
-	  	url: "http://localhost:3000/todo/active_tasks/mass_complete",
-	  	data: { id: collection }}).done(()-> alert 'Tasks completed')	  	
+	  	url: "http://localhost:3000/todo/mass_complete",
+	  	data: { id: collection }}).done(()-> alert 'Tasks completed')	  
+
+	@sort_table=sort_table=(obj, flag, order)->
+		collection = new Array
+		subject = $(obj).attr('id')
+
+		if flag is 'completed'
+			container = $('div#completed_tasks_container')
+			num = '3'
+		else if flag is 'active'
+			container = $('div#tasks_container')
+			num = '2'	
+
+		if subject is 'description' 
+			container.find("td##{subject} div").each(()-> td_text = $(this).text(); collection.push(td_text))
+			collection.sort()		
+		else if subject is 'priority' 	
+			collection = ['high', 'medium', 'low']
+		else if subject is 'status'
+			collection = ['in progress','open']	
+		else if subject is 'created_at'
+			$("td##{subject} div").each(()-> td_text = $(this).text(); collection.push(td_text))	
+		
+		if order is 'asc'	
+			if subject is 'created_at'
+				container.find("td:contains('#{value}')").parent().prependTo("tbody##{num}") for value in collection
+			else	
+				container.find("td:contains('#{value}')").parent().appendTo("tbody##{num}") for value in collection
+		else if order is 'desc'
+				container.find("td:contains('#{value}')").parent().prependTo("tbody##{num}") for value in collection	
+	
+		

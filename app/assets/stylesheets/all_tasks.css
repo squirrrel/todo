@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
-  background: url("images/retina_dust.png"); }
+  background: url("images/retina_dust.png");
+  paddong-bottom: 5px; }
 
 input {
   font-family: "Courier New", Courier, monospace;
@@ -145,6 +146,11 @@ tr.medium {
 tr.low {
   background-color: #ffffe9; }
 
+div.headers_container {
+  height: 30px;
+  text-align: center;
+  vertical-align: middle; }
+
 div#new_tasks_form {
   margin-top: 5px;
   margin-left: 620px;
@@ -156,7 +162,7 @@ div#tasks_container, div#completed_tasks_container {
   float: left;
   position: relative;
   overflow: hidden;
-  height: 450px; }
+  height: 350px; }
 
 div#tasks_container:hover, div#completed_tasks_container:hover {
   overflow: auto; }
@@ -175,7 +181,8 @@ div.shadow {
   background: url("images/little_pluses.png");
   box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
   -moz-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5); }
+  -webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
+  margin: 70px auto; }
 
 div#complete_for_checkbox {
   height: 25px;
@@ -190,7 +197,8 @@ div#complete_for_checkbox {
   display: inline;
   background-color: #bfe9be;
   border: 1px solid #bfe9be;
-  color: #04b4ae; }
+  color: #04b4ae;
+  display: none; }
 
 div#complete_for_checkbox:hover {
   border: 1px solid #92f184; }
@@ -209,17 +217,22 @@ div#delete_for_checkbox {
   background-color: #f39ba8;
   border: 1px solid #f39ba8;
   color: #df3a01;
+  display: none;
   margin-left: 8px; }
 
 div#delete_for_checkbox:hover {
   border: 1px solid #ee7872; }
 
+div#footer {
+  margin: 10px auto;
+  width: 300px;
+  text-align: center; }
+
 p#copyright {
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
   font-weight: lighter;
-  color: #848484;
-  margin-left: 300px; }
+  color: #848484; }
 
 .add_me {
   height: 29px;
@@ -370,3 +383,31 @@ button.edit:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(34, 2, 0, 0.6); }
+
+span.tooltip {
+  position: absolute;
+  height: 4px;
+  line-height: 6px;
+  padding: 10px;
+  font-size: 9px;
+  font-weight: light;
+  font-family: arial;
+  text-align: center;
+  color: white;
+  background: rgba(17, 17, 17, 0.6);
+  border-radius: 2px;
+  text-shadow: rgba(0, 0, 0, 0.09804) 1px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.09804) 1px 1px 2px 0px;
+  z-index: 100px; }
+
+span.tooltip:after {
+  content: "";
+  position: absolute;
+  margin-top: 0;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(17, 17, 17, 0.7) transparent transparent transparent;
+  top: 24px;
+  left: 60px; }

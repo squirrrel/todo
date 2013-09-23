@@ -16,3 +16,4 @@
 //= require_tree .
 //= require jcarousel-plugin/lib/jquery-1.9.1.min
 //= require jcarousel-plugin/lib/jquery.jcarousel.min 
+//= require stupid_sorter/stupidtable

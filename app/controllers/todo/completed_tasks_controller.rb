@@ -66,8 +66,7 @@ class Todo::CompletedTasksController < ApplicationController
 		#filtered_by_time logic moved to index in order to avoid duplicated code
 	end
 
-	def filter_by_priority	
-	   
+	def filter_by_priority		   
 	   @tasks = CompletedTask.force_time_filter
 	   
 	   @tasks.map!{|task| task if task.priority == params[:priority] }

@@ -7,7 +7,7 @@
 
 * Make fix-sized div containing the #index view  DONE
 
-* Put active_tasks/completed_tasks #index together using liquid-carousel-jquery kind of thing
+* Put active_tasks/completed_tasks #index together using liquid-carousel-jquery kind of thing DONE
 
 * Make scroll semitransparent-black DONE
 
@@ -17,9 +17,9 @@
 
 * Implement advanced caching
 
-* Add checkbox-based 'mass-delete'/'mass-complete' functionality IN PROGRESS: style checkboxes, make task font bold when a corresponding checkbox is checked
+* Add checkbox-based 'mass-delete'/'mass-complete' functionality IN PROGRESS: style checkboxes, make task font bold when a corresponding checkbox is checked DONE
 
-* Add sorting functionality
+* Add sorting functionality IN PROGRESS - yet to handle completed_at sorting
 
 * Add black tooltips where needed
 

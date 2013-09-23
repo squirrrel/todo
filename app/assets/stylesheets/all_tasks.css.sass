@@ -1,6 +1,7 @@
 //GLOBAL MIXIN
 body
 	background: url('images/retina_dust.png')
+	paddong-bottom: 5px
 
 @mixin fonts($size,$weight)
 	font:
@@ -145,6 +146,10 @@ tr.medium
 tr.low
 	background-color: rgb(255, 255, 233) 	
 
+div.headers_container
+	height: 30px
+	text-align: center
+	vertical-align: middle
 
 div#new_tasks_form
 	margin:
@@ -158,7 +163,7 @@ div#tasks_container
 	float: left
 	position: relative
 	overflow: hidden	
-	height: 450px
+	height: 350px
 
 
 div#tasks_container:hover
@@ -180,7 +185,7 @@ div.shadow
 	box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
 	-moz-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
 	-webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
-
+	margin: 70px auto
 
 @mixin buttons_sample($background, $border, $color)
 	height: 25px
@@ -214,13 +219,17 @@ div#delete_for_checkbox:hover
 	border: 1px solid #EE7872
 	
 
+div#footer
+	margin: 10px auto
+	width: 300px 	
+	text-align: center
+
 p#copyright
 	font:
 		family: "Courier New", Courier, monospace
 		size: 12px	
 		weight: lighter
-	color: #848484
-	margin-left: 300px		
+	color: #848484	
 
 //ADD button 
 .add_me
@@ -382,4 +391,32 @@ button.edit:hover
 	min-width: 10px
 
 ::-webkit-scrollbar-thumb:hover
-	background-color: rgba( 34, 2, 0, 0.6)		
+	background-color: rgba( 34, 2, 0, 0.6)	
+
+span.tooltip 
+	position: absolute
+	height: 4px
+	line-height: 6px
+	padding: 10px
+	font-size: 9px
+	font-weight: light
+	font-family: arial
+	text-align: center
+	color: rgb(255, 255, 255)
+	background: rgba(17, 17, 17, 0.6)
+	border-radius: 2px
+	text-shadow: rgba(0.5, 0.5, 0.5, 0.0980392) 1px 1px 1px
+	box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px
+	z-index: 100px
+
+span.tooltip:after 
+	content: ""
+	position: absolute
+	margin-top: 0
+	width: 0
+	height: 0
+	border-width: 5px
+	border-style: solid
+	border-color: rgba(17, 17, 17, 0.7) transparent transparent transparent
+	top: 24px
+	left: 60px

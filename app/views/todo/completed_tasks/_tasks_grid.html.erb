@@ -2,6 +2,7 @@
 <p>No records found</p>
 
 <%else%>
+<%= render '/todo/shared/checkbox_buttons' %>
 <div id='filters_container' style="margin-top: 5px; margin-left: 469px;">
 <select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
 <option selected='selected'>⌚<option>
@@ -18,7 +19,7 @@
 </select>
 </div>
 
-<table cellspacing="0" style="width:653px; margin-top:5px;">
+<table cellspacing="0" style="width:653px; margin-top:10px;">
 <tbody>
 <tr class='task-items'></tr>
 <tr style="width:653px;">
@@ -33,7 +34,7 @@
 
 <div id='completed_tasks_container'>
 <table cellspacing="0">
-<tbody>
+<tbody id='3'> 
 <%@tasks.each do |task|%>
 <%if task == nil%>
 <%'do nothing'%>
@@ -43,7 +44,7 @@
 <%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
 
 <% %w{description priority completed_at}.each do |attr|%>
-<td id='<%=attr%>' class='items'><%= task.send attr %></td>
+<td id='<%=attr%>' class='items'><div><%= task.send attr %></div></td>
 <%end%>
 <td style = 'width: 50px;'><%= button_to '✘', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none',remote: true %></td>
 <td style = 'width: 20px;'><span style = 'display: none' class='pipe<%=task.id%> separator' >❘</span></td>
