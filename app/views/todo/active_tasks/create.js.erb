@@ -1,2 +1,1 @@
-$("<tr><td>hi</td></tr>").insertBefore('.task-items')
-$('.render-here').html("<%= escape_javascript render :partial => 'delete_complete_update.html.erb', :locals => {:task => @task} %>")
+$('<tr><%=@items.map{|itm| "<td>" +itm.to_s+ "</td>"}%></tr>').insertBefore('.task-items');

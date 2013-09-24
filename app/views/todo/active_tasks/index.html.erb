@@ -1,3 +1,6 @@
+<span class='tooltip_3'>reopen</span>
+
+
 <div class='shadow'>
 <ul id="mycarousel" class="jcarousel-skin-tango">
 <li>
@@ -7,9 +10,9 @@
 <tbody>
 <tr>
 <%= render partial: '/todo/shared/headers' %>
-<th style='width:50px;background-color: #E7E9D3;'></th>
-<th style='width:20px;background-color: #E7E9D3;'></th>
-<th style='width:50px;background-color: #E7E9D3;'></th>
+<th style='width:50px;background-color: #E7E9D3;' id='complete'></th>
+<th style='width:20px;background-color: #E7E9D3;' id='delete'></th>
+<th style='width:50px;background-color: #E7E9D3;' id= 'edit'></th>
 <th style='width:20px;background-color: #E7E9D3;'></th>
 <th style='width:120px;background-color: #E7E9D3;'></th>
 </tr>
@@ -45,14 +48,3 @@
 </li>
 </ul>
 </div>
-
-<span class='tooltip' style='margin: 0 0; width: 40px;'>complete</span>
-<span class='tooltip' style='margin: 0 120px; width: 30px;'>delete</span>
-<span class='tooltip' style='margin: 0 220px; width: 20px;'>edit</span>
-<span class='tooltip' style='margin: 0 320px; width: 60px;'>add new task</span>
-<span class='tooltip' style='margin: 0 400px; width: 30px;'>reopen</span>
-<span class='tooltip' style='margin: 0 500px; width: 70px;'>completed tasks</span>
-<span class='tooltip' style='margin: 0 600px; width: 60px;'>active tasks</span>
-<span class='tooltip' style='margin: 0 700px; width: 45px;'>time filter</span>
-<span class='tooltip' style='margin: 0 800px; width: 50px;'>priority filter</span>
-<span class='tooltip' style='margin: 0 900px; width: 60px;'>select priority</span>

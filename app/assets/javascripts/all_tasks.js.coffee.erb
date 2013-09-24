@@ -1,5 +1,5 @@
 jQuery ->
-	do load_completed_tasks = ->
+	do completed_tasks = ->
 		$.ajax({
 			type: "GET",
 			url: "http://localhost:3000/todo/completed_tasks/"})
@@ -13,11 +13,21 @@ jQuery ->
 	do carousel = -> 
 		$('#mycarousel').jcarousel({ vertical: false, size: 2, scroll: 2, animation: 'slow', visible: 1 })	
 
-	do initialize_left_arrow = ->
+	do arrows = ->
 		$('div.jcarousel-prev').text("❰")	
+		$('div.jcarousel-next').text("❱")   
 
-	do initialize_right_arrow = ->
-		$('div.jcarousel-next').text("❱")    		
+	do tooltips = ->
+		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, th#complete, th#delete, th#edit').attr('rel','tooltip')
+	
+		$('div.jcarousel-next').attr('title','completed tasks')
+		$('div.jcarousel-prev').attr('title','active tasks')
+		$('.add_me').attr('title','add new task')
+		$('#new_priority').attr('title','select priority')
+		$('th#complete').attr('title','complete')
+		$('th#delete').attr('title','delete')
+		$('th#edit').attr('title','edit')	
+
 
 	### show ACTIONS that can be applied on a task ###	
 	@show_actions = show_actions = (task_id)->
@@ -83,7 +93,7 @@ jQuery ->
 		$.ajax({
 	  	type: "POST",
 	  	url: "http://localhost:3000/todo/mass_destroy",
-	  	data: { id: collection }}).done(()-> alert 'Tasks deleted')	
+	  	data: { id: collection }}).done(() -> $.easyNotification(text: 'tasks deleted', duration: 5000, autoClose: true))	
 
 	@complete_items=complete_items=()->
 		collection = new Array
@@ -91,7 +101,7 @@ jQuery ->
 		$.ajax({
 	  	type: "POST",
 	  	url: "http://localhost:3000/todo/mass_complete",
-	  	data: { id: collection }}).done(()-> alert 'Tasks completed')	  
+	  	data: { id: collection }}).done(()-> $.easyNotification(text: 'tasks completed', duration: 5000, autoClose: true))	  
 
 	@sort_table=sort_table=(obj, flag, order)->
 		collection = new Array
@@ -120,6 +130,15 @@ jQuery ->
 			else	
 				container.find("td:contains('#{value}')").parent().appendTo("tbody##{num}") for value in collection
 		else if order is 'desc'
-				container.find("td:contains('#{value}')").parent().prependTo("tbody##{num}") for value in collection	
-	
+				container.find("td:contains('#{value}')").parent().prependTo("tbody##{num}") for value in collection
+
+	@left_arrow_show_tooltip=left_arrow_show_tooltip=()->
+		$('span.tooltip_4').show()
+
+
+	@left_arrow__hide_tooltip=left_arrow__hide_tooltip=()->	
+		$('span.tooltip_4').hide()			
+
+
+
 		

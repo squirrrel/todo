@@ -4,14 +4,14 @@
 <%else%>
 <%= render '/todo/shared/checkbox_buttons' %>
 <div id='filters_container' style="margin-top: 5px; margin-left: 469px;">
-<select id= 'elapsed_time' onchange = "apply_time_filter($(this).find('option:selected').text())">
+<select id= 'elapsed_time' rel='tooltip' title='time filter' onchange = "apply_time_filter($(this).find('option:selected').text())">
 <option selected='selected'>⌚<option>
 <%@time_filter.each do |opt|%>
 <option><%= opt.id2name %></option>
 <%end%>
 </select> 
 
-<select id= 'priority_set' onchange = "apply_priority_filter($(this).find('option:selected').text())">
+<select id= 'priority_set' rel='tooltip' title='priority filter' onchange = "apply_priority_filter($(this).find('option:selected').text())">
 <option selected="selected" >!</option>
 <%@priorities.each do |opt|%>
 <option><%= opt.id2name %></option>
