@@ -21,7 +21,9 @@
 
 * Add sorting functionality IN PROGRESS - yet to handle completed_at sorting
 
-* Add black tooltips where needed
+* Add black tooltips where needed IN PROGRESS
+
+* Add new_task form validations
 
 == There is sooo much #todo;)
 

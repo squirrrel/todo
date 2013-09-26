@@ -188,37 +188,42 @@ div.shadow
 	-webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
 	margin: 70px auto
 
-@mixin buttons_sample($background, $border, $color)
+div#notification_container
+	margin: 0 auto
+	padding: 10px 0 0 0 
+	width: 250px	
 	height: 25px
-	width: 50px		
+
+@mixin buttons_sample
+	height: 25px
+	width: 40px		
 	cursor: pointer
 	float: left
 	margin-top: 18px
-	-webkit-border-radius: 2px
-	-moz-border-radius: 2px
+	-webkit-border-radius: 1px
+	-moz-border-radius: 1px
 	text-align: center
 	padding-top: 5px
-	display: inline
-	background-color: $background
-	border: 1px solid $border
-	color: $color
 	display: none
+	color: rgba(255, 255, 255, 0.6)
+	background: rgba(17, 17, 17, 0.5)
+	text-shadow: rgba(17, 17, 17, 0.955) 1px 1px 1px
+	box-shadow: rgba(17, 17, 17, 0.7) 1px 1px 1px
 
 
 div#complete_for_checkbox
-	@include buttons_sample(#BFE9BE, #BFE9BE, #04B4AE) 
+	@include buttons_sample
 
 div#complete_for_checkbox:hover
-	border: 1px solid #92F184
+	background: rgba(17, 17, 17, 0.7)
 
 
 div#delete_for_checkbox	
-	@include buttons_sample(#F39BA8, #F39BA8, #DF3A01) 
+	@extend #complete_for_checkbox
 	margin-left: 8px
-	
-div#delete_for_checkbox:hover
-	border: 1px solid #EE7872
-	
+
+div#reopen_for_checkbox	
+	@extend #complete_for_checkbox
 
 div#footer
 	margin: 10px auto
@@ -235,7 +240,7 @@ p#copyright
 //ADD button 
 .add_me
 	height: 29px
-	background-color: #EF4C3E
+	background-color: #57C791
 	width: 45px	
 	color: #FFFFFF
 	font:
@@ -247,10 +252,13 @@ p#copyright
 	border: 1.7px solid #EF4C3E
 	border-bottom-right-radius: 2px
 	border-top-right-radius: 2px
+	border: 1px solid rgba(17, 17, 17, 0.3)
+	text-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px
+	box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px
 
 .add_me:hover
 	cursor: pointer	
-	border: 1.7px solid #C53E32 
+	border: 1px solid rgba(17, 17, 17, 0.5)
 
 //ICONS
 span.separator 
@@ -421,8 +429,6 @@ button.edit:hover
 	border-width: 5px
 	border-style: solid
 	border-color: rgba(17, 17, 17, 0.7) transparent transparent transparent		
-
-
  
 #tooltip.top:after
 	border-top-color: transparent
@@ -430,14 +436,35 @@ button.edit:hover
 	top: -20px
 	bottom: auto
 
-
 #tooltip.left:after
 	left: 10px
 	margin: 0
-
 
 #tooltip.right:after
 	right: 10px
 	left: auto
 	margin: 0
 
+div#easyNotification
+	background: rgba(17, 17, 17, 0.5)
+	font-family: "Courier New", Courier, monospace
+	font-weight: light
+	font-size: 12px
+	color: rgba(255, 255, 255, 0.9)
+	text-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px
+	width: 180px
+	height: 17px
+	vertical-align: center
+	text-align: center
+	padding: 3px 0 0 25px
+	letter-spacing: 2px
+	word-spacing: 5px
+	border: 1px solid rgba(255, 255, 255, 0.8)
+
+span.close
+	margin: 0 0 5px 30px
+	color: rgb(255, 255, 255)
+	font-size: bold
+
+span.close:hover
+	cursor: pointer	

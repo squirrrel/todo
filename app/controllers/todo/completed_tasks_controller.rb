@@ -52,22 +52,35 @@ class Todo::CompletedTasksController < ApplicationController
 	  CompletedTask.find(params[:id]).destroy #ensure it is destroyed
 	  @notification = 'task deleted'
 	  respond_to do |format|
-	  	format.js{ render 'remove.js.erb'}
+	  	format.js{ render '/todo/shared/remove.js.erb'}
 	  end			  
 	end
 
+	### TRANSACTION HERE
+	def mass_destroy
+		params[:id].each{|id| CompletedTask.find(id).destroy }
+		@notification = 'tasks deleted'
+	    respond_to do |format|
+		    format.js{ render '/todo/shared/mass_remove.js.erb' }
+      	end		
+	end	
+
 	def reopen
-      subject = BasicTask.find(params[:id])
-      paramz = { type: 'ActiveTask', completed_at: Time.new(1000,01,01, 1,1,1) }
-	  subject.update_attributes(paramz)	
+		CompletedTask.reopen_task(params[:id])
 	  @notification = 'task reopened'  
 	  respond_to do |format|
-	  	format.js{ render 'remove.js.erb'}
+	  	format.js{ render '/todo/shared/remove.js.erb'}
 	  end	
-
-		 #ADD SOME MSSG
-	  #perhaps it is better to add some flag column to indicate that it's been open
 	end	 
+
+	#TRANSACTION HERE
+	def mass_reopen
+		params[:id].each{|id| CompletedTask.reopen_task(id) }
+		@notification = 'tasks reopened'
+		respond_to do |format|
+	  	format.js{ render '/todo/shared/mass_remove.js.erb'}
+	  end	
+	end	
 
 	#COMPLETE AND CONSIDER TIME FILTER FOR PRIORITY FILTER IF IT TOOK PLACE
 	def filter_by_time 

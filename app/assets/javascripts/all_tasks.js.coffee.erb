@@ -11,24 +11,31 @@ jQuery ->
 		$('div#created_at, div#completed_at').removeClass('arrow_down')	
 
 	do carousel = -> 
-		$('#mycarousel').jcarousel({ vertical: false, size: 2, scroll: 2, animation: 'slow', visible: 1 })	
+		$('#mycarousel').jcarousel()	
 
 	do arrows = ->
 		$('div.jcarousel-prev').text("❰")	
 		$('div.jcarousel-next').text("❱")   
-
+		
+	### REFACTOR ###		
 	do tooltips = ->
-		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, th#complete, th#delete, th#edit').attr('rel','tooltip')
+		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, #complete_for_checkbox, #delete_for_checkbox, th#delete, th#edit').attr('rel','tooltip')
 	
-		$('div.jcarousel-next').attr('title','completed tasks')
-		$('div.jcarousel-prev').attr('title','active tasks')
+		if $('div.jcarousel-prev').is(':disabled') is true
+			$('div.jcarousel-prev').attr('title','active tasks')
+		if $('div.jcarousel-next').is(':disabled') is false
+			$('div.jcarousel-next').attr('title','completed tasks')	
 		$('.add_me').attr('title','add new task')
 		$('#new_priority').attr('title','select priority')
-		$('th#complete').attr('title','complete')
+		$('div#complete_for_checkbox').attr('title','complete marked items')
+		$('div#delete_for_checkbox').attr('title','delete marked items')
 		$('th#delete').attr('title','delete')
-		$('th#edit').attr('title','edit')	
+		$('th#edit').attr('title','edit')
 
-
+	do arrows_onclick = ->
+		$('.jcarousel-next, .jcarousel-prev').click(()-> 
+			$("input[type='checkbox']:checked").prop('checked', false); $("input[type='checkbox']").hide();	$('div.checkbox_button').hide())
+				
 	### show ACTIONS that can be applied on a task ###	
 	@show_actions = show_actions = (task_id)->
 		$('.' + task_id + '_action').show()
@@ -87,13 +94,16 @@ jQuery ->
 			$(obj).css('color', '#848484')
 			$(obj).addClass('arrow_down')
 
-	@delete_items=delete_items=()->
+	@delete_items=delete_items=(obj)->
 		collection = new Array
 		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
+		
+		path_injection = if $(obj).hasClass('true') then '/completed_tasks/' else '/'
+		
 		$.ajax({
 	  	type: "POST",
-	  	url: "http://localhost:3000/todo/mass_destroy",
-	  	data: { id: collection }}).done(() -> $.easyNotification(text: 'tasks deleted', duration: 5000, autoClose: true))	
+	  	url: "http://localhost:3000/todo#{path_injection}mass_destroy",
+	  	data: { id: collection }})
 
 	@complete_items=complete_items=()->
 		collection = new Array
@@ -101,8 +111,17 @@ jQuery ->
 		$.ajax({
 	  	type: "POST",
 	  	url: "http://localhost:3000/todo/mass_complete",
-	  	data: { id: collection }}).done(()-> $.easyNotification(text: 'tasks completed', duration: 5000, autoClose: true))	  
+	  	data: { id: collection }})
 
+	@reopen_items=reopen_items=()->
+		collection = new Array
+		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
+		$.ajax({
+	  	type: "POST",
+	  	url: "http://localhost:3000/todo/completed_tasks/mass_reopen",
+	  	data: { id: collection }})
+
+		  		  
 	@sort_table=sort_table=(obj, flag, order)->
 		collection = new Array
 		subject = $(obj).attr('id')
@@ -131,14 +150,3 @@ jQuery ->
 				container.find("td:contains('#{value}')").parent().appendTo("tbody##{num}") for value in collection
 		else if order is 'desc'
 				container.find("td:contains('#{value}')").parent().prependTo("tbody##{num}") for value in collection
-
-	@left_arrow_show_tooltip=left_arrow_show_tooltip=()->
-		$('span.tooltip_4').show()
-
-
-	@left_arrow__hide_tooltip=left_arrow__hide_tooltip=()->	
-		$('span.tooltip_4').hide()			
-
-
-
-		

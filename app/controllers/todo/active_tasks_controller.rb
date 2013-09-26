@@ -18,18 +18,15 @@ class Todo::ActiveTasksController < ApplicationController
 		end 
 		#new_task.type = new_task.class.name - no need as rails handles it on his own		
 		new_task.save if new_task.valid?
-	
+		
 		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}	
-		render js: "$('<tr>#{items.map{|itm| '<td>' +itm.to_s+ '</td>'}}</tr>').insertBefore('.task-items');"
-		#### RENDERING delete_complete_update partial ideally:
-		#1: respond_to {|format| format.js } 2: use correct syntax at create.js.erb and bingo
-		#$('.render-here').html('#{render :partial => 'delete_complete_update.html.erb', :locals => {:task => @task} }')
-		####
+		row = "<tr>#{(items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
+		notification = 'task created!'
 
-		 #todo: 
-		 #make date look like '%e %b, %H:%m %p' or +year mention if it was last year, update it at a application controller level
-		 #move something to the model if needed
-		 #Delete Update and Complete will be than shown if the tr hovered so no need to add them as well
+		render js: "! function(){ 
+						$('#{row}').insertBefore('.task-items');
+						$.easyNotification({text: '#{notification}'});
+					}();"
 	end
 
 	 def edit
@@ -47,47 +44,34 @@ class Todo::ActiveTasksController < ApplicationController
 		ActiveTask.find(params[:id]).destroy 
 		@notification = 'task deleted'
  		respond_to do |format|
-	  		format.js{ render 'remove.js.erb'}
+	  		format.js{ render '/todo/shared/remove.js.erb'}
 	  	end
 	end
 
+	### TRANSACTION HERE
 	def mass_destroy
 		params[:id].each{|id| ActiveTask.find(id).destroy }
+		@notification = 'tasks deleted'
 	    respond_to do |format|
-		    format.js{ render 'mass_remove.js.erb' }
+		    format.js{ render '/todo/shared/mass_remove.js.erb' }
       	end		
 	end
 
 	## make complete and mass complete one single action at a later time
 	def complete
-		subject = BasicTask.find(params[:id])
-		### NOT WORKING HAVE TO FIX IT
-		#paramz = { type: 'CompletedTask', completed_at: Time.now }
-		#subject.update_attributes(paramz)
-		subject.type = 'CompletedTask'
-		subject.status = 'completed'
-		subject.completed_at = Time.now
-		subject.save
+		ActiveTask.complete_task params[:id]
 		@notification = 'task completed'
 	    respond_to do |format|
-		    format.js{ render 'remove.js.erb' }
+		    format.js{ render '/todo/shared/remove.js.erb' }
       	end	
 	end	
 
+	#TRANSACTION HERE
 	def mass_complete
-		params[:id].each do |id|
-			subject = BasicTask.find(id)
-			### NOT WORKING HAVE TO FIX IT
-			#paramz = { type: 'CompletedTask', completed_at: Time.now }
-			#subject.update_attributes(paramz)
-			subject.type = 'CompletedTask'
-			subject.status = 'completed'
-			subject.completed_at = Time.now
-			subject.save
-		end
-		
+		params[:id].each{ |id| ActiveTask.complete_task(id)}
+		@notification = 'tasks completed'
 		respond_to do |format|
-		    format.js{ render 'mass_remove.js.erb' }
+		    format.js{ render '/todo/shared/mass_remove.js.erb' }
       	end
 	end	
 end

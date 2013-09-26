@@ -17,7 +17,7 @@ $( document ).ready( function()
         target.removeAttr( 'title' );
         tooltip.css( 'opacity', 0 )
                .html( tip )
-               .appendTo( 'body' );
+               .appendTo( 'body');
  
         var init_tooltip = function()
         {
@@ -53,8 +53,19 @@ $( document ).ready( function()
             else
                 tooltip.removeClass( 'top' );
  
+            if (target.attr('id') == 'complete_for_checkbox')
+            { 
             tooltip.css( { left: pos_left, top: pos_top } )
-                   .animate( { top: '+=10', opacity: 1 }, 50 );
+                   .delay( 2000 ).animate( { top: '+=10', opacity: 1 }, 250 );
+            }
+            else if(target.attr('id') == 'delete_for_checkbox')
+            {
+            tooltip.css( { left: pos_left, top: pos_top } )
+                   .delay( 2000 ).animate( { top: '+=10', opacity: 1 }, 250 );
+            }
+            else
+                tooltip.css( { left: pos_left, top: pos_top } )
+                   .animate( { top: '+=10', opacity: 1 }, 50 );       
         };
  
         init_tooltip();

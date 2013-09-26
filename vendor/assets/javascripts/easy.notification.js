@@ -17,18 +17,18 @@ jQuery.easyNotification = function (options) {
     var defaults = {	
 		id: 'easyNotification',
 		text: 'Notification!',		
-		parent: 'body',
+		parent: 'div#notification_container',
 		prepend: true,		
 		sibling: '',
 		before: true,
 		closeClassName: 'close',
-		closeText: 'Close',
+		closeText: '✖',
 		cookieEnable: false,
 		cookieName: 'notification',
 		cookieValue: '123425',
 		cookieDays: 30,		
 		delay: 0,
-		autoClose: false,
+		autoClose: true,
 		duration: 5000,
 		callback: function(){}
 	}; 

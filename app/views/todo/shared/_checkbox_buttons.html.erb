@@ -1,2 +1,7 @@
+<% if @completed == true%>
+<div id= 'reopen_for_checkbox' class='checkbox_button' onclick="reopen_items()">↺</div>
+<%else%>
 <div id= 'complete_for_checkbox' class='checkbox_button' onclick="complete_items()">✔</div>
-<div id='delete_for_checkbox' class='checkbox_button' onclick="delete_items()">✘</div>
+<%end%>
+
+<div id='delete_for_checkbox' class='checkbox_button <%=@completed%>' onclick="delete_items(this)">✘</div>
