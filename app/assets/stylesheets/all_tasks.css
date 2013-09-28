@@ -191,7 +191,7 @@ div#notification_container {
   width: 250px;
   height: 25px; }
 
-div#complete_for_checkbox, div#delete_for_checkbox {
+div#complete_for_checkbox, div#delete_for_checkbox, div#reopen_for_checkbox {
   height: 25px;
   width: 40px;
   cursor: pointer;
@@ -207,7 +207,7 @@ div#complete_for_checkbox, div#delete_for_checkbox {
   text-shadow: rgba(17, 17, 17, 0.955) 1px 1px 1px;
   box-shadow: rgba(17, 17, 17, 0.7) 1px 1px 1px; }
 
-div#complete_for_checkbox:hover, div#delete_for_checkbox:hover {
+div#complete_for_checkbox:hover, div#delete_for_checkbox:hover, div#reopen_for_checkbox:hover {
   background: rgba(17, 17, 17, 0.7); }
 
 div#delete_for_checkbox {
@@ -377,7 +377,7 @@ button.edit:hover {
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(34, 2, 0, 0.6); }
 
-#tooltip {
+#tooltip, #validation {
   position: absolute;
   height: 4px;
   line-height: 5px;
@@ -393,7 +393,7 @@ button.edit:hover {
   box-shadow: rgba(0, 0, 0, 0.09804) 1px 1px 2px 0px;
   z-index: 10; }
 
-#tooltip:after {
+#tooltip:after, #validation:after {
   width: 0;
   height: 0;
   content: "";
@@ -405,20 +405,40 @@ button.edit:hover {
   border-style: solid;
   border-color: rgba(17, 17, 17, 0.7) transparent transparent transparent; }
 
-#tooltip.top:after {
+#tooltip.top:after, .top#validation:after {
   border-top-color: transparent;
   border-bottom: 10px solid #111111;
   top: -20px;
   bottom: auto; }
 
-#tooltip.left:after {
+#tooltip.left:after, .left#validation:after {
   left: 10px;
   margin: 0; }
 
-#tooltip.right:after {
+#tooltip.right:after, .right#validation:after {
   right: 10px;
   left: auto;
   margin: 0; }
+
+#validation {
+  background: rgba(239, 76, 62, 0.6);
+  height: 7px;
+  padding: 8px;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 8px;
+  text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+  border-radius: 4px;
+  z-index: 10; }
+
+#validation:after {
+  left: 50%;
+  top: 100%;
+  bottom: -10px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: rgba(239, 76, 62, 0.6) transparent transparent transparent; }
 
 div#easyNotification {
   background: rgba(17, 17, 17, 0.5);

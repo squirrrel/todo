@@ -1,3 +1,17 @@
+	do validate_new_task_form = ->
+	$(document).ready(
+		()-> $('form').submit((e)=>
+			target = document.getElementById('new_description') 
+			if target.value.match(/\S+/)
+				return true
+			else	
+				target_height = $('input#new_description').height()
+				$('div#validation').css('top', "100px")
+									.css('left', "#{$('input#new_description').offset().left}px")
+				  					.css('display','table')
+				e.preventDefault 
+				return false))	
+
 	### on-click EDIT button handler ### 
 	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
 		$('div#description' + task_id).attr('contenteditable','true')

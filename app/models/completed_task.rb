@@ -32,6 +32,6 @@ class CompletedTask < BasicTask
 	def self.reopen_task id
 	    subject = BasicTask.find(id)
     	paramz = { type: 'ActiveTask', completed_at: Time.new(1000,01,01, 1,1,1) }
-	  	#subject.update_attributes(paramz)
+	  	subject.update_attributes(paramz)
 	end	
 end

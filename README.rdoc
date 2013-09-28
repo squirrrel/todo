@@ -25,5 +25,9 @@
 
 * Add new_task form validations
 
+* 500 error notification handler
+
+* Refactor coffee files 
+
 == There is sooo much #todo;)
 
