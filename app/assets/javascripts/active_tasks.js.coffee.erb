@@ -1,19 +1,22 @@
-	do validate_new_task_form = ->
-	$(document).ready(
-		()-> $('form').submit((e)=>
-			target = document.getElementById('new_description') 
-			if target.value.match(/\S+/)
-				return true
-			else	
-				target_height = $('input#new_description').height()
-				$('div#validation').css('top', "100px")
-									.css('left', "#{$('input#new_description').offset().left}px")
-				  					.css('display','table')
-				e.preventDefault 
-				return false))	
+	do validate = ->
+		$(document).ready(
+			()-> $("div#new_tasks_form form").submit((e)=>
+				dom_target = document.getElementById('new_description') 
+				query_target = $('input#new_description')
+				query_target_height = query_target.offset().top - query_target.outerHeight()
+				if dom_target.value.match(/\S+/)
+					true
+				else	
+					$('div#validation').css('top', "#{query_target_height}px")
+										.css('left', "#{query_target.offset().left}px")
+					  					.css('display','table')
+					e.preventDefault 
+					false
+			)
+		)	
 
-	### on-click EDIT button handler ### 
-	@trigger_on_edit = trigger_on_edit=(task_id, dropdown,obj)->
+
+	@trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
 		
 		$('div#priority' + task_id).replaceWith('<select><option>' + 
@@ -28,7 +31,6 @@
 		$('#' + dropdown).show()
 
 		
-	### on-click OK button handler ###
 	@trigger_on_ok = trigger_on_ok = (obj, task_id, dropdown)->
 		$('div#description' + task_id).attr('contenteditable','false')
 		
@@ -47,10 +49,10 @@
 		$.ajax({
   		type: "POST",
   		url: "http://localhost:3000/todo/update_task",
-  		data: { id: task_id, description: description, priority: priority, status: status }}).done(()-> $.easyNotification(text: 'task updated'))
+  		data: { id: task_id, description: description, priority: priority, status: status }
+  		}).done(()-> $.easyNotification(text: 'task updated'))
 
 
-	### on-click CANCEL button handler ###
 	@trigger_on_cancel = trigger_on_cancel = (obj, task_id)->
 		injection = $(obj).attr('id') + '_span'
 		
@@ -72,6 +74,5 @@
 		$('.okay' + task_id).hide()
 
 
-	### on-unfocus DESCRIPTION handler ###
-	@set_noneditable = set_noneditable =(obj)->  
-		$(obj).attr('contenteditable','false')	
+	@set_noneditable = set_noneditable = (obj)->  
+		$(obj).attr('contenteditable','false') if $(obj).parent().attr('id') is 'description'	

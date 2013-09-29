@@ -93,18 +93,19 @@ select#elapsed_time:hover, select#priority_set:hover {
 
 th.headers {
   font-family: "Courier New", Courier, monospace;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: lighter;
-  color: #848484;
+  color: rgba(17, 17, 17, 0.9);
   text-align: center;
   height: 30px;
-  background-color: #e7e9d3; }
+  background-color: rgba(255, 255, 255, 0.5);
+  text-shadow: rgba(17, 17, 17, 0.3) 1px 1px 1px; }
 
 th.headers:hover {
-  color: rgba(34, 2, 0, 0.8);
+  color: rgba(17, 17, 17, 0.8);
   font-weight: bold;
   cursor: pointer;
-  background-color: rgba(231, 233, 211, 0.5); }
+  background-color: rgba(255, 255, 255, 0.7); }
 
 th.status {
   width: 100px; }

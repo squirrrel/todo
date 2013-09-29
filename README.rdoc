@@ -27,7 +27,9 @@
 
 * 500 error notification handler
 
-* Refactor coffee files 
+* Refactor coffee files
+
+* Calculate validation height based on the target height 
 
 == There is sooo much #todo;)
 

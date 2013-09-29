@@ -50,7 +50,9 @@ class Todo::ActiveTasksController < ApplicationController
 
 	### TRANSACTION HERE
 	def mass_destroy
-		params[:id].each{|id| ActiveTask.find(id).destroy }
+		ActiveTask.transaction do
+			params[:id].each{|id| ActiveTask.find(id).destroy }
+		end
 		@notification = 'tasks deleted'
 	    respond_to do |format|
 		    format.js{ render '/todo/shared/mass_remove.js.erb' }
@@ -68,7 +70,9 @@ class Todo::ActiveTasksController < ApplicationController
 
 	#TRANSACTION HERE
 	def mass_complete
-		params[:id].each{ |id| ActiveTask.complete_task(id)}
+		ActiveTask.transaction do
+			params[:id].each{ |id| ActiveTask.complete_task(id)}
+		end
 		@notification = 'tasks completed'
 		respond_to do |format|
 		    format.js{ render '/todo/shared/mass_remove.js.erb' }

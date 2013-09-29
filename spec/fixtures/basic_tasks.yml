@@ -1,0 +1,24 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+active_task_1:
+    id: 1
+    description: very important task
+    priority: high
+    status: in progress
+    created_at:
+    completed_at:
+
+active_task_2:
+    id: 2
+    description: not that important
+    priority: medium
+    status: open
+    created_at:
+    completed_at:
+
+
+	

@@ -58,7 +58,9 @@ class Todo::CompletedTasksController < ApplicationController
 
 	### TRANSACTION HERE
 	def mass_destroy
-		params[:id].each{|id| CompletedTask.find(id).destroy }
+		CompletedTask.transaction do
+			params[:id].each{|id| CompletedTask.find(id).destroy }
+		end
 		@notification = 'tasks deleted'
 	    respond_to do |format|
 		    format.js{ render '/todo/shared/mass_remove.js.erb' }
@@ -66,7 +68,7 @@ class Todo::CompletedTasksController < ApplicationController
 	end	
 
 	def reopen
-		CompletedTask.reopen_task(params[:id])
+	  CompletedTask.reopen_task(params[:id])
 	  @notification = 'task reopened'  
 	  respond_to do |format|
 	  	format.js{ render '/todo/shared/remove.js.erb'}
@@ -75,7 +77,9 @@ class Todo::CompletedTasksController < ApplicationController
 
 	#TRANSACTION HERE
 	def mass_reopen
-		params[:id].each{|id| CompletedTask.reopen_task(id) }
+		CompletedTask.transaction do
+			params[:id].each{|id| CompletedTask.reopen_task(id) }
+		end
 		@notification = 'tasks reopened'
 		respond_to do |format|
 	  	format.js{ render '/todo/shared/mass_remove.js.erb'}

@@ -1,152 +1,154 @@
-jQuery ->
-	do completed_tasks = ->
+root = exports ? this
+
+do carousel = -> 
+	$(document).ready(()->
+		$('#mycarousel').jcarousel()	
+		$('div.jcarousel-prev').text("❰")	
+		$('div.jcarousel-next').text("❱") 
+	)	
+
+do completed_tasks = ->
+	$(document).ready(()->
 		$.ajax({
 			type: "GET",
 			url: "http://localhost:3000/todo/completed_tasks/"})
+	)
 
-	do default_sorting = -> 
-		$('div#created_at, div#completed_at').find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
-		$('div#created_at, div#completed_at').css('font-weight', 'bold')
-		$('div#created_at, div#completed_at').css('color', 'rgba( 34, 2, 0, 0.8)')
-		$('div#created_at, div#completed_at').removeClass('arrow_down')	
-
-	do carousel = -> 
-		$('#mycarousel').jcarousel()	
-
-	do arrows = ->
-		$('div.jcarousel-prev').text("❰")	
-		$('div.jcarousel-next').text("❱")   
-		
-	### REFACTOR ###		
-	do tooltips = ->
-		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, #complete_for_checkbox, #delete_for_checkbox, th#delete, th#edit').attr('rel','tooltip')
 	
-		if $('div.jcarousel-prev').is(':disabled') is true
-			$('div.jcarousel-prev').attr('title','active tasks')
-		if $('div.jcarousel-next').is(':disabled') is false
-			$('div.jcarousel-next').attr('title','completed tasks')	
+do tooltips = ->
+	$(document).ready(()->
+		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, #complete_for_checkbox, #delete_for_checkbox, th#delete, th#edit').attr('rel','tooltip')
+			
+		$('div.jcarousel-prev').attr('title','active tasks') if $('div.jcarousel-prev').is(':disabled') is true
+		$('div.jcarousel-next').attr('title','completed tasks')	if $('div.jcarousel-next').is(':disabled') is false
 		$('.add_me').attr('title','add new task')
 		$('#new_priority').attr('title','select priority')
 		$('div#complete_for_checkbox').attr('title','complete marked items')
 		$('div#delete_for_checkbox').attr('title','delete marked items')
 		$('th#delete').attr('title','delete')
 		$('th#edit').attr('title','edit')
+	)	
 
-	do arrows_onclick = ->
+do arrows_onclick = ->
+	$(document).ready(()->
 		$('.jcarousel-next, .jcarousel-prev').click(()-> 
-			$("input[type='checkbox']:checked").prop('checked', false); $("input[type='checkbox']").hide();	$('div.checkbox_button').hide())
-				
-	### show ACTIONS that can be applied on a task ###	
-	@show_actions = show_actions = (task_id)->
-		$('.' + task_id + '_action').show()
-		$('.pipe' + task_id).show()
+			$("input[type='checkbox']:checked").prop('checked', false)
+			$("input[type='checkbox'], div.checkbox_button, div#validation").hide()
+			window.completed_dates = new Array
+			$('div#completed_tasks_container').find("td#completed_at div").each(()-> td_text = $(this).text(); completed_dates.push(td_text))
+		)
+	)
 
-	### hide ACTIONS that can be applied on a task ###		
-	@hide_actions = hide_actions = (task_id)->
-		$('.' + task_id + '_action').hide()
-		$('.pipe' + task_id).hide()
+do read_dates = ->
+	$(document).ready(()->
+		window.active_dates = new Array
+		$('div#tasks_container').find("td#created_at div").each(()-> td_text = $(this).text(); active_dates.push(td_text))
+	)
 
-	### emphasize the concrete task onhover and turn it back to normal on unhover###	
-	@bold = bold =(obj)->
-		$(obj).find('.items').css('font-weight', 'bold')
+			
+@show_actions = show_actions = (task_id)->
+	$('.' + task_id + '_action' + ', .pipe' + task_id).show()
+	
+@hide_actions = hide_actions = (task_id)->
+	$('.' + task_id + '_action' + ', .pipe' + task_id).hide()
 
-	@unbold=unbold=(obj)->
-		$(obj).find('.items').css('font-weight', 'lighter')
 
-	### show HEADERS ###
-	@show_header = show_header = (header_id)->
-		$(header_id).removeAttr('hidden')
+@bold = bold = (obj)->
+	$(obj).find('.items').css('font-weight', 'bold')
 
-	### hide HEADERS ###
-	@hide_header = hide_header = (header_id)->
-		$(header_id).attr('hidden', 'true')
+@unbold = unbold = (obj)->
+	$(obj).find('.items').css('font-weight', 'lighter')
 
-	### onhover and onchange CHECKBOXES handler ###	
-	@show_boxes=show_boxes=(task_id)->
-		$("input[type='checkbox']").show()
 
-	@hide_boxes=hide_boxes=(task_id)->
-		box = "input[type='checkbox']"	
-		if $("#{box}:checked").length > 0 
-			$(box).show()
-		else	
-			$('div.checkbox_button').hide()
-			$(box).hide()
+@show_header = show_header = (header_id)->
+	$(header_id).removeAttr('hidden')
 
-	@sort_table_by=sort_table_by=(obj, flag)->
-		if $(obj).hasClass('arrow_down')
+@hide_header = hide_header = (header_id)->
+	$(header_id).attr('hidden', 'true')
 
-			sort_table(obj, flag, 'asc')
 
-			$('.headers_container').find('span').replaceWith("<span class='unfiltered'> ⌵</span>")
-			$('.headers_container').css('font-weight', 'lighter')
-			$('.headers_container').css('color', '#848484')
+@show_boxes = show_boxes = (task_id)->
+	$("input[type='checkbox']").show()
 
-			$(obj).find('span.unfiltered').replaceWith("<span class='filtered'> ⌃</span>")
-			$(obj).css('font-weight', 'bold')
-			$(obj).css('color', 'rgba( 34, 2, 0, 0.8)')
-			$(obj).removeClass('arrow_down')
-		else
-			sort_table(obj, flag, 'desc')
+@hide_boxes = hide_boxes = (task_id)->
+	box = "input[type='checkbox']"	
+	if $("#{box}:checked").length > 0 then $(box).show() else $('div.checkbox_button,' + box).hide()
 
-			$(obj).find('span.filtered').replaceWith("<span class='unfiltered'> ⌵</span>")
-			$(obj).css('font-weight', 'lighter')
-			$(obj).css('color', '#848484')
-			$(obj).addClass('arrow_down')
+@delete_items= delete_items = (obj)->
+	collection = new Array
+	path_injection = if $(obj).hasClass('true') then '/completed_tasks/' else '/'
 
-	@delete_items=delete_items=(obj)->
-		collection = new Array
-		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
-		
-		path_injection = if $(obj).hasClass('true') then '/completed_tasks/' else '/'
-		
-		$.ajax({
-	  	type: "POST",
-	  	url: "http://localhost:3000/todo#{path_injection}mass_destroy",
-	  	data: { id: collection }})
+	$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
+			
+	$.ajax({
+  		type: "POST",
+  		url: "http://localhost:3000/todo#{path_injection}mass_destroy",
+  		data: { id: collection }
+		})
 
-	@complete_items=complete_items=()->
-		collection = new Array
-		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
-		$.ajax({
-	  	type: "POST",
-	  	url: "http://localhost:3000/todo/mass_complete",
-	  	data: { id: collection }})
+@complete_items = complete_items = ()->
+	collection = new Array
 
-	@reopen_items=reopen_items=()->
-		collection = new Array
-		$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
-		$.ajax({
+	$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
+	
+	$.ajax({
+  		type: "POST",
+  		url: "http://localhost:3000/todo/mass_complete",
+  		data: { id: collection }
+		})
+
+@reopen_items = reopen_items = ()->
+	collection = new Array
+	
+	$("input:checked").each(()-> item_id = $(this).attr('id'); collection.push(item_id))	 
+	
+	$.ajax({
 	  	type: "POST",
 	  	url: "http://localhost:3000/todo/completed_tasks/mass_reopen",
-	  	data: { id: collection }})
+	  	data: { id: collection }
+  	})
 
-		  		  
-	@sort_table=sort_table=(obj, flag, order)->
-		collection = new Array
-		subject = $(obj).attr('id')
 
-		if flag is 'completed'
-			container = $('div#completed_tasks_container')
-			num = '3'
-		else if flag is 'active'
-			container = $('div#tasks_container')
-			num = '2'	
+@sort_table_by = sort_table_by = (obj, flag)->
+	$('.headers_container').each(()-> $(this).css('font-weight', 'lighter')
+								.css('color', '#848484')
+								.find('span').remove()							
+	)
 
-		if subject is 'description' 
-			container.find("td##{subject} div").each(()-> td_text = $(this).text(); collection.push(td_text))
-			collection.sort()		
-		else if subject is 'priority' 	
-			collection = ['high', 'medium', 'low']
-		else if subject is 'status'
-			collection = ['in progress','open']	
-		else if subject is 'created_at'
-			$("td##{subject} div").each(()-> td_text = $(this).text(); collection.push(td_text))	
+	if $(obj).hasClass('arrow_down')
+		$(obj).append("<span class='filtered'> ⌃</span>")
+		$(obj).css('font-weight', 'bold')
+				.css('color', 'rgba( 34, 2, 0, 0.8)')
+				.removeClass('arrow_down')
+
+		sort_tr(obj, flag, 'asc')				
+	else
+		$(obj).append("<span class='unfiltered'> ⌵</span>")
+		$(obj).css('font-weight', 'bold')
+				.css('color', 'rgba(34, 2, 0, 0.8)')
+				.addClass('arrow_down')
+
 		
-		if order is 'asc'	
-			if subject is 'created_at'
-				container.find("td:contains('#{value}')").parent().prependTo("tbody##{num}") for value in collection
-			else	
-				container.find("td:contains('#{value}')").parent().appendTo("tbody##{num}") for value in collection
-		else if order is 'desc'
-				container.find("td:contains('#{value}')").parent().prependTo("tbody##{num}") for value in collection
+		sort_tr(obj, flag, 'desc')  	
+	  		  
+@sort_tr = sort_tr = (obj, flag, order)->
+	collection = new Array
+	subject = $(obj).attr('id')
+	container = if flag is 'completed' then 'div#completed_tasks_container' else 'div#tasks_container'
+
+	collection = if subject is 'description' 
+		$(container).find("td##{subject} div").each(()-> td_text = $(this).text(); collection.push(td_text))
+		collection.sort()		
+	else if subject is 'priority' 	
+		['high', 'medium', 'low']
+	else if subject is 'status'
+		['in progress','open']	
+	else if subject is 'created_at'
+		active_dates
+	else if subject is 'completed_at'
+		completed_dates	
+	
+	if order is 'asc'		
+			$(container).find("td:contains('#{value}')").parent().appendTo("#{container} tbody") for value in collection
+	else if order is 'desc'
+			$(container).find("td:contains('#{value}')").parent().prependTo("#{container} tbody") for value in collection
