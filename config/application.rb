@@ -25,5 +25,6 @@ module Todo
     #config.assets.enabled = true
     config.active_record.whitelist_attributes = false
     config.serve_static_assets = true
+    config.log_level = :debug
   end
 end

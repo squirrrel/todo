@@ -1,0 +1,1638 @@
+E, [2013-09-30T12:06:22.621527 #28365] ERROR -- : awesome
+E, [2013-09-30T12:06:24.513773 #28365] ERROR -- : awesome
+E, [2013-09-30T12:07:44.599863 #28365] ERROR -- : awesome
+E, [2013-09-30T12:08:13.643376 #28541] ERROR -- : awesome
+E, [2013-09-30T12:08:52.907084 #28541] ERROR -- : awesome
+E, [2013-09-30T12:09:11.506707 #28541] ERROR -- : awesome
+E, [2013-09-30T12:09:24.859018 #28541] ERROR -- : awesome
+E, [2013-09-30T12:11:30.783166 #28780] ERROR -- : awesome
+E, [2013-09-30T12:13:09.856095 #28780] ERROR -- : awesome
+E, [2013-09-30T12:14:42.782264 #28780] ERROR -- : awesome
+F, [2013-09-30T12:14:42.782450 #28780] FATAL -- : fuuuckkkk
+E, [2013-09-30T12:20:48.704893 #28780] ERROR -- : awesome
+F, [2013-09-30T12:20:48.705216 #28780] FATAL -- : fuuuckkkk
+E, [2013-09-30T12:25:34.596864 #28780] ERROR -- : #Exception Class:{exception.class} --- Message:{exception.message}
+E, [2013-09-30T12:26:06.549276 #28780] ERROR -- : Exception Class:NoMethodError --- Message:super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002ea6648>
+E, [2013-09-30T12:27:20.349877 #28780] ERROR -- : Exception:NoMethodError | Message:super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002ea7228>
+E, [2013-09-30T12:27:52.517619 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002ea73b8>
+F, [2013-09-30T12:50:20.445163 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T12:50:24.893889 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003af2f28>
+E, [2013-09-30T13:04:15.617570 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b87a88>
+E, [2013-09-30T13:05:33.772460 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b1c6c0>
+E, [2013-09-30T13:09:47.419576 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002ea6620>
+F, [2013-09-30T13:10:00.853391 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:10:04.024878 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000385cbb0>
+E, [2013-09-30T13:10:50.923615 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003e17898>
+F, [2013-09-30T13:10:57.264958 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+F, [2013-09-30T13:12:07.107180 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:12:12.295134 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b816b0>
+F, [2013-09-30T13:12:33.943534 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:12:38.101466 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003c22d58>
+F, [2013-09-30T13:12:47.543403 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:12:52.588507 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003e019d0>
+F, [2013-09-30T13:13:10.451576 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:13:13.532482 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003df9ac8>
+F, [2013-09-30T13:15:27.202722 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:15:31.192211 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003f62bf8>
+F, [2013-09-30T13:15:53.371726 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:15:57.812819 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000004272780>
+F, [2013-09-30T13:16:52.567798 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:16:56.233062 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002c23858>
+F, [2013-09-30T13:17:25.910107 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:17:29.945146 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003d77f28>
+E, [2013-09-30T13:17:32.750226 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003e11588>
+E, [2013-09-30T13:17:33.718790 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003e311d0>
+F, [2013-09-30T13:18:09.659854 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:18:14.260540 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003ed8ed0>
+F, [2013-09-30T13:18:33.149220 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:18:38.055238 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003f76a18>
+E, [2013-09-30T13:18:39.916357 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003f9c218>
+E, [2013-09-30T13:18:40.128120 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003fd32b8>
+E, [2013-09-30T13:18:40.603457 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003fca140>
+E, [2013-09-30T13:18:40.779921 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000042ae078>
+E, [2013-09-30T13:18:40.968874 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000405dda0>
+E, [2013-09-30T13:18:41.161790 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000040b2918>
+E, [2013-09-30T13:18:41.353704 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003e92980>
+E, [2013-09-30T13:18:41.531730 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000004131600>
+E, [2013-09-30T13:18:41.725442 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000041be2a8>
+E, [2013-09-30T13:18:41.958237 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000041b17d8>
+E, [2013-09-30T13:18:42.094824 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000314b3f8>
+E, [2013-09-30T13:18:42.253337 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002b0eda0>
+E, [2013-09-30T13:18:42.454783 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000032911e0>
+E, [2013-09-30T13:18:42.636904 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000036e08e0>
+E, [2013-09-30T13:18:42.825222 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000363d6e0>
+E, [2013-09-30T13:18:43.076422 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000037d2910>
+E, [2013-09-30T13:18:43.646913 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000037f2b70>
+F, [2013-09-30T13:18:59.016763 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:19:02.542466 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003e530c8>
+E, [2013-09-30T13:19:04.093388 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003de14f0>
+E, [2013-09-30T13:19:04.301755 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003ecd878>
+F, [2013-09-30T13:19:21.157030 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:19:24.217904 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003f73430>
+F, [2013-09-30T13:22:08.788821 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:22:15.137783 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000040b3700>
+E, [2013-09-30T13:23:21.222291 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003aa8e50>
+E, [2013-09-30T13:23:22.564726 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003bb1b58>
+E, [2013-09-30T13:23:22.767230 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003bd35c8>
+E, [2013-09-30T13:23:23.002423 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003beced8>
+E, [2013-09-30T13:23:23.930370 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003c0c378>
+E, [2013-09-30T13:23:24.979202 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003c2cdf8>
+E, [2013-09-30T13:24:09.156000 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003fbb668>
+E, [2013-09-30T13:24:37.763918 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003740d08>
+E, [2013-09-30T13:24:55.746311 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002e03e70>
+E, [2013-09-30T13:25:30.531097 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003d87d60>
+F, [2013-09-30T13:25:44.091806 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+F, [2013-09-30T13:25:52.888509 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:25:56.236324 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000039d5578>
+E, [2013-09-30T13:25:57.805552 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003a0aa70>
+E, [2013-09-30T13:25:58.596238 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000037357f0>
+E, [2013-09-30T13:25:58.779601 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003abe318>
+E, [2013-09-30T13:25:59.011453 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b0cc20>
+E, [2013-09-30T13:25:59.176110 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b32038>
+E, [2013-09-30T13:25:59.353035 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b57888>
+E, [2013-09-30T13:25:59.536391 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b75978>
+E, [2013-09-30T13:26:00.011808 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003a9bae8>
+E, [2013-09-30T13:26:00.232200 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003ba0f88>
+E, [2013-09-30T13:26:00.465259 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003bc7610>
+E, [2013-09-30T13:26:00.656695 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003be66a0>
+E, [2013-09-30T13:26:00.855835 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003c048a8>
+F, [2013-09-30T13:27:20.936047 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:27:25.236926 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003eb3270>
+E, [2013-09-30T13:27:29.389056 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000429d0e8>
+E, [2013-09-30T13:27:31.234940 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000040574c8>
+E, [2013-09-30T13:28:14.853333 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003479fe8>
+E, [2013-09-30T13:28:38.180328 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002912a88>
+F, [2013-09-30T13:28:45.605501 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:28:51.398879 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000385bdf0>
+E, [2013-09-30T13:28:53.690091 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000038a1eb8>
+E, [2013-09-30T13:28:55.692157 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000039be738>
+F, [2013-09-30T13:29:58.633958 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:30:02.730845 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003ab3d50>
+F, [2013-09-30T13:30:58.416514 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:31:04.107639 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003af4ee0>
+E, [2013-09-30T13:31:05.938730 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000385cea8>
+E, [2013-09-30T13:31:06.441190 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000359ba48>
+E, [2013-09-30T13:31:06.803190 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000039bf930>
+E, [2013-09-30T13:31:07.097250 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000034f9748>
+E, [2013-09-30T13:31:07.352532 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000037a9498>
+E, [2013-09-30T13:31:07.906251 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000380db50>
+E, [2013-09-30T13:31:08.105825 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000035ab128>
+E, [2013-09-30T13:31:08.327296 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003664a88>
+E, [2013-09-30T13:31:08.922833 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000039cf970>
+E, [2013-09-30T13:31:09.103741 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003a05318>
+F, [2013-09-30T13:31:26.712898 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:31:30.211746 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b87948>
+F, [2013-09-30T13:31:42.753733 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:31:46.998695 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b416a0>
+E, [2013-09-30T13:31:49.187464 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b623f0>
+E, [2013-09-30T13:31:51.394317 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b83d98>
+F, [2013-09-30T13:32:17.999679 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:32:21.684464 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b45228>
+E, [2013-09-30T13:32:22.658855 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b66108>
+E, [2013-09-30T13:32:23.031776 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b87808>
+E, [2013-09-30T13:32:23.650814 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003aa0548>
+F, [2013-09-30T13:32:30.491660 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:32:33.833055 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b64bf0>
+F, [2013-09-30T13:32:44.181095 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:32:47.276460 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b3ab20>
+F, [2013-09-30T13:32:55.847324 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:33:00.459971 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b094f8>
+F, [2013-09-30T13:33:17.984803 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:33:21.789776 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x0000000373fb88>
+F, [2013-09-30T13:33:40.279666 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:33:43.756765 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003a03d88>
+F, [2013-09-30T13:34:50.172126 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:34:54.008106 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000028e6c30>
+E, [2013-09-30T13:35:15.281321 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003c7ae68>
+E, [2013-09-30T13:37:12.605715 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003fbb0c8>
+E, [2013-09-30T13:37:29.465845 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000034f7970>
+E, [2013-09-30T13:40:29.993696 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003aae198>
+E, [2013-09-30T13:41:18.540362 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003ed9f60>
+E, [2013-09-30T13:41:54.125002 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003e99258>
+E, [2013-09-30T13:42:10.815262 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003829378>
+E, [2013-09-30T13:42:42.496533 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003fa2898>
+E, [2013-09-30T13:43:08.585701 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000039c7838>
+E, [2013-09-30T13:44:12.766922 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b08b20>
+E, [2013-09-30T13:44:43.968187 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003c6e410>
+F, [2013-09-30T13:44:47.281569 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+F, [2013-09-30T13:45:24.913095 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:45:29.324388 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000002fa2c90>
+F, [2013-09-30T13:46:56.816416 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:47:00.434638 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b9f318>
+F, [2013-09-30T13:47:38.362924 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:47:42.199489 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003f914f8>
+F, [2013-09-30T13:49:02.398109 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:49:09.080940 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000037a7a80>
+F, [2013-09-30T13:49:29.796180 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:49:35.828510 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003cdf250>
+F, [2013-09-30T13:49:59.778830 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:50:03.388625 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000040b3ac0>
+F, [2013-09-30T13:50:19.901942 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:50:23.913163 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b1c878>
+F, [2013-09-30T13:51:47.520504 #28780] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/jcarousel-plugin/lib/jquery.min.map"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:23:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.0) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.0) lib/rails/commands.rb:78:in `block in <top (required)>'
+  railties (4.0.0) lib/rails/commands.rb:73:in `tap'
+  railties (4.0.0) lib/rails/commands.rb:73:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+E, [2013-09-30T13:51:52.930304 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003b67b98>
+E, [2013-09-30T13:52:57.703911 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003d8f0b0>
+E, [2013-09-30T13:53:13.770082 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003f67540>
+E, [2013-09-30T13:56:11.624789 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003be6df8>
+E, [2013-09-30T13:56:27.890205 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find BasicTask with id=487
+E, [2013-09-30T13:57:01.072051 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003bb3228>
+E, [2013-09-30T13:57:49.865808 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find BasicTask with id=529
+E, [2013-09-30T13:57:59.964730 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=487 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T13:58:03.939561 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=529 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T13:58:04.577992 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=529 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T13:58:08.396678 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find BasicTask with id=529
+E, [2013-09-30T13:58:09.411108 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=529 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T13:58:10.058682 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=529 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T13:58:19.510877 #28780] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000003c36498>
+E, [2013-09-30T13:59:09.231205 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find BasicTask with id=529
+E, [2013-09-30T13:59:19.135862 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=529 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T13:59:49.695794 #28780] ERROR -- : NoMethodError | Message: undefined method `each' for nil:NilClass
+E, [2013-09-30T14:00:00.828360 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find BasicTask with id=487
+E, [2013-09-30T14:00:02.074543 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=487 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:00:05.664265 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=529 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:00:06.351709 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=529 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:00:11.156376 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=516 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:00:16.567696 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=517 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:00:37.235612 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=517 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:00:44.111998 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=517 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:01:06.186806 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=516 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+E, [2013-09-30T14:01:35.027980 #28780] ERROR -- : ActiveRecord::RecordNotFound | Message: Couldn't find CompletedTask with id=517 [WHERE "basic_tasks"."type" IN ('CompletedTask')]
+D, [2013-09-30T14:26:11.461673 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:11.461828 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:11.462186 #3257]  INFO -- : Started GET "/todo/" for 127.0.0.1 at 2013-09-30 14:26:11 +0300
+D, [2013-09-30T14:26:12.265811 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.266037 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.266319 #3257]  INFO -- : Started GET "/assets/application-50f327370f4ea0480becb2c1a7e8fc4f.css" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:12.269913 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.270107 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.270372 #3257]  INFO -- : Started GET "/assets/application-e35c99bdc16236c8542d1296dc72858e.js" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:12.273736 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.273925 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.274160 #3257]  INFO -- : Started GET "/assets/jcarousel-plugin/lib/jquery-1.9.1.min-2ad996463ee12dc00ad9ee73c1183210.js" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:12.276649 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.276824 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.277041 #3257]  INFO -- : Started GET "/assets/jcarousel-plugin/lib/jquery.jcarousel.min-4ee3cc6fec24256751b6c98134ac741f.js" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:12.279718 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.279892 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.280112 #3257]  INFO -- : Started GET "/assets/stupid_sorter/stupidtable-424abae64fc27ef7f1eb7034924b2b5c.js" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:12.282941 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.283147 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.283443 #3257]  INFO -- : Started GET "/assets/tooltip-ceeca49283e854f2b4b56db4e31f0bb4.js" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:12.288716 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.289138 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.289463 #3257]  INFO -- : Started GET "/assets/easy.notification-8db0ba171dc56ce01a52bab3c3ed8528.js" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:12.818737 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:12.818911 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:12.819187 #3257]  INFO -- : Started GET "/todo/completed_tasks/" for 127.0.0.1 at 2013-09-30 14:26:12 +0300
+D, [2013-09-30T14:26:17.493493 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:17.493954 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:17.494488 #3257]  INFO -- : Started POST "/todo/mass_complete" for 127.0.0.1 at 2013-09-30 14:26:17 +0300
+D, [2013-09-30T14:26:21.240661 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:21.240917 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:21.241258 #3257]  INFO -- : Started POST "/todo/mass_destroy" for 127.0.0.1 at 2013-09-30 14:26:21 +0300
+D, [2013-09-30T14:26:23.829382 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:23.829655 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:23.830057 #3257]  INFO -- : Started GET "/todo/" for 127.0.0.1 at 2013-09-30 14:26:23 +0300
+D, [2013-09-30T14:26:24.195651 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.195782 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.195977 #3257]  INFO -- : Started GET "/assets/application-50f327370f4ea0480becb2c1a7e8fc4f.css" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:24.198835 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.198944 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.199134 #3257]  INFO -- : Started GET "/assets/application-e35c99bdc16236c8542d1296dc72858e.js" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:24.202464 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.202602 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.202787 #3257]  INFO -- : Started GET "/assets/jcarousel-plugin/lib/jquery-1.9.1.min-2ad996463ee12dc00ad9ee73c1183210.js" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:24.205181 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.205291 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.205448 #3257]  INFO -- : Started GET "/assets/jcarousel-plugin/lib/jquery.jcarousel.min-4ee3cc6fec24256751b6c98134ac741f.js" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:24.208404 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.208606 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.208873 #3257]  INFO -- : Started GET "/assets/stupid_sorter/stupidtable-424abae64fc27ef7f1eb7034924b2b5c.js" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:24.213086 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.213304 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.213603 #3257]  INFO -- : Started GET "/assets/tooltip-ceeca49283e854f2b4b56db4e31f0bb4.js" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:24.217531 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.217658 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.217833 #3257]  INFO -- : Started GET "/assets/easy.notification-8db0ba171dc56ce01a52bab3c3ed8528.js" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:24.632545 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:24.632719 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:24.632956 #3257]  INFO -- : Started GET "/todo/completed_tasks/" for 127.0.0.1 at 2013-09-30 14:26:24 +0300
+D, [2013-09-30T14:26:40.940887 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:40.941063 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:40.941277 #3257]  INFO -- : Started PUT "/todo/480/complete" for 127.0.0.1 at 2013-09-30 14:26:40 +0300
+D, [2013-09-30T14:26:44.064812 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:44.065084 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:44.065409 #3257]  INFO -- : Started DELETE "/todo/479" for 127.0.0.1 at 2013-09-30 14:26:44 +0300
+D, [2013-09-30T14:26:46.406110 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:46.406278 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:46.406536 #3257]  INFO -- : Started DELETE "/todo/474" for 127.0.0.1 at 2013-09-30 14:26:46 +0300
+D, [2013-09-30T14:26:48.422774 #3257] DEBUG -- : 
+D, [2013-09-30T14:26:48.423037 #3257] DEBUG -- : 
+I, [2013-09-30T14:26:48.423332 #3257]  INFO -- : Started PUT "/todo/473/complete" for 127.0.0.1 at 2013-09-30 14:26:48 +0300
+D, [2013-09-30T14:32:59.001773 #3257] DEBUG -- : 
+D, [2013-09-30T14:32:59.001942 #3257] DEBUG -- : 
+I, [2013-09-30T14:32:59.002140 #3257]  INFO -- : Started PUT "/todo/completed_tasks/483/reopen" for 127.0.0.1 at 2013-09-30 14:32:59 +0300
+E, [2013-09-30T14:32:59.008527 #3257] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x00000005693188>
+D, [2013-09-30T14:33:03.736478 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:03.736649 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:03.736902 #3257]  INFO -- : Started DELETE "/todo/completed_tasks/483" for 127.0.0.1 at 2013-09-30 14:33:03 +0300
+D, [2013-09-30T14:33:06.470130 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:06.470375 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:06.470651 #3257]  INFO -- : Started DELETE "/todo/completed_tasks/525" for 127.0.0.1 at 2013-09-30 14:33:06 +0300
+D, [2013-09-30T14:33:09.892101 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:09.892333 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:09.892621 #3257]  INFO -- : Started POST "/todo/completed_tasks/mass_reopen" for 127.0.0.1 at 2013-09-30 14:33:09 +0300
+E, [2013-09-30T14:33:09.901406 #3257] ERROR -- : NoMethodError | Message: super: no superclass method `sanitize_for_mass_assignment' for #<CompletedTask:0x000000056d6348>
+D, [2013-09-30T14:33:13.523143 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:13.523428 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:13.523933 #3257]  INFO -- : Started POST "/todo/completed_tasks/mass_destroy" for 127.0.0.1 at 2013-09-30 14:33:13 +0300
+D, [2013-09-30T14:33:18.051434 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:18.051809 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:18.052128 #3257]  INFO -- : Started POST "/todo/completed_tasks/mass_destroy" for 127.0.0.1 at 2013-09-30 14:33:18 +0300
+D, [2013-09-30T14:33:20.310334 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.310562 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.310759 #3257]  INFO -- : Started GET "/todo/" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:20.736844 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.737014 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.737310 #3257]  INFO -- : Started GET "/assets/application-50f327370f4ea0480becb2c1a7e8fc4f.css" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:20.741732 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.741871 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.742136 #3257]  INFO -- : Started GET "/assets/application-e35c99bdc16236c8542d1296dc72858e.js" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:20.747010 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.747200 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.747551 #3257]  INFO -- : Started GET "/assets/jcarousel-plugin/lib/jquery-1.9.1.min-2ad996463ee12dc00ad9ee73c1183210.js" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:20.752268 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.752449 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.752682 #3257]  INFO -- : Started GET "/assets/jcarousel-plugin/lib/jquery.jcarousel.min-4ee3cc6fec24256751b6c98134ac741f.js" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:20.755127 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.755297 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.755540 #3257]  INFO -- : Started GET "/assets/stupid_sorter/stupidtable-424abae64fc27ef7f1eb7034924b2b5c.js" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:20.758233 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.758434 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.758705 #3257]  INFO -- : Started GET "/assets/tooltip-ceeca49283e854f2b4b56db4e31f0bb4.js" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:20.763486 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:20.763700 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:20.764024 #3257]  INFO -- : Started GET "/assets/easy.notification-8db0ba171dc56ce01a52bab3c3ed8528.js" for 127.0.0.1 at 2013-09-30 14:33:20 +0300
+D, [2013-09-30T14:33:21.277594 #3257] DEBUG -- : 
+D, [2013-09-30T14:33:21.277797 #3257] DEBUG -- : 
+I, [2013-09-30T14:33:21.278051 #3257]  INFO -- : Started GET "/todo/completed_tasks/" for 127.0.0.1 at 2013-09-30 14:33:21 +0300
