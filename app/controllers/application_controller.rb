@@ -11,9 +11,10 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, with: :handle_and_file
 
   private
-
-  def handle_and_file exception
-  	Rails.logger.error "#{exception.class} | Message: #{exception.message}"
-  	render js: "$.errorMessanger({text: 'Something went wrong while processing your request. Try to perform it later' });"
-  end	
+    def handle_and_file exception
+    	Rails.logger.error "#{exception.class} | Message: #{exception.message}
+                           \n ---------------------- \n #{exception.backtrace[0..5]}
+                           \n ----------------------"
+    	render js: "$.errorMessanger({text: '' });"
+    end	
 end

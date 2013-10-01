@@ -1,7 +1,8 @@
+require 'protected_attributes'
+
 class BasicTask < ActiveRecord::Base
-  include ActiveModel::ForbiddenAttributesProtection
-#attr_accessible :description, :priority, :status
-#attr_protected	:type, :created_at, :completed_at
+include ActiveModel::ForbiddenAttributesProtection
+attr_accessible :type, :completed_at, :status, :description, :priority, :id, :created_at
 
  #    def format_date
  # if self.created_at.year == Time.now.year

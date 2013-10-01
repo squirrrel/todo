@@ -44,7 +44,6 @@ group :custom do
 	gem 'thin'
 	gem 'sprockets-rails', :require => 'sprockets/railtie'
 	gem 'protected_attributes'
-	gem 'strong_parameters' 
 	gem 'state_machine', '0.9.3'
 	gem 'devise'
 end

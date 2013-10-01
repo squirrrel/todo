@@ -1,8 +1,6 @@
 === BACKLOG
 
 
-* Send completed_tasks filters values on #index refresh DONE
-
 * Add CSS IN PROGRESS
 
 * Make fix-sized div containing the #index view  DONE
@@ -11,7 +9,7 @@
 
 * Make scroll semitransparent-black DONE
 
-* Set up logging    
+* Set up logging DONE   
 
 * Choose an appropriate gem to handle authentication, roles and sessions 
 
@@ -19,17 +17,23 @@
 
 * Add checkbox-based 'mass-delete'/'mass-complete' functionality IN PROGRESS: style checkboxes, make task font bold when a corresponding checkbox is checked DONE
 
-* Add sorting functionality IN PROGRESS - yet to handle completed_at sorting
+* Add sorting functionality COMPLETED - TO REVIEW
 
 * Add black tooltips where needed IN PROGRESS
 
-* Add new_task form validations
+* Add new_task form validations DONE
 
-* 500 error notification handler
+* 500 error notification handler DONE
 
-* Refactor coffee files
+* Refactor coffee files DONE
 
 * Calculate validation height based on the target height 
+
+* Fix post-create CSS, add complete/reopen items to corresponding table using jquery
+
+* Implement advanced Filter
+
+* Implement Resizing and modify description text position and stuff
 
 == There is sooo much #todo;)
 

@@ -1,5 +1,4 @@
 class CompletedTask < BasicTask
-  	include ActiveModel::ForbiddenAttributesProtection
 	
 	@time = nil 
 	@priority = nil
@@ -31,7 +30,6 @@ class CompletedTask < BasicTask
 
 	def self.reopen_task id
 	    subject = BasicTask.find(id)
-    	paramz = { type: 'ActiveTask', completed_at: Time.new(1000,01,01, 1,1,1) }
-	  	subject.update_attributes(paramz)
+	  	subject.update_attributes({status: 'open', type: 'ActiveTask', created_at: Time.now, completed_at: Time.new(1000,01,01, 1,1,1)})
 	end	
 end

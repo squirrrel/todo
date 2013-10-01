@@ -35,11 +35,12 @@ class Todo::ActiveTasksController < ApplicationController
 
 	 def update_task
 	 	subject = ActiveTask.find(params[:id])
-	 	subject.update_attributes(params.permit(:id, :description, :priority, :status))
-	 	
+	 	subject.update_attributes({id: params[:id], description: params[:description], 
+	 								priority: params[:priority], status: params[:status]})
 	 	head :ok
 	 end
-	## make destroy and mass destroy one single action at a later time
+
+
 	def destroy
 		ActiveTask.find(params[:id]).destroy 
 		@notification = 'task deleted'
@@ -48,7 +49,6 @@ class Todo::ActiveTasksController < ApplicationController
 	  	end
 	end
 
-	### TRANSACTION HERE
 	def mass_destroy
 		ActiveTask.transaction do
 			params[:id].each{|id| ActiveTask.find(id).destroy }
@@ -59,7 +59,6 @@ class Todo::ActiveTasksController < ApplicationController
       	end		
 	end
 
-	## make complete and mass complete one single action at a later time
 	def complete
 		ActiveTask.complete_task params[:id]
 		@notification = 'task completed'
@@ -68,7 +67,6 @@ class Todo::ActiveTasksController < ApplicationController
       	end	
 	end	
 
-	#TRANSACTION HERE
 	def mass_complete
 		ActiveTask.transaction do
 			params[:id].each{ |id| ActiveTask.complete_task(id)}
