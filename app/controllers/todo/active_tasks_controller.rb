@@ -1,8 +1,10 @@
 class Todo::ActiveTasksController < ApplicationController
+	include Destroyable
+
 	def index
+		@priorities = Priorities
 		@tasks = ActiveTask.all.order('created_at DESC')
 		#BasicTask.where(type:'ActiveTask').order('created_at DESC')
-		@priorities = Priorities
 		#render json: tasks 
 	end
 
@@ -40,26 +42,8 @@ class Todo::ActiveTasksController < ApplicationController
 	 	head :ok
 	 end
 
-
-	def destroy
-		ActiveTask.find(params[:id]).destroy 
-		@notification = 'task deleted'
- 		respond_to do |format|
-	  		format.js{ render '/todo/shared/remove.js.erb'}
-	  	end
-	end
-
-	def mass_destroy
-		ActiveTask.transaction do
-			params[:id].each{|id| ActiveTask.find(id).destroy }
-		end
-		@notification = 'tasks deleted'
-	    respond_to do |format|
-		    format.js{ render '/todo/shared/mass_remove.js.erb' }
-      	end		
-	end
-
 	def complete
+		klf
 		ActiveTask.complete_task params[:id]
 		@notification = 'task completed'
 	    respond_to do |format|

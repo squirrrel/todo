@@ -1,38 +1,15 @@
 class Todo::CompletedTasksController < ApplicationController
-
-#TODO: REFACTOR INDEX
-#RETEST IN 2 WEEKS CAUSE I AM TIRED TO DO IT
+	include Destroyable
 
 	def index
 	  	@time_filter = TimeFilter
 	 	@priorities = Priorities
 	 	@default_option = DefaultTime
  		@tasks =  CompletedTask.all.order('completed_at DESC') 		 		      	
-
-
 	  	respond_to do |format|
-      		format.js { render 'filter.js.erb' }
-     		format.html { render 'index.html.erb' } 	
+      		format.js{ render 'filter.js.erb' }
+     		format.html{ render 'index.html.erb' } 	
 	  	end
-	end
-
-	def destroy
-	  CompletedTask.find(params[:id]).destroy #ensure it is destroyed
-	  @notification = 'task deleted'
-	  respond_to do |format|
-	  	format.js{ render '/todo/shared/remove.js.erb'}
-	  end			  
-	end
-
-	def mass_destroy
-		p params
-		CompletedTask.transaction do
-			params[:id].each{|id| CompletedTask.find(id).destroy }
-		end
-		@notification = 'tasks deleted'
-	    respond_to do |format|
-		    format.js{ render '/todo/shared/mass_remove.js.erb' }
-      	end		
 	end	
 
 	def reopen	
@@ -59,13 +36,10 @@ class Todo::CompletedTasksController < ApplicationController
 	end
 
 	def filter_by_priority		   
-	   @tasks = CompletedTask.force_time_filter
-	   
+	   @tasks = CompletedTask.force_time_filter   
 	   @tasks.map!{|task| task if task.priority == params[:priority] }
 	   @tasks.delete_if{|task| task == nil }
-
        CompletedTask.set_priority_filter = @tasks
-
 	   if !@tasks.empty?     
 	      respond_to do |format|
 		     format.js{ render 'filter.js.erb' }
@@ -73,6 +47,5 @@ class Todo::CompletedTasksController < ApplicationController
 	   else
 		  head :ok 		  
 	   end
-
 	end
 end

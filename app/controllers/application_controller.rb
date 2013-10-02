@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
     	Rails.logger.error "#{exception.class} | Message: #{exception.message}
                            \n ---------------------- \n #{exception.backtrace[0..5]}
                            \n ----------------------"
-    	render js: "$.errorMessanger({text: '' });"
+    	render js: "$.errorMessanger({text: '#{STORAGE.with_indifferent_access[:literals][:message]}' });"
     end	
 end

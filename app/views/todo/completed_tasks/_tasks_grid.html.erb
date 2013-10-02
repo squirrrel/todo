@@ -46,7 +46,7 @@
 <% %w{description priority completed_at}.each do |attr|%>
 <td id='<%=attr%>' class='items'><div><%= task.send attr %></div></td>
 <%end%>
-<td style = 'width: 50px;'><%= link_to '↺', reopen_todo_completed_task_path(task.id), method: :put, class: "reopen #{task.id}_action", style: 'display: none', remote: true %></td>
+<td style = 'width: 50px;'><%= link_to '↺', reopen_todo_completed_task_path(task.id), method: :patch, class: "reopen #{task.id}_action", style: 'display: none', remote: true %></td>
 <td style = 'width: 20px;'><span style = 'display: none' class='pipe<%=task.id%> separator' >❘</span></td>
 <td style = 'width: 50px;'><%= button_to '✘', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none',remote: true %></td>
 </tr>

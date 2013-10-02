@@ -1,3 +1,2 @@
-#hi
 literals:
-	message: 1
+ message: "Something went wrong while processing your request. Try to perform it later"
