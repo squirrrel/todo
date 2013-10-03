@@ -1,9 +1,11 @@
 class Todo::ActiveTasksController < ApplicationController
 	include Destroyable
 
+	before_action :authenticate_user!
+
 	def index
 		@priorities = Priorities
-		@tasks = ActiveTask.all.order('created_at DESC')
+		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')
 		#BasicTask.where(type:'ActiveTask').order('created_at DESC')
 		#render json: tasks 
 	end
@@ -14,17 +16,12 @@ class Todo::ActiveTasksController < ApplicationController
 	end
 
 	def create
-		new_task = ActiveTask.new
-		new_task.attributes.map do |attr, value|
-			new_task[attr] = params[:new][attr] if params[:new].include?(attr)	
-		end 
-		#new_task.type = new_task.class.name - no need as rails handles it on his own		
-		new_task.save if new_task.valid?
-		
+		new_task = ActiveTask.create(description: params[:new]['description'] , priority: params[:new]['priority'])
+		new_task.update_attribute(:user_id, current_user.id)
+		#new_task.type = new_task.class.name - no need as rails handles it on his own!!!		
 		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}	
 		row = "<tr>#{(items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
 		notification = 'task created!'
-
 		render js: "! function(){ 
 						$('#{row}').insertBefore('.task-items');
 						$.easyNotification({text: '#{notification}'});
@@ -43,7 +40,6 @@ class Todo::ActiveTasksController < ApplicationController
 	 end
 
 	def complete
-		klf
 		ActiveTask.complete_task params[:id]
 		@notification = 'task completed'
 	    respond_to do |format|

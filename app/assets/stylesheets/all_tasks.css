@@ -324,6 +324,18 @@ button.edit:hover {
   cursor: pointer;
   color: #04b4ae; }
 
+#signout {
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgba(239, 76, 62, 0.8);
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+  float: right; }
+
+#signout:hover {
+  color: rgba(17, 17, 17, 0.6); }
+
 #completed_at {
   width: 170px; }
 

@@ -1,5 +1,7 @@
 Todo::Application.routes.draw do
   devise_for :users
+  
+  root :to => 'todo/active_tasks#index', as: 'todo'
 
   concern :mass_destroyable do
     post 'mass_destroy', on: :collection

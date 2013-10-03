@@ -1,11 +1,13 @@
 class Todo::CompletedTasksController < ApplicationController
 	include Destroyable
 
+	before_action :authenticate_user!
+
 	def index
 	  	@time_filter = TimeFilter
 	 	@priorities = Priorities
 	 	@default_option = DefaultTime
- 		@tasks =  CompletedTask.all.order('completed_at DESC') 		 		      	
+ 		@tasks =  CompletedTask.where(user_id: "#{current_user.id}").order('completed_at DESC') 		 		      	
 	  	respond_to do |format|
       		format.js{ render 'filter.js.erb' }
      		format.html{ render 'index.html.erb' } 	

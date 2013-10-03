@@ -26,5 +26,6 @@ module Todo
     config.active_record.whitelist_attributes = false
     config.serve_static_assets = true
     config.log_level = :debug
+    config.i18n.default_locale = :en
   end
 end

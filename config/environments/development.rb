@@ -44,4 +44,5 @@ Todo::Application.configure do
   config.active_record.whitelist_attributes = false
   # config.assets.precompile += ['cancelokedit.js']
   config.log_level = :debug
+  config.i18n.default_locale = :en
 end
