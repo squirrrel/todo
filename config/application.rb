@@ -20,12 +20,11 @@ module Todo
     #    g.template_engine :haml
     # end
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :ua
     #config.assets.enabled = true
     config.active_record.whitelist_attributes = false
     config.serve_static_assets = true
     config.log_level = :debug
-    config.i18n.default_locale = :en
   end
 end

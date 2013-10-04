@@ -1,10 +1,12 @@
 class Todo::ActiveTasksController < ApplicationController
 	include Destroyable
-
+	
+	skip_before_filter :log_user, only: ['create', 'destroy']
 	before_action :authenticate_user!
 
 	def index
-		@priorities = Priorities
+
+		@priorities = set_priorities
 		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')
 		#BasicTask.where(type:'ActiveTask').order('created_at DESC')
 		#render json: tasks 
@@ -21,9 +23,9 @@ class Todo::ActiveTasksController < ApplicationController
 		#new_task.type = new_task.class.name - no need as rails handles it on his own!!!		
 		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}	
 		row = "<tr>#{(items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
-		notification = 'task created!'
+		notification = t(:notifications)[:created]
 		render js: "! function(){ 
-						$('#{row}').insertBefore('.task-items');
+						$('#{row}').insertBefore('table#1 .task-items');
 						$.easyNotification({text: '#{notification}'});
 					}();"
 	end
@@ -36,12 +38,13 @@ class Todo::ActiveTasksController < ApplicationController
 	 	subject = ActiveTask.find(params[:id])
 	 	subject.update_attributes({id: params[:id], description: params[:description], 
 	 								priority: params[:priority], status: params[:status]})
-	 	head :ok
+	 	notification = t(:notifications)[:updated]
+	 	render js: "! function(){$.easyNotification({text: '#{notification}'});}();"
 	 end
 
 	def complete
 		ActiveTask.complete_task params[:id]
-		@notification = 'task completed'
+		@notification = t(:notifications)[:completed]
 	    respond_to do |format|
 		    format.js{ render '/todo/shared/remove.js.erb' }
       	end	
@@ -51,7 +54,7 @@ class Todo::ActiveTasksController < ApplicationController
 		ActiveTask.transaction do
 			params[:id].each{ |id| ActiveTask.complete_task(id)}
 		end
-		@notification = 'tasks completed'
+		@notification = t(:notifications)[:completed]
 		respond_to do |format|
 		    format.js{ render '/todo/shared/mass_remove.js.erb' }
       	end

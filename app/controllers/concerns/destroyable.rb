@@ -4,7 +4,7 @@ module Destroyable
 	included do
 		def destroy
 			BasicTask.find(params[:id]).destroy 
-			@notification = 'task deleted'
+			@notification = t(:notifications)[:deleted]
 			respond_to do |format|
 				format.js{ render '/todo/shared/remove.js.erb'}
 			end
@@ -14,7 +14,7 @@ module Destroyable
 			BasicTask.transaction do
 				params[:id].each{|id| BasicTask.find(id).destroy }
 			end
-			@notification = 'tasks deleted'
+			@notification = t(:notifications)[:deleted]
 			respond_to do |format|
 				format.js{ render '/todo/shared/mass_remove.js.erb' }
 			end		

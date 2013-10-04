@@ -1,11 +1,12 @@
 class Todo::CompletedTasksController < ApplicationController
 	include Destroyable
 
+	skip_before_filter :log_user, only: ['create', 'destroy']
 	before_action :authenticate_user!
 
 	def index
-	  	@time_filter = TimeFilter
-	 	@priorities = Priorities
+	  	@time_filter = set_time_filter_options
+	 	@priorities = set_priorities
 	 	@default_option = DefaultTime
  		@tasks =  CompletedTask.where(user_id: "#{current_user.id}").order('completed_at DESC') 		 		      	
 	  	respond_to do |format|
@@ -16,7 +17,7 @@ class Todo::CompletedTasksController < ApplicationController
 
 	def reopen	
 	  CompletedTask.reopen_task(params[:id])
-	  @notification = 'task reopened'  
+	  @notification = t(:notifications)[:reopened]  
 	  respond_to do |format|
 	  	format.js{ render '/todo/shared/remove.js.erb'}
 	  end	
@@ -26,7 +27,7 @@ class Todo::CompletedTasksController < ApplicationController
 		CompletedTask.transaction do
 			params[:id].each{|id| CompletedTask.reopen_task(id) }
 		end
-		@notification = 'tasks reopened'
+		@notification = t(:notifications)[:reopened]
 		respond_to do |format|
 	  	format.js{ render '/todo/shared/mass_remove.js.erb'}
 	  end	

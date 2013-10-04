@@ -11,7 +11,7 @@
 
 * Set up logging DONE   
 
-* Choose an appropriate gem to handle authentication, roles and sessions 
+* Choose an appropriate gem to handle authentication, roles and sessions DONE
 
 * Implement advanced caching
 
@@ -27,7 +27,7 @@
 
 * Refactor coffee files DONE
 
-* Calculate validation height based on the target height 
+* Calculate validation height based on the target height DONE
 
 * Fix post-create CSS, add complete/reopen items to corresponding table using jquery
 

@@ -1,4 +1,4 @@
-<%= link_to 'Sign out', '/users/sign_out', method: :delete, id: 'signout' %>
+<%= link_to 'Sign out', '/todo/user/signout', method: :delete, id: 'signout' %>
 <span class='tooltip_3'>reopen</span>
 
 
@@ -8,7 +8,7 @@
 <li>
 <%= render '/todo/shared/checkbox_buttons' %>
 <%= render 'new', locals: {priority: @priority}%>
-<table cellspacing="0" style='margin-top: 5px;'>
+<table cellspacing="0" style='margin-top: 5px;' id='1'>
 <tbody>
 <tr>
 <%= render partial: '/todo/shared/headers' %>

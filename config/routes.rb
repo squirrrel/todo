@@ -1,7 +1,8 @@
 Todo::Application.routes.draw do
-  devise_for :users
+  devise_for :users, path: 'todo/user', path_names: { sign_in: 'signin', sign_out: 'signout', 
+                        sign_up: 'registration', password: 'password', edit: 'registration/edit' } 
   
-  root :to => 'todo/active_tasks#index', as: 'todo'
+  root :to => 'todo/active_tasks#index', path: '/todo'
 
   concern :mass_destroyable do
     post 'mass_destroy', on: :collection
