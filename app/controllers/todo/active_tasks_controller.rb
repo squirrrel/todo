@@ -21,8 +21,18 @@ class Todo::ActiveTasksController < ApplicationController
 		new_task = ActiveTask.create(description: params[:new]['description'] , priority: params[:new]['priority'])
 		new_task.update_attribute(:user_id, current_user.id)
 		#new_task.type = new_task.class.name - no need as rails handles it on his own!!!		
-		items = %w{description priority status created_at}.map!{|prop| new_task.send prop}	
-		row = "<tr>#{(items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
+		localised_items = %w{description priority status created_at}.map! do |prop| 
+		res = new_task.send prop
+		case prop
+			when 'priority' then
+				res == 'high' ? (t(:priorities)[:high]) : ( res == 'medium' ? t(:priorities)[:medium] : t(:priorities)[:low] )	
+			when 'status' then
+				res == 'open' ? t(:views)[:status][:open] : t(:views)[:status][:in_progress] 
+			else
+				res
+			end
+		end
+		row = "<tr>#{(localised_items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
 		notification = t(:notifications)[:created]
 		render js: "! function(){ 
 						$('#{row}').insertBefore('table#1 .task-items');

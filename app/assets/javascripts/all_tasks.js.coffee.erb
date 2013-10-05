@@ -16,17 +16,21 @@ do completed_tasks = ->
 
 	
 do tooltips = ->
-	$(document).ready(()->
-		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, #complete_for_checkbox, #delete_for_checkbox, th#delete, th#edit').attr('rel','tooltip')
+	$(document).ready(()->		 
+		console.log a = $("span#locales").data('special')
+		console.log jQuery.parseJSON(a)
+		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, #complete_for_checkbox, #delete_for_checkbox, #reopen_for_checkbox, th#delete, th#edit').attr('rel','tooltip')
 			
-		$('div.jcarousel-prev').attr('title','active tasks') if $('div.jcarousel-prev').is(':disabled') is true
-		$('div.jcarousel-next').attr('title','completed tasks')	if $('div.jcarousel-next').is(':disabled') is false
-		$('.add_me').attr('title','add new task')
-		$('#new_priority').attr('title','select priority')
-		$('div#complete_for_checkbox').attr('title','complete marked items')
-		$('div#delete_for_checkbox').attr('title','delete marked items')
-		$('th#delete').attr('title','delete')
-		$('th#edit').attr('title','edit')
+		$('div.jcarousel-prev').attr('title', $('span#active_tasks').data('locales')) if $('div.jcarousel-prev').is(':disabled') is true
+		$('div.jcarousel-next').attr('title', $('span#completed_tasks').data('locales')) if $('div.jcarousel-next').is(':disabled') is false
+		$('.add_me').attr('title', $('span#add_new_task').data('locales'))
+		$('#new_priority').attr('title', $('span#select_priority').data('locales'))
+		$('div#complete_for_checkbox').attr('title', $('span#complete_marked_items').data('locales'))
+		$('div#delete_for_checkbox').attr('title', $('span#delete_marked_items').data('locales'))
+		$('div#reopen_for_checkbox').attr('title', $('span#reopen_marked_items').data('locales'))
+		$('th#delete').attr('title', $('span#delete').data('locales'))
+		console.log $('span#delete').data('locales')
+		$('th#edit').attr('title', $('span#edit').data('locales'))
 	)	
 
 do arrows_onclick = ->
@@ -43,7 +47,7 @@ do read_dates = ->
 	$(document).ready(()->
 		window.active_dates = new Array
 		$('div#tasks_container').find("td#created_at div").each(()-> td_text = $(this).text(); active_dates.push(td_text))
-	)
+	)	
 
 			
 @show_actions = show_actions = (task_id)->

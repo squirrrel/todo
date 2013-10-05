@@ -21,88 +21,108 @@
 ## encoding: UTF-8
 ua:
   internal_server_error:
-    message: "Something went wrong while processing your request. Try to perform it later"
+    message: "Сталася помилка при виконанні Вашого запиту. Спробуйте пізніше"
   notifications:
-    completed: "task(s) completed"
-    deleted: "task(s) deleted"
-    reopened: "task(s) reopened"
-    created: "task created!"
-    updated: "task updated!"
+    completed: "задача(і) виконано"
+    deleted: "задача(і) видалено"
+    reopened: "задачу(і) додано до активних"
+    created: "задачу створено"
+    updated: "зміни збережено"
   priorities:
-    high: "импортен"
-    medium: "medium"
-    low: "low"
+    high: "висока"
+    medium: "середня"
+    low: "низька"
   time_filter:
-    today: "today"
-    last_7_days: "last 7 days"
-    last_14_days: "last 14 days"
-    last_30_days: "last 30 days"
-    last_3_months: "last 3 months"
-    last_6_months: "last 6 months"
-    last_year: "last year"
-    forever: "forever"
+    today: "сьогодні"
+    last_7_days: "за останні 7 днів"
+    last_14_days: "за останні 14 днів"
+    last_30_days: "за останні 30 днів"
+    last_3_months: "за останні 3 місяці"
+    last_6_months: "за останні 6 місяців"
+    last_year: "за останній рік"
+    forever: "за весь період"
   views:
     headers:
-      description: "Description"
-      priority: "Priority"
-      status: "Status"
-      created_at: "Created at"
-      completed_at: "Completed at"
+      description: "Описання"
+      priority: "Пріорітетність"
+      status: "Статус"
+      created_at: "Дата створення"
+      completed_at: "Дата виконання"
     placeholders: 
-      new: "Витаннячкииии"
-    signed_out_link:
+      new: "Опишіть Вашу нову задачу"
+    signed_out_link: "Вийти"
+    signin_header: "Увійти"
+    status:
+      open: "активна"
+      in_progress: "в процесі"
+    tooltips:
+      active_tasks: "активні задачі"
+      completed_tasks: "виконані задачі"
+      add_new_task: "додати нову задачу"
+      select_priority: "вибрати пріорітетність"
+      complete_marked_items: "відмітити як виконані задачі"
+      delete_marked_items: "видалити відмічені задачі"
+      reopen_marked_items: "додати до активних відмічені задачі"
+      delete: "видалити"
+      edit: "змінити"
+      complete: "відмітити як виконану"
+      reopen: "відмітити як активну"
+      priority_filter: "фільтрувати за пріорітетністю"
+      time_filter: "фільтрувати за датою"
+    copyright: "Ніна Москалик - Серпень..Жовтень 2013"
   devise:
-    confirmations:
-      confirmed: "Your account was successfully confirmed."
-      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+    login_header: "Увійти"
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid email or password."
-      locked: "Your account is locked."
-      not_found_in_database: "Invalid email or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
+      already_authenticated: 'Ви вже увійшли.'
+      unauthenticated: 'Ви маєте увійти або зареєструватися.'
+      unconfirmed: 'Ви маєте підтвердити Ваш обліковий запис.'
+      locked: 'Ваш обліковий запис заблоковано.'
+      invalid: 'Невірний email або пароль.'
+      invalid_token: 'Невірний токен.'
+      timeout: 'Час вашої сесії вичерпано. Увійдіть знову для продовження, будь ласка.'
+      inactive: 'Ваш обліковий запис ще не було активовано.'
+    sessions:
+      signed_in: 'Вхід успішний.'
+      signed_out: 'Вихід успішний.'
+    passwords:
+      send_instructions: 'Ви отримаєте інструкції зі скидання паролю через декілька хвилин.'
+      updated: 'Ваш пароль було успішно змінено.'
+      updated_not_active: 'Ваш пароль було успішно змінено.'
+      send_paranoid_instructions: "Ваш email існує у нашій базі даних, Вам надіслано посилання для відновлення вашого паролю"
+    confirmations:
+      send_instructions: 'На Ваш email надіслано інструкції з підтвердження облікового запису.'
+      send_paranoid_instructions: 'Якщо Ваш email існує у нашій базі даних, Вам надіслано інструкції з підтвердження облікового запису.'
+      confirmed: 'Ваш обліковий запис було успішно підтверджено.'
+    registrations:
+      signed_up: 'Вітаємо! Ви успішно зареєструвалися.'
+      inactive_signed_up: 'Ви успішно зареєструвалися. Але, Ви не можете увійти через те, що ваш обліковий запис %{reason}.'
+      updated: 'Ви успішно оновили свій обліковий запис.'
+      update_needs_confirmation: "Ви успішно оновили свій обліковий запис, але ми маємо перевірити Ваш email. Будь ласка, перевірте Ваш email та перейдіть за посиланням для того, щоб підтвердити Ваш email."
+      destroyed: 'До побачення! Ваш обліковий запис було успішно закрито. Сподіваємось незабаром побачитись з Вами знову.'
+      reasons:
+        inactive: 'не активний'
+        unconfirmed: 'не підтверджено'
+        locked: 'заблоковано'
+    unlocks:
+      send_instructions: 'На Ваш email надіслано інструкції з розблокування.'
+      unlocked: 'Ваш обліковий запис було успішно розблоковано.'
+      send_paranoid_instructions: 'Якщо Ваш email існує у нашій базі даних, Вам надіслано інструкції з розблокування.'
+    omniauth_callbacks:
+      success: 'Вхід успішний з облікового запису %{kind}.'
+      failure: 'Неможливо увійти з облікового запису %{kind} через те, що обліковий запис "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: 'Інструкції з підтвердження паролю'
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: 'Інструкції зі скидання паролю'
       unlock_instructions:
-        subject: "Unlock Instructions"
-    omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
-    passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
-    registrations:
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
-      updated: "You updated your account successfully."
-    sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-    unlocks:
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+        subject: 'Інструкції з розблокування'
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      expired: "прострочено, створіть новий"
+      not_found: "не знайдено"
+      already_confirmed: "вже було підтверджено, спробуйте увійти"
+      not_locked: "не було заблоковано"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "Виникла помилка, через яку неможливо зберегти зміни:"
+        other: "Виникли помилки (загалом - %{count}), через які неможливо зберегти зміни:"

@@ -9,12 +9,13 @@
 </head>
 <body>
 <header class='global_header'>
+<%= favicon_link_tag 'squirrel.ico'%>
 </header>
 <div id='authentication_views'>
 <%= yield %>
 </div>
 <div id="footer">
-  <p id="copyright">&copy Nina Moskalyk - August..October 2013</p>
+  <p id="copyright">&copy <%= t(:views)[:copyright]%></p>
 </div>
 </body>
 </html>

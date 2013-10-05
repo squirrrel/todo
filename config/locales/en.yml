@@ -51,8 +51,28 @@ en:
       completed_at: "Completed at"
     placeholders: 
       new: "Your new task here..."
-    signed_out_link:
+    signed_out_link: "Sign out"
+    signin_header: "Sign in" 
+    status:
+      open: "open"
+      in_progress: "in progress"
+    tooltips:
+      active_tasks: "active tasks"
+      completed_tasks: "completed tasks"
+      add_new_task: "add new task"
+      select_priority: "select priority"
+      complete_marked_items: "complete marked items"
+      delete_marked_items: "delete marked items"
+      reopen_marked_items: "reopen marked items"
+      delete: "delete"
+      edit: "edit"
+      complete: "complete"
+      reopen: "reopen"
+      priority_filter: "priority filter"
+      time_filter: "time filter"
+    copyright: "Nina Moskalyk - August..October 2013"
   devise:
+    login_header: "Увійти"
     confirmations:
       confirmed: "Your account was successfully confirmed."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."

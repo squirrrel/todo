@@ -5,14 +5,14 @@ class ApplicationController < ActionController::Base
   #respond_to :json, :html, :js
   #before_action :format_date
   rescue_from Exception, with: :handle_and_file
-  before_filter :log_user, only: ['create', 'destroy']
+  before_filter :log_user, only: ['create', 'destroy']  
 
   private
     def handle_and_file exception
     	Rails.logger.error "#{exception.class} | Message: #{exception.message}
                            \n ---------------------- \n #{exception.backtrace[0..5]}
                            \n ----------------------"
-    	render js: "$.errorMessanger({text: '#{t(:internal_server_error)}' });"
+    	render js: "$.errorMessanger({text: '#{t(:internal_server_error)[:message]}' });"
     end	
 
     def log_user

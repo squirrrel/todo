@@ -1,4 +1,4 @@
-<%= link_to 'Sign out', '/todo/user/signout', method: :delete, id: 'signout' %>
+<%= link_to t(:views)[:signed_out_link], '/todo/user/signout', method: :delete, id: 'signout' %>
 <span class='tooltip_3'>reopen</span>
 
 
@@ -31,9 +31,12 @@
 <% @task = task %>
 <%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
 <% %w{ description priority status created_at }.each do |attr|%>
-<% res = task.send attr %>
-<td id = '<%=attr%>' class='items <%=res%>'><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= res %></div></td>
-<span id='<%=attr + task.id.to_s%>_span' style = 'display:none'><%=res%></span>
+<% value = task.send attr %>
+
+<%= render partial: '/todo/shared/td_translations', locals: {attribute: attr, value: value}%>
+
+<td id = '<%=attr%>' class='items <%=@res%>'><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= @res %></div></td>
+<span id='<%=attr + task.id.to_s%>_span' style = 'display:none'><%=@res%></span>
 <% @dropdown ="#{task.id.to_s}" %>
 <%end%> 
 <%@task = task%>
@@ -52,4 +55,4 @@
 </div>
 
 <div id='validation' style='display:none;'>Please specify your new task Description</div>
-<div id='error_container' style= "width: 1200px; height: 100px;"></div>
+<%= render "/todo/shared/tooltip_titles"%>

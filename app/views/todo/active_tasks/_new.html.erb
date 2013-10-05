@@ -1,7 +1,7 @@
 <div id='new_tasks_form'>
 <%= form_for(:new, url: { action: 'create' }, :remote=> true, html:{onsubmit: "($('#validation').css('display','none'))"}) do |f| %>
 <%= select(:new, :priority, @priorities.collect{|p| p.id2name })  %>
-<%= f.text_field :description, placeholder: 'Your new task here...'%>
+<%= f.text_field :description, placeholder: t(:views)[:placeholders][:new]%>
 <%=submit_tag '+', id: 'add_me', class: 'add_me'%>
 <%end%>
 </div>
