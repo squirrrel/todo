@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   #respond_to :json, :html, :js
   #before_action :format_date
+  helper :application
   rescue_from Exception, with: :handle_and_file
   before_filter :log_user, only: ['create', 'destroy']  
 

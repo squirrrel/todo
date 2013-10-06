@@ -35,5 +35,7 @@
 
 * Implement Resizing and modify description text position and stuff
 
+* Add user name at the top on the left
+
 == There is sooo much #todo;)
 

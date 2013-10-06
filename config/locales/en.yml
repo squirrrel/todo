@@ -23,6 +23,8 @@
 en:
   internal_server_error:
     message: "Something went wrong while processing your request. Try to perform it later"
+  validations:
+    new_task: "Please specify your new task Description"
   notifications:
     completed: "task(s) completed"
     deleted: "task(s) deleted"
@@ -70,6 +72,9 @@ en:
       reopen: "reopen"
       priority_filter: "priority filter"
       time_filter: "time filter"
+    time:
+      months: "{Jan: 'Jan', Feb: 'Feb', Mar: 'Mar', Apr: 'Apr', May: 'May', June: 'June', July: 'July', Aug: 'Aug', Sept: 'Sept', Oct: 'Oct', Nov: 'Nov', Dec: 'Dec'}"
+      week: "{Mon: 'Mon', Tues: 'Tues', Wed: 'Wed', Thurs: 'Thurs', Fri: 'Fri', Sat: 'Sat', Sun: 'Sun' }"
     copyright: "Nina Moskalyk - August..October 2013"
   devise:
     login_header: "Увійти"

@@ -5,7 +5,6 @@ class Todo::ActiveTasksController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-
 		@priorities = set_priorities
 		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')
 		#BasicTask.where(type:'ActiveTask').order('created_at DESC')
@@ -28,6 +27,8 @@ class Todo::ActiveTasksController < ApplicationController
 				res == 'high' ? (t(:priorities)[:high]) : ( res == 'medium' ? t(:priorities)[:medium] : t(:priorities)[:low] )	
 			when 'status' then
 				res == 'open' ? t(:views)[:status][:open] : t(:views)[:status][:in_progress] 
+			when 'created_at' then
+				res.strftime("%a, %b %e, %l:%M %p")
 			else
 				res
 			end

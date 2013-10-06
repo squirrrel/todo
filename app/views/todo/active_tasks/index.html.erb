@@ -32,9 +32,7 @@
 <%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
 <% %w{ description priority status created_at }.each do |attr|%>
 <% value = task.send attr %>
-
-<%= render partial: '/todo/shared/td_translations', locals: {attribute: attr, value: value}%>
-
+<%get_translated(attr, value)%>
 <td id = '<%=attr%>' class='items <%=@res%>'><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= @res %></div></td>
 <span id='<%=attr + task.id.to_s%>_span' style = 'display:none'><%=@res%></span>
 <% @dropdown ="#{task.id.to_s}" %>
@@ -54,5 +52,5 @@
 </ul>
 </div>
 
-<div id='validation' style='display:none;'>Please specify your new task Description</div>
+<div id='validation' style='display:none;'><%= t(:validations)[:new_task]%></div>
 <%= render "/todo/shared/tooltip_titles"%>

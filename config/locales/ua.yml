@@ -22,6 +22,8 @@
 ua:
   internal_server_error:
     message: "Сталася помилка при виконанні Вашого запиту. Спробуйте пізніше"
+  validations:
+    new_task: "Будь ласка, вкажіть Вашу нову задачу"
   notifications:
     completed: "задача(і) виконано"
     deleted: "задача(і) видалено"
@@ -69,6 +71,9 @@ ua:
       reopen: "відмітити як активну"
       priority_filter: "фільтрувати за пріорітетністю"
       time_filter: "фільтрувати за датою"
+    time:
+      months: "{Jan: 'Січ', Feb: 'Лют', Mar: 'Бер', Apr: 'Кві', May: 'Тра', June: 'Черв', July: 'Лип', Aug: 'Серп', Sept: 'Вер', Oct: 'Жовт', Nov: 'Лист', Dec: 'Гру'}"
+      week: "{Mon: 'Пн', Tues: 'Вт', Wed: 'Ср', Thurs: 'Чт', Fri: 'Пт', Sat: 'Сб', Sun: 'Нд'}"
     copyright: "Ніна Москалик - Серпень..Жовтень 2013"
   devise:
     login_header: "Увійти"

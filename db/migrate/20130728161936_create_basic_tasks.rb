@@ -6,7 +6,7 @@ class CreateBasicTasks < ActiveRecord::Migration
       t.string	  :status, :default => 'completed'
       t.string	  :type 
       t.timestamps 
-      t.timestamp :completed_at, :default => 'not yet completed'
+      t.timestamp :completed_at
     end
   end
 end

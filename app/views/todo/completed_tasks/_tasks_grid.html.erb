@@ -45,7 +45,7 @@
 
 <% %w{description priority completed_at}.each do |attr|%>
 <% value = task.send attr %>
-<%= render partial: '/todo/shared/td_translations', locals: {attribute: attr, value: value}%>
+<%get_translated(attr, value)%>
 <td id='<%=attr%>' class='items'><div><%= @res %></div></td>
 <%end%>
 <td style = 'width: 50px;'><%= link_to '↺', reopen_todo_completed_task_path(task.id), method: :patch, class: "reopen #{task.id}_action", style: 'display: none', remote: true %></td>

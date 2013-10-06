@@ -1,8 +1,0 @@
-
-<% @res = if attribute == 'status'%>
-<% value == 'open' ? t(:views)[:status][:open] : t(:views)[:status][:in_progress] %>
-<% elsif attribute == 'priority'%>
-<% value == 'high' ? (t(:priorities)[:high]) : ( value == 'medium' ? t(:priorities)[:medium] : t(:priorities)[:low] )%>
-<%else%>
-<%value%>
-<%end%>
