@@ -1,0 +1,10 @@
+<div id='sign-in-wrapper'>
+<h1>#TODO</h1>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {id: 'sign-in-form'}) do |f| %>
+<br/><%= f.email_field :email, autofocus: true, placeholder: 'Email', class: 'sign-in-input' %>
+<br/><%= f.password_field :password, placeholder: 'Password', class: 'sign-in-input' %>
+<br/><br/><%= f.submit t(:devise)[:login_header], class: 'sign-in-submit' %>
+<% end %>
+<br/>
+<%= render "devise/shared/links" %>
+</div>
