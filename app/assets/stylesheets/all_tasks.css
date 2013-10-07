@@ -1,12 +1,6 @@
 @charset "UTF-8";
 body {
-  background: url("images/chalkboard.png"); }
-
-#authentication_views {
-  width: 100%;
-  height: 100%;
-  background: url("images/chalkboard.jpg");
-  z-index: 100; }
+  background: url("images/lodka.png"); }
 
 input {
   font-family: "Courier New", Courier, monospace;
@@ -228,9 +222,9 @@ p#copyright {
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
   font-weight: lighter;
-  color: #848484; }
+  color: rgba(255, 255, 255, 0.9); }
 
-.add_me {
+.add_me, .sign-in-submit, #resend-pass-submit {
   height: 29px;
   background-color: #57c791;
   width: 45px;
@@ -240,16 +234,77 @@ p#copyright {
   font-align: center;
   float: center;
   padding-bottom: 26px;
-  border: 1.7px solid #ef4c3e;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   border: 1px solid rgba(17, 17, 17, 0.3);
   text-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px;
   box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px; }
 
-.add_me:hover {
+.add_me:hover, .sign-in-submit:hover, #resend-pass-submit:hover {
   cursor: pointer;
   border: 1px solid rgba(17, 17, 17, 0.5); }
+
+.sign-in-submit, #resend-pass-submit {
+  width: 100px;
+  background: #3ebb87;
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 13px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-align: center;
+  line-height: 17px;
+  box-shadow: none;
+  border-radius: 0px;
+  border: none;
+  margin-left: 207px; }
+
+.sign-in-submit:hover, #resend-pass-submit:hover {
+  background: #3ec787;
+  border: none; }
+
+#resend-pass-submit {
+  width: 308px;
+  margin-left: 0px; }
+
+.sign-in-input {
+  font-family: arial;
+  font-weight: normal;
+  font-size: 14px;
+  color: #111111;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: none;
+  position: center;
+  width: 300px;
+  outline: none; }
+
+.sign-in-input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none; }
+
+div#sign-in-wrapper {
+  background: rgba(255, 255, 255, 0.5);
+  width: 370px;
+  box-shadow: none;
+  margin: 0 auto;
+  padding: 20px 10px 20px 60px;
+  font-family: purisa;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(17, 17, 17, 0.7); }
+
+.devise-link {
+  text-decoration: none;
+  color: #111111;
+  font-size: 13px;
+  font-weight: normal;
+  font-family: arial;
+  margin-top: 10px; }
+
+.devise-link:hover {
+  color: #39ac71; }
 
 span.separator {
   color: #bdbdbd;

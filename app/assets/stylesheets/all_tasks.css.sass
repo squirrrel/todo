@@ -1,6 +1,6 @@
 //GLOBAL MIXIN
 body
-	background: url('images/chalkboard.png')
+	background: url('images/lodka.png')
 
 @mixin fonts($size,$weight)
 	font:
@@ -235,7 +235,7 @@ p#copyright
 		family: "Courier New", Courier, monospace
 		size: 12px	
 		weight: lighter
-	color: #848484	
+	color: rgba(255, 255, 255, 0.9)	
 
 //ADD button 
 .add_me
@@ -249,7 +249,6 @@ p#copyright
 		align: center	
 	float: center
 	padding-bottom: 26px
-	border: 1.7px solid #EF4C3E
 	border-bottom-right-radius: 2px
 	border-top-right-radius: 2px
 	border: 1px solid rgba(17, 17, 17, 0.3)
@@ -259,6 +258,77 @@ p#copyright
 .add_me:hover
 	cursor: pointer	
 	border: 1px solid rgba(17, 17, 17, 0.5)
+
+.sign-in-submit
+	@extend .add_me
+	width: 100px
+	background: #3EBB87	
+	font:
+		family: arial
+		weight: lighter
+		size: 13px
+	letter-spacing: 1px
+	word-spacing: 2px
+	text-align: center
+	line-height: 17px
+	box-shadow: none
+	border-radius: 0px
+	border: none
+	margin-left: 207px
+
+.sign-in-submit:hover
+	background: #3EC787	
+	border: none 
+
+#resend-pass-submit
+	@extend .sign-in-submit
+	width: 308px
+	margin-left: 0px	
+
+
+.sign-in-input 
+	font:
+		family: arial
+		weight: normal
+		size: 14px
+	color: rgb(17, 17, 17)
+	background: rgba(255, 255, 255, 0.7)
+	border: 1px solid rgba(255, 255, 255, 0.0)
+	border-radius: none
+	position: center
+	width: 300px
+	outline: none
+
+.sign-in-input:focus
+	border: 1px solid rgba(255, 255, 255, 0.9)	
+	background: rgba(255, 255, 255, 0.9)
+	outline: none
+
+
+div#sign-in-wrapper
+	background: rgba(255, 255, 255, 0.5)
+	width: 370px
+	box-shadow: none
+	margin: 0 auto
+	padding: 20px 10px 20px 60px 
+	font:
+		family: purisa
+		size: 16px
+		weight: bold
+	color: rgba(17, 17, 17, 0.7)	
+
+
+.devise-link
+	text-decoration: none
+	color: rgb(17, 17, 17)
+	font:
+		size: 13px
+		weight: normal
+		family: arial
+	margin-top: 10px		
+
+.devise-link:hover
+	color: #39AC71
 
 //ICONS
 span.separator 

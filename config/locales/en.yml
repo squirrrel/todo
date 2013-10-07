@@ -77,7 +77,7 @@ en:
       week: "{Mon: 'Mon', Tues: 'Tues', Wed: 'Wed', Thurs: 'Thurs', Fri: 'Fri', Sat: 'Sat', Sun: 'Sun' }"
     copyright: "Nina Moskalyk - August..October 2013"
   devise:
-    login_header: "Увійти"
+    login_header: "Sign in"
     confirmations:
       confirmed: "Your account was successfully confirmed."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
