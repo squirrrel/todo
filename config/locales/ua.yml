@@ -73,10 +73,17 @@ ua:
       time_filter: "фільтрувати за датою"
     time:
       months: "{Jan: 'Січ', Feb: 'Лют', Mar: 'Бер', Apr: 'Кві', May: 'Тра', June: 'Черв', July: 'Лип', Aug: 'Серп', Sept: 'Вер', Oct: 'Жовт', Nov: 'Лист', Dec: 'Гру'}"
-      week: "{Mon: 'Пн', Tues: 'Вт', Wed: 'Ср', Thurs: 'Чт', Fri: 'Пт', Sat: 'Сб', Sun: 'Нд'}"
+      week: "{Mon: 'Пн', Tue: 'Вт', Wed: 'Ср', Thurs: 'Чт', Fri: 'Пт', Sat: 'Сб', Sun: 'Нд'}"
     copyright: "Ніна Москалик - Серпень..Жовтень 2013"
   devise:
-    login_header: "Увійти"
+    forms:
+      login_header: "Увійти"
+      signup_link: "Зареєструватися"
+      forgot_pass: "Забули свій пароль?"
+      pass_placeholder: "Пароль"
+      conf_pass_plcholder: "Підтвердити пароль"
+      email_placeholder: "Адреса eлектронної пошти"
+      send_instructions: "Відправити мені інструкцію для зміни пароля"
     failure:
       already_authenticated: 'Ви вже увійшли.'
       unauthenticated: 'Ви маєте увійти або зареєструватися.'

@@ -74,10 +74,17 @@ en:
       time_filter: "time filter"
     time:
       months: "{Jan: 'Jan', Feb: 'Feb', Mar: 'Mar', Apr: 'Apr', May: 'May', June: 'June', July: 'July', Aug: 'Aug', Sept: 'Sept', Oct: 'Oct', Nov: 'Nov', Dec: 'Dec'}"
-      week: "{Mon: 'Mon', Tues: 'Tues', Wed: 'Wed', Thurs: 'Thurs', Fri: 'Fri', Sat: 'Sat', Sun: 'Sun' }"
+      week: "{Mon: 'Mon', Tue: 'Tue', Wed: 'Wed', Thurs: 'Thurs', Fri: 'Fri', Sat: 'Sat', Sun: 'Sun' }"
     copyright: "Nina Moskalyk - August..October 2013"
   devise:
-    login_header: "Sign in"
+    forms:
+      login_header: "Sign in"
+      signup_link: "Sign up"
+      forgot_pass: "Forgot your password?"
+      pass_placeholder: "Password"
+      conf_pass_plcholder: "Confirm password" 
+      email_placeholder: "Email"
+      send_instructions: "Send me reset password instructions"
     confirmations:
       confirmed: "Your account was successfully confirmed."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."

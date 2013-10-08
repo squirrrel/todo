@@ -17,8 +17,6 @@ do completed_tasks = ->
 	
 do tooltips = ->
 	$(document).ready(()->		 
-		console.log a = $("span#locales").data('special')
-		console.log jQuery.parseJSON(a)
 		$('.jcarousel-next, .jcarousel-prev, .add_me, #new_priority, #complete_for_checkbox, #delete_for_checkbox, #reopen_for_checkbox, th#delete, th#edit').attr('rel','tooltip')
 			
 		$('div.jcarousel-prev').attr('title', $('span#active_tasks').data('locales')) if $('div.jcarousel-prev').is(':disabled') is true

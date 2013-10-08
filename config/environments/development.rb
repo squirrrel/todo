@@ -44,6 +44,6 @@ Todo::Application.configure do
   config.active_record.whitelist_attributes = false
   # config.assets.precompile += ['cancelokedit.js']
   config.log_level = :debug
-  config.i18n.default_locale = :en
+  config.i18n.default_locale = :ua
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

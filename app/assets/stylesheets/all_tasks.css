@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background: url("images/lodka.png"); }
+  background: url("images/irongrip.png"); }
 
 input {
   font-family: "Courier New", Courier, monospace;
@@ -134,16 +134,19 @@ td.items {
   height: 30px;
   width: 60px; }
 
+td#description {
+  text-align: left; }
+
 tr.completed {
   background-color: lightcyan; }
 
-tr.high {
+tr.high, tr.висока {
   background-color: #ffe5b4; }
 
-tr.medium {
+tr.medium, tr.середня {
   background-color: #fff8c6; }
 
-tr.low {
+tr.low, tr.низька {
   background-color: #ffffe9; }
 
 div.headers_container {
@@ -282,6 +285,16 @@ p#copyright {
 .sign-in-input:focus {
   border: 1px solid rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.9);
+  outline: none; }
+
+.sign-in-input:focus:hover {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none; }
+
+.sign-in-input:hover {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0);
   outline: none; }
 
 div#sign-in-wrapper {

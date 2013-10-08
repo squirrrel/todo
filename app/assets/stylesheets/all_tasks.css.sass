@@ -1,6 +1,6 @@
 //GLOBAL MIXIN
 body
-	background: url('images/lodka.png')
+	background: url('images/irongrip.png')
 
 @mixin fonts($size,$weight)
 	font:
@@ -134,16 +134,19 @@ td.items
 	height: 30px
 	width: 60px	
 
+td#description
+	text-align: left	
+
 tr.completed 
 	background-color: #E0FFFF
 
-tr.high
+tr.high, tr.висока
 	background-color: #FFE5B4 
 
-tr.medium
+tr.medium, tr.середня
 	background-color: #FFF8C6 
 	
-tr.low
+tr.low, tr.низька
 	background-color: rgb(255, 255, 233) 	
 
 div.headers_container
@@ -304,6 +307,17 @@ p#copyright
 	background: rgba(255, 255, 255, 0.9)
 	outline: none
 
+.sign-in-input:focus:hover
+	border: 1px solid rgba(255, 255, 255, 0.9)	
+	background: rgba(255, 255, 255, 0.9)
+	outline: none
+	
+
+.sign-in-input:hover
+	background: rgba(255, 255, 255, 0.7)
+	border: 1px solid rgba(255, 255, 255, 0.0)
+	outline: none
+	
 
 div#sign-in-wrapper
 	background: rgba(255, 255, 255, 0.5)

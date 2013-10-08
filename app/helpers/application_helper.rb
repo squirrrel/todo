@@ -12,8 +12,11 @@ module ApplicationHelper
 		 				day = /\w+/.match(res)[0] 
 						copy = res.dup.gsub!(/#{day}/, '')
 						month = /\w+/.match(copy)[0]
-						{'week' => day, 'months' => month}.each{|k,v| raw = t(:views)[:time][:"#{k}"]; parsed = eval raw
-						res.gsub!(/#{v}/,parsed[:"#{v}"])}
+						{:week => day, :months => month}.each do |k,v| 
+						 	raw = t(:views)[:time][:"#{k}"]
+							parsed = eval(raw)
+							res.gsub!(/#{v}/,parsed[:"#{v}"])
+						end
 						I18n.locale == :ua ? (res.gsub!(/AM|PM/, '')) : res
 					else
 						value

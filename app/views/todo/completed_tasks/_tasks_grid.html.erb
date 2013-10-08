@@ -28,6 +28,7 @@
 <th style='width:20px;background-color: #E7E9D3;'></th>
 <th style='width:50px;background-color: #E7E9D3;'></th>
 </tr>
+<tr class='task-items'></tr>
 </tbody>
 </table>
 
@@ -38,7 +39,6 @@
 <%if task == nil%>
 <%'do nothing'%>
 <%else%>
-<tr class='task-items'></tr>
 <tr class="<%=task.id%> to-be-hovered completed" onmouseover = "show_actions(<%=task.id%>), bold(this)" onmouseout = "hide_actions(<%=task.id%>), unbold(this)">
 <% @task = task %>
 <%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
