@@ -22,12 +22,14 @@ input
 	float: center
 	border-bottom-left-radius: 2px
 	border-top-left-radius: 2px
+	outline: none
 
 input:hover
 	border:
 		top: 1px solid #BDBDBD
 		bottom: 1px solid #BDBDBD	 
-		left: 1px solid #BDBDBD			
+		left: 1px solid #BDBDBD	
+		outline: none		
 
 input.pick 
 	width: 1em
@@ -39,10 +41,27 @@ input.pick
 	float: center
 	border: 1px solid #2e2e2e
 	background-color: #BDBDBD 
+	outline: none
 
 input.pick:hover
 	cursor: pointer	
+	outline: none
 
+input#new_description
+	outline: none
+	border: 1px solid rgba(255, 255, 255, 0.0)	
+	background: rgba(255, 255, 255, 0.7)	
+	border-radius: 0px
+	width: 400px
+
+input#new_description:hover
+	outline: none
+	border-radius: 0px
+
+input#new_description:focus
+	border: 1px solid rgba(255, 255, 255, 0.9)	
+	background: rgba(255, 255, 255, 0.9)
+	outline: none
 
 @mixin dropdown_sample
 	@include fonts(13px,lighter)
@@ -54,6 +73,8 @@ input.pick:hover
 	text-align: justify
 	float: center
 	margin-top: 10px
+	border: none
+	outline: none
 	overflow: hidden
 	-moz-appearance: none
 	text:
@@ -66,7 +87,14 @@ select
 	borderbrush: transparent
 	border: 0
 	padding: 0
-	@include dropdown_sample		
+	@include dropdown_sample	
+
+select:hover
+	border: none
+	cursor: pointer
+
+select:before
+	border: none		
 
 select#new_priority
 	width: 20px
@@ -134,8 +162,12 @@ td.items
 	height: 30px
 	width: 60px	
 
-td#description
-	text-align: left	
+td#description div
+	text-align: left
+	overflow: hidden
+	white-space: nowrap
+	text-overflow: ellipsis	
+	width: 190px
 
 tr.completed 
 	background-color: #E0FFFF
@@ -157,8 +189,12 @@ div.headers_container
 div#new_tasks_form
 	margin:
 		top: 5px
-		left: 620px
-		width: 150px
+		left: 420px
+		width: 400px
+
+div#new_tasks_form form 
+	width: 500px
+	margin-left: 0px		
 
 div#tasks_container
 	margin-top: 0px	
@@ -185,7 +221,7 @@ div.shadow
 	height: 500px
 	width: 980px
 	margin-left: 50px
-	background: url('images/little_pluses.png')
+	background: rgba(255, 255, 255, 0.3)
 	box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
 	-moz-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
 	-webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.50)
@@ -257,6 +293,7 @@ p#copyright
 	border: 1px solid rgba(17, 17, 17, 0.3)
 	text-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px
 	box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px
+	outline: none
 
 .add_me:hover
 	cursor: pointer	
@@ -557,7 +594,45 @@ button.edit:hover
 	bottom: -10px
 	border-width: 7px
 	border-style: solid
-	border-color: rgba(239, 76, 62, 0.6) transparent transparent transparent		
+	border-color: rgba(239, 76, 62, 0.6) transparent transparent transparent	
+
+#in-detail-description
+	position: absolute
+	padding: 2px 2px 2px 2px
+	max-width: 400px
+	line-height: 15px
+	text-align: left
+	z-index: 10
+	background: rgba(255, 255, 255, 0.9)
+	border: 1px solid rgba(17, 17, 17, 0.2)
+	box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 2px 0px
+	color: rgba(17, 17, 17, 0.9)
+	font:
+		weight: normal
+		size: 12px
+		family: arial
+
+#in-detail-description::after
+	left: 10% 
+	top: 100%
+	z-index: 10
+	bottom: 150px
+	content: ""
+	position: absolute
+	border-width: 4px
+	border-style: solid
+	border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent			
+
+#close_description
+	float: right
+	color: rgba(17, 17, 17, 0.7)
+	font:
+		size: 14px
+		weight: lighter
+		family: arial
+
+#close_description:hover
+	cursor: pointer
 
 div#easyNotification
 	background: rgba(17, 17, 17, 0.5)

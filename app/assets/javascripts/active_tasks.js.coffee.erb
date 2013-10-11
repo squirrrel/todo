@@ -1,21 +1,3 @@
-	do validate = ->
-		$(document).ready(
-			()-> $("div#new_tasks_form form").submit((e)=>
-				dom_target = document.getElementById('new_description') 
-				query_target = $('input#new_description')
-				query_target_height = query_target.offset().top - query_target.outerHeight()
-				if dom_target.value.match(/\S+/)
-					true
-				else	
-					$('div#validation').css('top', "#{query_target_height}px")
-										.css('left', "#{query_target.offset().left}px")
-					  					.css('display','table')
-					e.preventDefault 
-					false
-			)
-		)	
-
-
 	@trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
 		

@@ -15,6 +15,8 @@ module ApplicationHelper
 						{:week => day, :months => month}.each do |k,v| 
 						 	raw = t(:views)[:time][:"#{k}"]
 							parsed = eval(raw)
+							p res
+							p parsed
 							res.gsub!(/#{v}/,parsed[:"#{v}"])
 						end
 						I18n.locale == :ua ? (res.gsub!(/AM|PM/, '')) : res

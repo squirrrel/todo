@@ -13,7 +13,6 @@ do completed_tasks = ->
 			type: "GET",
 			url: "http://localhost:3000/todo/completed_tasks/"})
 	)
-
 	
 do tooltips = ->
 	$(document).ready(()->		 
@@ -30,6 +29,24 @@ do tooltips = ->
 		console.log $('span#delete').data('locales')
 		$('th#edit').attr('title', $('span#edit').data('locales'))
 	)	
+
+do validate = ->
+	$(document).ready(
+		()-> $("div#new_tasks_form form").submit((e)=>
+			dom_target = document.getElementById('new_description') 
+			query_target = $("input#new_description")
+			query_target_height = query_target.offset().top - query_target.outerHeight()
+			if dom_target.value.match(/\S+/)
+				true
+			else	
+				$('div#validation').css('top', "#{query_target_height}px")
+									.css('left', "#{query_target.offset().left}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false	
+		)
+	)	
+
 
 do arrows_onclick = ->
 	$(document).ready(()->
@@ -141,7 +158,7 @@ do read_dates = ->
 	collection = if subject is 'description' 
 		$(container).find("td##{subject} div").each(()-> td_text = $(this).text(); collection.push(td_text))
 		collection.sort()		
-	else if subject is 'priority' 	
+	else if subject is 'priority'
 		['high', 'medium', 'low']
 	else if subject is 'status'
 		['in progress','open']	
@@ -154,3 +171,16 @@ do read_dates = ->
 			$(container).find("td:contains('#{value}')").parent().appendTo("#{container} tbody") for value in collection
 	else if order is 'desc'
 			$(container).find("td:contains('#{value}')").parent().prependTo("#{container} tbody") for value in collection
+
+@show_detailed_description = show_detailed_description = (obj)->
+	$('div#in-detail-description').remove()
+	$('div#tasks_container').attr('style', 'overflow-y:hidden;')
+	text = $(obj).text()
+	subject_height = $(obj).parent().offset().top - $(obj).parent().outerHeight(true)
+	subject_left = $(obj).offset().left
+	$('body').append("<div id='in-detail-description' style='top:#{subject_height}px; left:#{subject_left}px' onclick='hide_detailed_description(this)'><span>#{text}</span></div>")
+	
+
+@hide_detailed_description = hide_detailed_description = (obj)->
+	$(obj).remove()
+	$('div#tasks_container').attr('style', 'overflow-y:auto;')

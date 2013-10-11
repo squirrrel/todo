@@ -15,12 +15,14 @@ input {
   padding-left: 5px;
   float: center;
   border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px; }
+  border-top-left-radius: 2px;
+  outline: none; }
 
 input:hover {
   border-top: 1px solid #bdbdbd;
   border-bottom: 1px solid #bdbdbd;
-  border-left: 1px solid #bdbdbd; }
+  border-left: 1px solid #bdbdbd;
+  border-outline: none; }
 
 input.pick {
   width: 1em;
@@ -31,10 +33,28 @@ input.pick {
   margin-bottom: 8px;
   float: center;
   border: 1px solid #2e2e2e;
-  background-color: #bdbdbd; }
+  background-color: #bdbdbd;
+  outline: none; }
 
 input.pick:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
+
+input#new_description {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 0px;
+  width: 400px; }
+
+input#new_description:hover {
+  outline: none;
+  border-radius: 0px; }
+
+input#new_description:focus {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none; }
 
 select {
   height: 20px;
@@ -52,10 +72,19 @@ select {
   text-align: justify;
   float: center;
   margin-top: 10px;
+  border: none;
+  outline: none;
   overflow: hidden;
   -moz-appearance: none;
   text-indent: 0.01px;
   text-overflow: "⌄"; }
+
+select:hover {
+  border: none;
+  cursor: pointer; }
+
+select:before {
+  border: none; }
 
 select#new_priority, select#elapsed_time, select#priority_set {
   width: 20px;
@@ -72,6 +101,8 @@ select#new_priority, select#elapsed_time, select#priority_set {
   text-align: justify;
   float: center;
   margin-top: 10px;
+  border: none;
+  outline: none;
   overflow: hidden;
   -moz-appearance: none;
   text-indent: 0.01px;
@@ -134,8 +165,12 @@ td.items {
   height: 30px;
   width: 60px; }
 
-td#description {
-  text-align: left; }
+td#description div {
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 190px; }
 
 tr.completed {
   background-color: lightcyan; }
@@ -156,8 +191,12 @@ div.headers_container {
 
 div#new_tasks_form {
   margin-top: 5px;
-  margin-left: 620px;
-  margin-width: 150px; }
+  margin-left: 420px;
+  margin-width: 400px; }
+
+div#new_tasks_form form {
+  width: 500px;
+  margin-left: 0px; }
 
 div#tasks_container, div#completed_tasks_container {
   margin-top: 0px;
@@ -182,7 +221,7 @@ div.shadow {
   height: 500px;
   width: 980px;
   margin-left: 50px;
-  background: url("images/little_pluses.png");
+  background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
   -moz-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
   -webkit-box-shadow: 0px 0px 12px 4px rgba(34, 2, 0, 0.5);
@@ -241,7 +280,8 @@ p#copyright {
   border-top-right-radius: 2px;
   border: 1px solid rgba(17, 17, 17, 0.3);
   text-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px;
-  box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px; }
+  box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px;
+  outline: none; }
 
 .add_me:hover, .sign-in-submit:hover, #resend-pass-submit:hover {
   cursor: pointer;
@@ -525,6 +565,42 @@ button.edit:hover {
   border-width: 7px;
   border-style: solid;
   border-color: rgba(239, 76, 62, 0.6) transparent transparent transparent; }
+
+#in-detail-description {
+  position: absolute;
+  padding: 2px 2px 2px 2px;
+  max-width: 400px;
+  line-height: 15px;
+  text-align: left;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 2px 0px;
+  color: rgba(17, 17, 17, 0.9);
+  font-weight: normal;
+  font-size: 12px;
+  font-family: arial; }
+
+#in-detail-description::after {
+  left: 10%;
+  top: 100%;
+  z-index: 10;
+  bottom: 150px;
+  content: "";
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent; }
+
+#close_description {
+  float: right;
+  color: rgba(17, 17, 17, 0.7);
+  font-size: 14px;
+  font-weight: lighter;
+  font-family: arial; }
+
+#close_description:hover {
+  cursor: pointer; }
 
 div#easyNotification {
   background: rgba(17, 17, 17, 0.5);

@@ -33,7 +33,7 @@
 <% %w{ description priority status created_at }.each do |attr|%>
 <% value = task.send attr %>
 <%get_translated(attr, value)%>
-<td id = '<%=attr%>' class='items <%=@res%>'><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)"><%= @res %></div></td>
+<td id = '<%=attr%>' class='items <%=@res%>'><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)" onclick="show_detailed_description(this)"><%= @res %></div></td>
 <span id='<%=attr + task.id.to_s%>_span' style = 'display:none'><%=@res%></span>
 <% @dropdown ="#{task.id.to_s}" %>
 <%end%> 
