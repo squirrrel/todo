@@ -9,6 +9,10 @@ class Todo::ActiveTasksController < ApplicationController
 		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')
 		#BasicTask.where(type:'ActiveTask').order('created_at DESC')
 		#render json: tasks 
+		respond_to do |format|
+			format.js{ render 'index.js.erb' }
+			format.html{render 'index.html.erb'} 
+		end
 	end
 
 	def new
@@ -36,7 +40,7 @@ class Todo::ActiveTasksController < ApplicationController
 		row = "<tr>#{(localised_items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
 		notification = t(:notifications)[:created]
 		render js: "! function(){ 
-						$('#{row}').insertBefore('table#1 .task-items');
+						$.ajax({type: 'GET', url:'http://localhost:3000/todo/'});
 						$.easyNotification({text: '#{notification}'});
 					}();"
 	end

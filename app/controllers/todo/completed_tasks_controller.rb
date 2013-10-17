@@ -9,7 +9,7 @@ class Todo::CompletedTasksController < ApplicationController
 	 	@priorities = set_priorities
 	 	@default_option = DefaultTime
  		@tasks =  CompletedTask.where(user_id: "#{current_user.id}").order('completed_at DESC') 		 		      	
-      	render 'filter.js.erb' 	
+      	render 'index.js.erb' 	
 	end	
 
 	def reopen	

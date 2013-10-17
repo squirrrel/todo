@@ -1,10 +1,10 @@
 	@trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
 		$('div#description' + task_id).attr('contenteditable','true')
 		
-		$('div#priority' + task_id).replaceWith('<select><option>' + 
+		$('div#priority' + task_id).replaceWith('<select class="embedded"><option>' + 
 			'high</option><option>medium</option>' + 
 			'<option>low</option></select>')
-		$('div#status' + task_id).replaceWith('<select><option>open</option>' +
+		$('div#status' + task_id).replaceWith('<select class="embedded"><option>open</option>' +
 			'<option>in progress</option></select>')
 			 
 		$('tr.' + task_id).removeAttr('onmouseout')

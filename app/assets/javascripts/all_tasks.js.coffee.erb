@@ -26,11 +26,10 @@ do tooltips = ->
 		$('div#delete_for_checkbox').attr('title', $('span#delete_marked_items').data('locales'))
 		$('div#reopen_for_checkbox').attr('title', $('span#reopen_marked_items').data('locales'))
 		$('th#delete').attr('title', $('span#delete').data('locales'))
-		console.log $('span#delete').data('locales')
 		$('th#edit').attr('title', $('span#edit').data('locales'))
 	)	
 
-do validate = ->
+do validate_new_task = ->
 	$(document).ready(
 		()-> $("div#new_tasks_form form").submit((e)=>
 			dom_target = document.getElementById('new_description') 
@@ -45,18 +44,161 @@ do validate = ->
 				e.preventDefault 
 				false	
 		)
+	)
+
+do validate_email_onsignin = ->
+	$(document).ready(
+		()-> $("div#sessions_wrapper form").submit((e)=>
+			$('.empty_email, .invalid_email').attr('style', 'display:none;')
+			dom_target = document.getElementById('user_email') 
+			query_target = $("input#user_email")
+			if dom_target.value.match(/^\w+\.?\w+\@\w+\.\w{2,3}$/)
+				true
+			else	
+				validation = if dom_target.value.match(/^\s*$/)
+					'empty_email'
+				else
+					'invalid_email'	
+				$("div.#{validation}").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.#{validation}").outerWidth()- 4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false	
+		)
+
 	)	
 
+do validate_password_onsignin = ->
+	$(document).ready(
+		()-> $("div#sessions_wrapper form").submit((e)=>
+			$('.empty_password').attr('style', 'display:none;')	
+			$('input#signinpass').trigger('blur')	
+			dom_target = document.getElementById('signinpass') 
+			query_target = $("input#signinpass")
+			if dom_target.value.match(/^\s*$/) 
+				$("div.empty_password").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.empty_password").outerWidth() - 4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false	
+			else	
+				true
+		)
+
+	)	
+
+
+do validate_email_onresend = ->
+	$(document).ready(
+		()-> $("div#resend_wrapper form").submit((e)=>
+			$('.empty_email, .invalid_email').attr('style', 'display:none;')
+			$('input#resend_email').trigger('blur')
+			dom_target = document.getElementById('resend_email') 
+			query_target = $("input#resend_email")
+			if dom_target.value.match(/^\w+\.?\w+\@\w+\.\w{2,3}$/)
+				true
+				$.easyNotification(text: 'hi')
+			else	
+				validation = if dom_target.value.match(/^\s*$/)
+					'empty_email'
+				else
+					'invalid_email'	
+				$("div.#{validation}").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.#{validation}").outerWidth()- 4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false	
+		)
+
+	)	
+
+do validate_email_registration = ->
+	$(document).ready(
+		()-> $("div#registration_wrapper form").submit((e)=>
+			$('.empty_email, .invalid_email').attr('style', 'display:none;')
+			dom_target = document.getElementById('register_email') 
+			query_target = $("input#register_email")
+			if dom_target.value.match(/^\w+\@\w+\.\w{2,3}$/)
+				true
+			else	
+				validation = if dom_target.value.match(/^\s*$/)
+					'empty_email'
+				else
+					'invalid_email'	
+				$("div.#{validation}").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.#{validation}").outerWidth()- 4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false	
+		)
+
+	)
+
+do validate_password_registration = ->
+	$(document).ready(
+		()-> $("div#registration_wrapper form").submit((e)=>
+			$('.empty_password, .invalid_password').attr('style', 'display:none;')
+			dom_target = document.getElementById('register_pass') 
+			query_target = $("input#register_pass")
+			if dom_target.value.match(/^\w{8,}\d{2,}$/)
+				true
+			else	
+				validation = if dom_target.value.match(/^\s*$/)
+					'empty_password'
+				else
+					'invalid_password'	
+				$("div.#{validation}").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.#{validation}").outerWidth()- 4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false	
+		)
+
+	)
+
+do confirm_password_registration = ->
+	$(document).ready(
+		()-> $("div#registration_wrapper form").submit((e)=>
+			$('#devise_validation_retype, .dont_match').attr('style', 'display:none;')
+			dom_target = document.getElementById('user_password_confirmation') 
+			dom_target_2 = document.getElementById('register_pass') 
+			query_target = $("input#user_password_confirmation")
+			if dom_target.value.match(/^\s*$/)
+				$("div.confirm_pass").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.confirm_pass").outerWidth()-4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false
+			else if dom_target_2.value isnt dom_target.value
+				$("div.dont_match").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+						       		.css('left', "#{query_target.offset().left - $("div.dont_match").outerWidth()-4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false 		
+			else	
+				true
+		)
+
+	)	
 
 do arrows_onclick = ->
 	$(document).ready(()->
 		$('.jcarousel-next, .jcarousel-prev').click(()-> 
 			$("input[type='checkbox']:checked").prop('checked', false)
 			$("input[type='checkbox'], div.checkbox_button, div#validation").hide()
+			$('th.checkbox').removeClass('headers')
 			window.completed_dates = new Array
 			$('div#completed_tasks_container').find("td#completed_at div").each(()-> td_text = $(this).text(); completed_dates.push(td_text))
 		)
 	)
+
+do calculate_everything = ->
+	$(document).ready(()->
+		console.log $('table#1').offset().top
+		console.log $('.shadow').offset().top
+		console.log $('#new_tasks_form').offset().top
+	)		
+
 
 do read_dates = ->
 	$(document).ready(()->
@@ -64,6 +206,15 @@ do read_dates = ->
 		$('div#tasks_container').find("td#created_at div").each(()-> td_text = $(this).text(); active_dates.push(td_text))
 	)	
 
+do remove_class = ->
+	$(document).ready(()->
+		$('th.checkbox').each(()-> $(this).removeClass('headers'))
+	)		
+
+do calculate_top = ->
+	$(document).ready(()->
+		console.log $('#delete_for_checkbox').offset().top
+	)
 			
 @show_actions = show_actions = (task_id)->
 	$('.' + task_id + '_action' + ', .pipe' + task_id).show()
@@ -88,6 +239,8 @@ do read_dates = ->
 
 @show_boxes = show_boxes = (task_id)->
 	$("input[type='checkbox']").show()
+	console.log $('#complete_for_checkbox').offset().top
+	console.log $('.shadow').offset().top
 
 @hide_boxes = hide_boxes = (task_id)->
 	box = "input[type='checkbox']"	

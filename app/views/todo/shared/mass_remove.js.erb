@@ -1,2 +1,8 @@
 $("input:checked").each(function(){ item_id = $(this).attr('id'); $('.' + item_id).remove();});
+<% if @notification =~ /complete/%>
+$.ajax({type: "GET", url: "http://localhost:3000/todo/completed_tasks/"});
+<%elsif @notification =~ /reopen/%>
+$.ajax({type: "GET", url: "http://localhost:3000/todo/"});
+<%end%>
 $.easyNotification({text: '<%=@notification%>'});
+

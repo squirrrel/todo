@@ -1,0 +1,22 @@
+<div id='tasks_container'>
+<table cellspacing="0">
+<tbody id = '2'>
+<%@tasks.each do |task|%>
+<tr id = "for_edit_<%=task.id.to_s%>" class="be_hovered <%=task.id%> <%=task.priority%>" onmouseover = "show_actions(<%=task.id%>), bold(this)" onmouseout = "hide_actions(<%=task.id%>), unbold(this)" >
+
+<% @task = task %>
+<%= render partial: '/todo/shared/checkbox', locals: {task: @task} %>
+<% %w{ description priority status created_at }.each do |attr|%>
+<% value = task.send attr %>
+<%get_translated(attr, value)%>
+<td id = '<%=attr%>' class='items <%=@res%>'><div id = "<%=attr + task.id.to_s%>" onblur= "set_noneditable(this)" <%='onclick=show_detailed_description(this)' if attr == 'description'%>><%= @res %></div></td>
+<span id='<%=attr + task.id.to_s%>_span' style = 'display:none'><%=@res%></span>
+<% @dropdown ="#{task.id.to_s}" %>
+<%end%> 
+<%@task = task%>
+<%= render 'delete_complete_update', locals: { task: @task, priority: @priority, dropdown: @dropdown }%>
+</tr>
+<%end%>
+</tbody>
+</table>
+</div>
