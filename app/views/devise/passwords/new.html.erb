@@ -1,5 +1,6 @@
 <div id = 'resend_wrapper'>
 <div id='sign-in-wrapper'>
+<%= render "devise/shared/locales" %>
 <h1>#TODO</h1>
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
 <br/>
@@ -8,7 +9,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-<p id="copyright" style='margin: 271px 0px 5px 5px;'>&copy <%= t(:views)[:copyright]%></p>
+<p id="copyright">&copy <%= t(:views)[:copyright]%></p>
 </div>
 </div>
 

@@ -25,5 +25,18 @@ module Todo
     config.active_record.whitelist_attributes = false
     config.serve_static_assets = true
     config.log_level = :debug
+
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.consider_all_requests_local = true
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'example.com',
+      user_name:            'nina.moskalyk@gmail.com',
+      password:             'cheguevara1988',
+      authentication:       'plain',
+      enable_starttls_auto: true  }
   end
 end

@@ -75,6 +75,7 @@ en:
     time:
       months: "{Jan: 'Jan', Feb: 'Feb', Mar: 'Mar', Apr: 'Apr', May: 'May', June: 'June', July: 'July', Aug: 'Aug', Sept: 'Sept', Oct: 'Oct', Nov: 'Nov', Dec: 'Dec'}"
       week: "{Mon: 'Mon', Tue: 'Tue', Wed: 'Wed', Thu: 'Thu', Fri: 'Fri', Sat: 'Sat', Sun: 'Sun' }"
+    promo: '#TODO list will help you manage your daily tasks:)'
     copyright: "Nina Moskalyk - August..October 2013"
   devise:
     forms:
@@ -102,7 +103,7 @@ en:
       please_invalid_password: "Please specify a valid password. It should contain no less than 8 letters characters and at least 2 digits"
       please_didntmatch_password: "Password didn't match. Please try again" 
       locked: "Your account is locked."
-      not_found_in_database: "Invalid email or password."
+      not_found_in_database: "Invalid email or password"
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your account before continuing."

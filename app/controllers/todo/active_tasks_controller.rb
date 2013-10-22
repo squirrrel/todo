@@ -11,7 +11,7 @@ class Todo::ActiveTasksController < ApplicationController
 		#render json: tasks 
 		respond_to do |format|
 			format.js{ render 'index.js.erb' }
-			format.html{render 'index.html.erb'} 
+			format.html{ render 'index.html.erb' } 
 		end
 	end
 

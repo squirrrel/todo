@@ -1,4 +1,5 @@
 Todo::Application.routes.draw do
+  get "global_actions/translate"
   devise_for :users, path: 'todo/user', path_names: { sign_in: 'signin', sign_out: 'signout', 
                         sign_up: 'registration', password: 'password', edit: 'registration/edit' } 
   
@@ -20,6 +21,10 @@ Todo::Application.routes.draw do
       patch 'complete', on: :member
       post 'update_task',  on: :collection
       post 'mass_complete', on: :collection
+    end  
+
+    resources :global_actions, only: [] do
+      get 'translate', on: :collection
     end  
   end  
 end

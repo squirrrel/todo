@@ -1,0 +1,2 @@
+module Todo::GlobalActionsHelper
+end

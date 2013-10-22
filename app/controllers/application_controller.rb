@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   #before_action :format_date
   helper :application
   rescue_from Exception, with: :handle_and_file
-  before_filter :log_user, only: ['create', 'destroy']  
+  before_filter :log_and_send_email, only: ['create', 'destroy']  
 
   private
     def handle_and_file exception
@@ -16,9 +16,25 @@ class ApplicationController < ActionController::Base
     	render js: "$.errorMessanger({text: '#{t(:internal_server_error)[:message]}' });"
     end	
 
-    def log_user
-      logged_in_or_out = params[:action] == 'create' ? 'LOGGED-IN' : 'LOGGED-OUT' 
-      Rails.logger.info "ID:#{current_user.try(:id)} | #{current_user.try(:email) ? current_user.email : 'NEWBIE REGISTERED AND'} #{logged_in_or_out}"
+    def log_and_send_email     
+      if params[:action] == 'create'
+        user_count = User.where(email: "#{params[:user][:email]}").count
+        if params[:controller] == 'devise/registrations' && user_count == 0
+          user_email = params[:user][:email]
+          UserMailer.welcome_registered(user_email).deliver
+          Rails.logger.info "NEWBIE REGISTERED AND SIGGNED IN"
+        elsif params[:controller] == 'devise/registrations' && user_count == 1
+          Rails.logger.info "NEWBIE ENTERED AN EXISTING EMAIL ADDRESS AND FAILED TO REGISTER AT devise/registrations"
+        elsif params[:controller] == 'devise/sessions'
+          if user_count == 1 && User.find_by_email(params[:user][:email]).valid_password?(params[:user][:password])
+            Rails.logger.info "#{params[:user][:email]} SIGGNED IN"
+          else
+            flash.now[:notice] = t(:devise)[:failure][:not_found_in_database]
+          end
+        end
+      elsif params[:action] == 'destroy'
+        Rails.logger.info "ID:#{current_user.try(:id)} | #{current_user.try(:email)} SIGGNED OUT"
+      end
     end 
 
     def set_priorities
@@ -29,5 +45,5 @@ class ApplicationController < ActionController::Base
       [:"#{t(:time_filter)[:today]}", :"#{t(:time_filter)[:last_7_days]}",:"#{t(:time_filter)[:last_14_days]}", 
         :"#{t(:time_filter)[:last_30_days]}", :"#{t(:time_filter)[:last_3_months]}", :"#{t(:time_filter)[:last_6_months]}",
          :"#{t(:time_filter)[:last_year]}",:"#{t(:time_filter)[:forever]}"]
-    end  
+    end    
 end

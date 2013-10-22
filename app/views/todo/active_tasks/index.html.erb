@@ -1,14 +1,13 @@
+<div style='width: 310px; height:28px;margin-left: 500px; position: fixed;z-index: 20; float: top: 0px; right: 4px;'><span id='current_user'><%= current_user.email%></span>
 <ul id='main-ul'>
-<li id='main-li'>
-    high
+  <li id='main-li'>
+   <img src="<%=I18n.locale == :en ? '/assets/images/GB.png' : '/assets/images/ukrainian.png'%>" id='first-flag'>
     <ul id='secondary-ul'>
-      <li class='secondary-li'><img src="assets/images/ukrainian.png"></li>
-      <li class='secondary-li'><img src="assets/images/GB.png"></li>
+      <li class='secondary-li' onclick="translate_app(this)"> <img src="<%=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
     </ul>
   </li>
-
-<span id='current_user'><%= current_user.email%></span>
-<%= link_to t(:views)[:signed_out_link], '/todo/user/signout', method: :delete, id: 'signout' %>
+ </ul>
+<%= link_to t(:views)[:signed_out_link], '/todo/user/signout', method: :delete, id: 'signout' %></div>
 <span class='tooltip_3'>reopen</span>
 <div class='shadow'>
 <div id='notification_container'></div>

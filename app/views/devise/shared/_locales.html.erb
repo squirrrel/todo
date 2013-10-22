@@ -1,0 +1,8 @@
+<ul id='main-ul' style="position:absolute; top:-5px;right: 55px;">
+  <li id='main-li'>
+   <img src="<%=I18n.locale == :en ? '/assets/images/GB.png' : '/assets/images/ukrainian.png'%>" id='first-flag'>
+    <ul id='secondary-ul'>
+      <li class='secondary-li' onclick="translate_app(this)"> <img src="<%=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
+    </ul>
+  </li>
+ </ul>
