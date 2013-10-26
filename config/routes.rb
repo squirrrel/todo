@@ -1,9 +1,8 @@
 Todo::Application.routes.draw do
-  get "global_actions/translate"
   devise_for :users, path: 'todo/user', path_names: { sign_in: 'signin', sign_out: 'signout', 
                         sign_up: 'registration', password: 'password', edit: 'registration/edit' } 
   
-  root :to => 'todo/active_tasks#index', path: '/todo'
+  root 'todo/active_tasks#index', path: '/', as: '/todo'
 
   concern :mass_destroyable do
     post 'mass_destroy', on: :collection
@@ -25,6 +24,8 @@ Todo::Application.routes.draw do
 
     resources :global_actions, only: [] do
       get 'translate', on: :collection
-    end  
+      get 'not_found', on: :collection
+    end 
+    match '*404' => 'global_actions#not_found', via: :get
   end  
 end

@@ -29,13 +29,17 @@
 
 * Calculate validation height based on the target height DONE
 
-* Fix post-create CSS, add complete/reopen items to corresponding table using jquery
+* Fix post-create CSS, add complete/reopen items to corresponding table using jquery DONE
 
-* Implement advanced Filter
+* Implement advanced Filter RELEASE 2
 
-* Implement Resizing and modify description text position and stuff
+* Complete description windows functionality and css IN PROGRESS
 
-* Add user name at the top on the left
+* Add user name at the top on the left DONE
+
+* Fix the issue with the wrong old style 404 rendering when not found
+
+* Think of appling security actions to prevent user read internal server files and actions, look at http://guides.rubyonrails.org/security.html, may be devise could help, render 401 page
 
 == There is sooo much #todo;)
 

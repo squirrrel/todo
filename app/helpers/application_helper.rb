@@ -22,4 +22,7 @@ module ApplicationHelper
 						value
 				end
 	end	
+
+	def set_background_picture
+	end	
 end

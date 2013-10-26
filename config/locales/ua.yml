@@ -22,6 +22,8 @@
 ua:
   internal_server_error:
     message: "Сталася помилка при виконанні Вашого запиту. Спробуйте пізніше"
+  custom_errors:
+    non_existent_email: 'Вкажіть адресу Вашої дійсної електронної пошти'  
   validations:
     new_task: "Будь ласка, вкажіть Вашу нову задачу"
   notifications:

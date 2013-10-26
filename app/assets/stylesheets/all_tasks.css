@@ -1,11 +1,4 @@
 @charset "UTF-8";
-html {
-  background: url("images/wallpaper.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-
 input {
   font-family: "Courier New", Courier, monospace;
   font-size: 13px;
@@ -585,7 +578,7 @@ td#description {
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(34, 2, 0, 0.6); }
 
-#tooltip, #validation, #devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database {
+#tooltip, #validation, #devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database, #confirmation {
   position: absolute;
   height: 4px;
   line-height: 5px;
@@ -601,7 +594,7 @@ td#description {
   box-shadow: rgba(0, 0, 0, 0.09804) 1px 1px 2px 0px;
   z-index: 10; }
 
-#tooltip:after, #validation:after, #devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after {
+#tooltip:after, #validation:after, #devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after, #confirmation:after {
   width: 0;
   height: 0;
   content: "";
@@ -613,22 +606,22 @@ td#description {
   border-style: solid;
   border-color: rgba(17, 17, 17, 0.7) transparent transparent transparent; }
 
-#tooltip.top:after, .top#validation:after, .top#devise_validation:after, .top#devise_validation_resend_1:after, .top#devise_validation_resend_2:after, .top#devise_validation_email_1:after, .top#devise_validation_password_1:after, .top#devise_validation_password_2:after, .top#devise_validation_retype:after, .top#devise_validation_didntmatch:after, .top#not_found_in_database:after {
+#tooltip.top:after, .top#validation:after, .top#devise_validation:after, .top#devise_validation_resend_1:after, .top#devise_validation_resend_2:after, .top#devise_validation_email_1:after, .top#devise_validation_password_1:after, .top#devise_validation_password_2:after, .top#devise_validation_retype:after, .top#devise_validation_didntmatch:after, .top#not_found_in_database:after, .top#confirmation:after {
   border-top-color: transparent;
   border-bottom: 10px solid #111111;
   top: -20px;
   bottom: auto; }
 
-#tooltip.left:after, .left#validation:after, .left#devise_validation:after, .left#devise_validation_resend_1:after, .left#devise_validation_resend_2:after, .left#devise_validation_email_1:after, .left#devise_validation_password_1:after, .left#devise_validation_password_2:after, .left#devise_validation_retype:after, .left#devise_validation_didntmatch:after, .left#not_found_in_database:after {
+#tooltip.left:after, .left#validation:after, .left#devise_validation:after, .left#devise_validation_resend_1:after, .left#devise_validation_resend_2:after, .left#devise_validation_email_1:after, .left#devise_validation_password_1:after, .left#devise_validation_password_2:after, .left#devise_validation_retype:after, .left#devise_validation_didntmatch:after, .left#not_found_in_database:after, .left#confirmation:after {
   left: 10px;
   margin: 0; }
 
-#tooltip.right:after, .right#validation:after, .right#devise_validation:after, .right#devise_validation_resend_1:after, .right#devise_validation_resend_2:after, .right#devise_validation_email_1:after, .right#devise_validation_password_1:after, .right#devise_validation_password_2:after, .right#devise_validation_retype:after, .right#devise_validation_didntmatch:after, .right#not_found_in_database:after {
+#tooltip.right:after, .right#validation:after, .right#devise_validation:after, .right#devise_validation_resend_1:after, .right#devise_validation_resend_2:after, .right#devise_validation_email_1:after, .right#devise_validation_password_1:after, .right#devise_validation_password_2:after, .right#devise_validation_retype:after, .right#devise_validation_didntmatch:after, .right#not_found_in_database:after, .right#confirmation:after {
   right: 10px;
   left: auto;
   margin: 0; }
 
-#validation, #devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database {
+#validation, #devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database, #confirmation {
   background: rgba(239, 76, 62, 0.6);
   height: 7px;
   padding: 8px;
@@ -640,7 +633,7 @@ td#description {
   border-radius: 4px;
   z-index: 10; }
 
-#validation:after, #devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after {
+#validation:after, #devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after, #confirmation:after {
   left: 50%;
   top: 100%;
   bottom: -10px;
@@ -648,10 +641,10 @@ td#description {
   border-style: solid;
   border-color: rgba(239, 76, 62, 0.6) transparent transparent transparent; }
 
-#devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database {
+#devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database, #confirmation {
   border-radius: 0px; }
 
-#devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after {
+#devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after, #confirmation:after {
   left: 108.5%;
   top: 35%;
   bottom: -10px;
@@ -687,14 +680,25 @@ td#description {
   left: 105%;
   top: 34%; }
 
-#not_found_in_database {
+#not_found_in_database, #confirmation {
   width: 290px;
   letter-spacing: 1px;
   word-spacing: 3px;
   font-size: 10px; }
 
-#not_found_in_database:after {
+#not_found_in_database:after, #confirmation:after {
   display: none; }
+
+#confirmation {
+  height: 24px;
+  background: rgba(62, 187, 135, 0.8);
+  font-size: 10px;
+  font-weight: lighter;
+  color: white;
+  line-height: 12px;
+  text-shadow: rgba(0, 0, 0, 0.8) 1px 1px 1px;
+  padding-top: 2px;
+  padding-bottom: 2px; }
 
 #in-detail-description {
   position: absolute;
@@ -847,3 +851,37 @@ span#current_user {
   color: rgba(17, 17, 17, 0.7);
   text-shadow: rgba(17, 17, 17, 0.5) 1px 1px 1px;
   float: left; }
+
+#fog {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  background: rgba(255, 255, 255, 0.4); }
+
+#ooopz {
+  font-family: Purisa;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: rgba(17, 17, 17, 0.5) 1px 1px 1px;
+  color: rgba(239, 76, 62, 0.8); }
+
+.explanation {
+  font-family: Purisa;
+  font-size: 20px;
+  font-weight: lighter;
+  text-shadow: rgba(17, 17, 17, 0.5) 1px 1px 1px;
+  color: rgba(17, 17, 17, 0.8);
+  vertical-align: middle; }
+
+#link_to_homepage {
+  font-family: Purisa;
+  font-size: 20px;
+  text-decoration: none;
+  color: rgba(17, 17, 17, 0.8);
+  position: relative;
+  left: 30%; }
+
+#link_to_homepage:hover {
+  color: rgba(239, 76, 62, 0.8); }

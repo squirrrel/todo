@@ -23,6 +23,8 @@
 en:
   internal_server_error:
     message: "Something went wrong while processing your request. Try to perform it later"
+  custom_errors:
+    non_existent_email: 'You should specify your own valid email'
   validations:
     new_task: "Please specify your new task Description"
   notifications:
@@ -119,7 +121,7 @@ en:
       success: "Successfully authenticated from %{kind} account."
     passwords:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_instructions: "Check you email box to find reset-password instructions"
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password was changed successfully. You are now signed in."
       updated_not_active: "Your password was changed successfully."
@@ -135,7 +137,7 @@ en:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
     unlocks:
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      send_instructions: "Check you email box to find reset-password instructions"
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
   errors:

@@ -20,6 +20,7 @@ module Todo
     #    g.template_engine :haml
     # end
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    #config.exceptions_app = self.routes
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en   #config.assets.enabled = true
     config.active_record.whitelist_attributes = false
@@ -28,7 +29,7 @@ module Todo
 
     config.action_mailer.perform_deliveries = true
     config.action_mailer.raise_delivery_errors = true
-    config.consider_all_requests_local = true
+    config.consider_all_requests_local = false
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',

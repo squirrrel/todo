@@ -42,6 +42,7 @@ end
 group :custom do 
 	gem 'thin'
 	gem 'sprockets-rails', :require => 'sprockets/railtie'
+	gem 'actionpack-action_caching'
 	gem 'protected_attributes'
 	gem 'state_machine', '0.9.3'
 	gem 'devise'

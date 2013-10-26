@@ -2,7 +2,7 @@ class Todo::ActiveTasksController < ApplicationController
 	include Destroyable
 	
 	skip_before_filter :log_user, only: ['create', 'destroy']
-	before_action :authenticate_user!
+	before_action :authenticate_user!	
 
 	def index
 		@priorities = set_priorities

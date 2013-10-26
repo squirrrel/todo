@@ -1,60 +1,67 @@
-	@trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
-		$('div#description' + task_id).attr('contenteditable','true')
-		
-		$('div#priority' + task_id).replaceWith('<select class="embedded"><option>' + 
-			'high</option><option>medium</option>' + 
-			'<option>low</option></select>')
-		$('div#status' + task_id).replaceWith('<select class="embedded"><option>open</option>' +
-			'<option>in progress</option></select>')
-			 
-		$('tr.' + task_id).removeAttr('onmouseout')
-		$(obj).attr('disabled','disabled')
-		$('.okay' + task_id).show()
-		$('#' + dropdown).show()
-
-		
-	@trigger_on_ok = trigger_on_ok = (obj, task_id, dropdown)->
-		$('div#description' + task_id).attr('contenteditable','false')
-		
-		description = $('div#description' + task_id).text()
-		priority = $('select :selected').slice(1,2).text()
-		status = $('select :selected').slice(2,3).text() 
-		
-		$('select').slice(1,2).replaceWith('<div>' + priority + '</div>') 
-		$('select').slice(1,2).replaceWith('<div>' + status + '</div>')
-		
-		$(obj).hide()
-		$('#'+ dropdown).hide()
-
-		### HERE WE HAVE TO ADD ONMOUSEOUT SCRIPT CALL AGAIN TO MAKE ICON SYMBOLS DISSAPEAR OR APPLY ANY OTHER METHOD TO DO IT ###      
-
+do completed_tasks = ->
+	$(document).ready(()->
 		$.ajax({
-  		type: "POST",
-  		url: "http://localhost:3000/todo/update_task",
-  		data: { id: task_id, description: description, priority: priority, status: status }
-  		}).done(()-> $.easyNotification(text: 'task updated'))
+			type: "GET",
+		url: "http://localhost:3000/todo/completed_tasks/"})
+	)
+
+@trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
+	$('div#description' + task_id).attr('contenteditable','true')
+	
+	$('div#priority' + task_id).replaceWith('<select class="embedded"><option>' + 
+		'high</option><option>medium</option>' + 
+		'<option>low</option></select>')
+	$('div#status' + task_id).replaceWith('<select class="embedded"><option>open</option>' +
+		'<option>in progress</option></select>')
+		 
+	$('tr.' + task_id).removeAttr('onmouseout')
+	$(obj).attr('disabled','disabled')
+	$('.okay' + task_id).show()
+	$('#' + dropdown).show()
+
+	
+@trigger_on_ok = trigger_on_ok = (obj, task_id, dropdown)->
+	$('div#description' + task_id).attr('contenteditable','false')
+	
+	description = $('div#description' + task_id).text()
+	priority = $('select :selected').slice(1,2).text()
+	status = $('select :selected').slice(2,3).text() 
+	
+	$('select').slice(1,2).replaceWith('<div>' + priority + '</div>') 
+	$('select').slice(1,2).replaceWith('<div>' + status + '</div>')
+	
+	$(obj).hide()
+	$('#'+ dropdown).hide()
+
+	### HERE WE HAVE TO ADD ONMOUSEOUT SCRIPT CALL AGAIN TO MAKE ICON SYMBOLS DISSAPEAR OR APPLY ANY OTHER METHOD TO DO IT ###      
+
+	$.ajax({
+		type: "POST",
+		url: "http://localhost:3000/todo/update_task",
+		data: { id: task_id, description: description, priority: priority, status: status }
+		}).done(()-> $.easyNotification(text: 'task updated'))
 
 
-	@trigger_on_cancel = trigger_on_cancel = (obj, task_id)->
-		injection = $(obj).attr('id') + '_span'
-		
-		description_id = 'description' + injection
-		priority_id = 'priority'+ injection
-		status_id = 'status' + injection
+@trigger_on_cancel = trigger_on_cancel = (obj, task_id)->
+	injection = $(obj).attr('id') + '_span'
+	
+	description_id = 'description' + injection
+	priority_id = 'priority'+ injection
+	status_id = 'status' + injection
 
-		desc_text = document.getElementById(description_id).textContent
-		drop_text_1 = document.getElementById(priority_id).textContent
-		drop_text_2 = document.getElementById(status_id).textContent
+	desc_text = document.getElementById(description_id).textContent
+	drop_text_1 = document.getElementById(priority_id).textContent
+	drop_text_2 = document.getElementById(status_id).textContent
 
-		$('div#description' + task_id).attr('contenteditable','false')
-		
-		$('div#description' + task_id).replaceWith('<div>'+desc_text+'</div>')
-		$('select').slice(1,2).replaceWith('<div>'+drop_text_1+'</div>')
-		$('select').slice(1,2).replaceWith('<div>'+drop_text_2+'</div>')
-		
-		$(obj).hide()
-		$('.okay' + task_id).hide()
+	$('div#description' + task_id).attr('contenteditable','false')
+	
+	$('div#description' + task_id).replaceWith('<div>'+desc_text+'</div>')
+	$('select').slice(1,2).replaceWith('<div>'+drop_text_1+'</div>')
+	$('select').slice(1,2).replaceWith('<div>'+drop_text_2+'</div>')
+	
+	$(obj).hide()
+	$('.okay' + task_id).hide()
 
 
-	@set_noneditable = set_noneditable = (obj)->  
-		$(obj).attr('contenteditable','false') if $(obj).parent().attr('id') is 'description'	
+@set_noneditable = set_noneditable = (obj)->  
+	$(obj).attr('contenteditable','false') if $(obj).parent().attr('id') is 'description'	

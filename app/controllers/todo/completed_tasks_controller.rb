@@ -12,7 +12,7 @@ class Todo::CompletedTasksController < ApplicationController
       	render 'index.js.erb' 	
 	end	
 
-	def reopen	
+	def reopen
 	  CompletedTask.reopen_task(params[:id])
 	  @notification = t(:notifications)[:reopened]  
 	  respond_to do |format|
