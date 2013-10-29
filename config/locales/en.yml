@@ -25,6 +25,7 @@ en:
     message: "Something went wrong while processing your request. Try to perform it later"
   custom_errors:
     non_existent_email: 'You should specify your own valid email'
+    mustbe_unique: 'You should specify different email or password'
   validations:
     new_task: "Please specify your new task Description"
   notifications:

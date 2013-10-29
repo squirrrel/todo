@@ -51,10 +51,12 @@ class Todo::ActiveTasksController < ApplicationController
 
 	 def update_task
 	 	subject = ActiveTask.find(params[:id])
-	 	subject.update_attributes({id: params[:id], description: params[:description], 
-	 								priority: params[:priority], status: params[:status]})
+	 	subject.update_attributes({description: params['description'], 
+	 								priority: params['priority'], status: params['status']})
 	 	notification = t(:notifications)[:updated]
-	 	render js: "! function(){$.easyNotification({text: '#{notification}'});}();"
+	 	render js: "! function(){ 
+	 					$.ajax({type: 'GET', url:'http://localhost:3000/todo/'});
+					}();"
 	 end
 
 	def complete

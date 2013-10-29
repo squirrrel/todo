@@ -1,8 +1,8 @@
-<button class= "okay<%=@task.id.to_s%> okay", style= 'display:none' onclick = " 
+<button class= "okay<%=@task.id.to_s%> okay", style= 'display:none;' onclick = " 
 task_id = <%=@task.id.to_s%> 
 dropdown =<%=@dropdown%>
 trigger_on_ok(this, task_id, dropdown)"
 >OK</button>  
-<button id='<%= @dropdown%>' class='cancel' style='display:none' 
+<button id="<%=@dropdown%>" class="cancel <%= @dropdown%>" style='display:none;padding-top: 3px;' 
 onclick="trigger_on_cancel(this,<%=@task.id.to_s%>)" >✖</button>
 

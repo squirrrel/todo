@@ -152,7 +152,7 @@ do validate_password_registration = ->
 do confirm_password_registration = ->
 	$(document).ready(
 		()-> $("div#registration_wrapper form").submit((e)=>
-			$('#devise_validation_retype, .dont_match').attr('style', 'display:none;')
+			$('#devise_validation_retype_ua, #devise_validation_retype_en, .dont_match').attr('style', 'display:none;')
 			dom_target = document.getElementById('user_password_confirmation') 
 			dom_target_2 = document.getElementById('register_pass') 
 			query_target = $("input#user_password_confirmation")
@@ -185,14 +185,6 @@ do arrows_onclick = ->
 		)
 	)
 
-do calculate_everything = ->
-	$(document).ready(()->
-		console.log $('table#1').offset().top
-		console.log $('.shadow').offset().top
-		console.log $('#new_tasks_form').offset().top
-	)		
-
-
 do read_dates = ->
 	$(document).ready(()->
 		window.active_dates = new Array
@@ -203,11 +195,6 @@ do remove_class = ->
 	$(document).ready(()->
 		$('th.checkbox').each(()-> $(this).removeClass('headers'))
 	)		
-
-do calculate_top = ->
-	$(document).ready(()->
-		console.log $('#delete_for_checkbox').offset().top
-	)
 			
 @show_actions = show_actions = (task_id)->
 	$('.' + task_id + '_action' + ', .pipe' + task_id).show()

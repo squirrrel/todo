@@ -3,6 +3,7 @@
 <td style = "width: 50px;"><%= button_to '✘', "/todo/#{@task.id}", method: :delete, class: "delete #{@task.id}_action",style: 'display: none',remote: true %></td>
 <td style="width: 20px;"><span style = 'display: none' class='pipe<%=@task.id%> separator' >❘</span></td>
 <td style="width: 120px;">
+<% p @dropdown.class%>
 <button onclick = "trigger_on_edit(<%=@task.id.to_s%>,<%= @dropdown%>,this)",
 style = 'display: none' class = '<%=@task.id%>_action edit'>✎</button>
 <%= render 'ok_cancel', locals: { task: @task, dropdown: @dropdown } %>

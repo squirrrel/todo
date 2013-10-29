@@ -2,22 +2,23 @@
 <div id='sign-in-wrapper'>
 <%= render "devise/shared/locales" %>
 <h1>#TODO</h1>
+<div id='not_found_in_database' style="display: <%= flash[:error] ? 'inline' : 'none' %>; padding-bottom: 16px;padding-top: 4px;line-height: 10px;" ><%=flash[:error]%></div></br>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 <%= f.text_field :email, autofocus: true, placeholder: t(:devise)[:forms][:email_placeholder], class: 'sign-in-input', id: 'register_email' %>
 <%= f.password_field :password, placeholder: t(:devise)[:forms][:pass_placeholder], class: 'sign-in-input', id: 'register_pass' %>
 <%= f.password_field :password_confirmation, placeholder: t(:devise)[:forms][:conf_pass_plcholder], class: 'sign-in-input' %>
 <br/><br/><%= f.submit t(:devise)[:forms][:signup_link],  class: 'sign-in-submit', style: I18n.locale == :ua ? "margin-left: 157px;width: 150px;" : 'margin-left: 207px;width: 100px;' %>
 <% end %>
-
+</br>
 <%= render "devise/shared/links" %>
 <span id = 'promo'><%=t(:views)[:promo]%></span>
 <p id="copyright">&copy <%= t(:views)[:copyright]%></p>
 </div>
 </div>
-
-<div id='devise_validation_email_1' class= 'invalid_email' style='display:none;'><%= t(:devise)[:failure][:invalid_email]%></div></br>
-<div id='devise_validation' class='empty_email' style='display:none;'><%= t(:devise)[:failure][:please_empty_email]%></div></br>
-<div id='devise_validation_password_2' class='invalid_password' style='display:none;'><%= t(:devise)[:failure][:please_invalid_password]%></div></br>
-<div id='devise_validation_didntmatch' class= 'dont_match' style='display:none;'><%= t(:devise)[:failure][:please_didntmatch_password]%></div></br>
-<div id='devise_validation_password_1' class= 'empty_password' style='display:none;'><%= t(:devise)[:failure][:please_specify_password]%></div></br>
-<div id='devise_validation_retype' class= 'confirm_pass' style='display:none;'><%= t(:devise)[:failure][:please_confirm_password]%></div></br>
+<div id="devise_validation_email_<%= I18n.locale == :ua ? '2' : '1' %>" class= 'invalid_email' style='display:none;'><%= t(:devise)[:failure][:invalid_email]%></div>
+</br>
+<div id="devise_validation_<%= I18n.locale == :ua ? 'ua' : 'en'%>" class= 'empty_email' style='display:none;'><%= t(:devise)[:failure][:please_empty_email]%></div></br>
+<div id='devise_validation_password_2_<%= I18n.locale == :ua ? 'ua' : 'en'%>' class='invalid_password' style='display:none;'><%= t(:devise)[:failure][:please_invalid_password]%></div></br>
+<div id='devise_validation_didntmatch_<%= I18n.locale == :ua ? 'ua' : 'en'%>' class= 'dont_match' style='display:none;'><%= t(:devise)[:failure][:please_didntmatch_password]%></div></br>
+<div id="devise_validation_password_<%= I18n.locale == :ua ? 'ua' : 'en'%>" class='empty_password' style='display:none;'><%= t(:devise)[:failure][:please_specify_password]%></div></br>
+<div id="devise_validation_retype_<%= I18n.locale == :ua ? 'ua' : 'en'%>" class= 'confirm_pass' style='display:none;'><%= t(:devise)[:failure][:please_confirm_password]%></div></br>

@@ -18,17 +18,20 @@ class ApplicationController < ActionController::Base
     end
 
     def log_and_send_email     
-      if params[:action] == 'create' && !params[:controller] == 'active_tasks' 
+      if params[:action] == 'create'
         user_count = User.where(email: "#{params[:user][:email]}").count
-        if params[:controller] = 'devise/passwords' && User.find_by_email(params[:user][:email]).nil?
+        if params[:controller] == 'active_tasks'
+          #do nothing 
+        elsif params[:controller] == 'devise/passwords' && User.find_by_email(params[:user][:email]).nil?
           flash[:error] =  t(:custom_errors)[:non_existent_email]
-        elsif params[:controller] = 'devise/passwords' && !User.find_by_email(params[:user][:email]).nil?
+        elsif params[:controller] == 'devise/passwords' && !User.find_by_email(params[:user][:email]).nil?
           #flash[:error] = nil
         elsif params[:controller] == 'devise/registrations' && user_count == 0
           user_email = params[:user][:email]
-          UserMailer.welcome_registered(user_email).deliver
+          Thread.new { UserMailer.welcome_registered(user_email).deliver } #so far there is no handling error in case invalid email is specified      
           Rails.logger.info "NEWBIE REGISTERED AND SIGGNED IN"
         elsif params[:controller] == 'devise/registrations' && user_count == 1
+          flash[:error] = t(:custom_errors)[:mustbe_unique]
           Rails.logger.info "NEWBIE ENTERED AN EXISTING EMAIL ADDRESS AND FAILED TO REGISTER AT devise/registrations"
         elsif params[:controller] == 'devise/sessions'
           if user_count == 1 && User.find_by_email(params[:user][:email]).valid_password?(params[:user][:password])

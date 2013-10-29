@@ -24,6 +24,7 @@ ua:
     message: "Сталася помилка при виконанні Вашого запиту. Спробуйте пізніше"
   custom_errors:
     non_existent_email: 'Вкажіть адресу Вашої дійсної електронної пошти'  
+    mustbe_unique: 'Будь ласка, вкажіть іншу адресу електронної пошти або пароль'
   validations:
     new_task: "Будь ласка, вкажіть Вашу нову задачу"
   notifications:
@@ -48,7 +49,7 @@ ua:
   views:
     headers:
       description: "Описання"
-      priority: "Пріорітетність"
+      priority: "Пріорітет"
       status: "Статус"
       created_at: "Дата створення"
       completed_at: "Дата виконання"

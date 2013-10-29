@@ -42,7 +42,9 @@ input#new_description {
   border: 1px solid rgba(255, 255, 255, 0);
   background: rgba(255, 255, 255, 0.7);
   border-radius: 0px;
-  width: 400px; }
+  width: 400px;
+  margin-top: 0px;
+  position: absolute; }
 
 input#new_description:hover {
   outline: none;
@@ -90,8 +92,8 @@ select#new_priority, select#elapsed_time, select#priority_set {
   outline: none;
   overflow: hidden;
   -moz-appearance: none;
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 33px;
   margin-bottom: 0px;
   background: rgba(255, 255, 255, 0.7);
   -webkit-appearance: none;
@@ -137,7 +139,7 @@ select.embedded {
   outline: none;
   overflow: hidden;
   -moz-appearance: none;
-  margin-left: 25%;
+  margin-left: 32%;
   background: no-repeat 60px center;
   font-family: "Courier New", Courier, monospace;
   -webkit-appearance: none;
@@ -244,7 +246,7 @@ div.headers_container {
 
 div#new_tasks_form {
   margin-top: 0px;
-  margin-left: 550px;
+  margin-left: 545px;
   margin-width: 400px; }
 
 div#new_tasks_form form {
@@ -292,7 +294,7 @@ div#complete_for_checkbox, div#delete_for_checkbox, div#reopen_for_checkbox {
   width: 40px;
   cursor: pointer;
   float: left;
-  margin-top: 22px;
+  margin-top: 4px;
   margin-bottom: 4px;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
@@ -342,14 +344,16 @@ p#copyright {
   font-weight: bold;
   font-size: 20px;
   font-align: center;
-  float: center;
   padding-bottom: 26px;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   border: 1px solid rgba(17, 17, 17, 0.3);
   text-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px;
   box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px;
-  outline: none; }
+  outline: none;
+  margin-top: 0px;
+  position: absolute;
+  margin-left: 410px; }
 
 .add_me:hover, .sign-in-submit:hover, #resend-pass-submit:hover {
   cursor: pointer;
@@ -460,7 +464,8 @@ button.edit:hover {
   background: transparent;
   borderbrush: transparent;
   border: 0;
-  margin-top: 2px; }
+  margin-top: 2px;
+  vertical-align: text-bottom; }
 
 .okay:hover {
   cursor: pointer;
@@ -474,7 +479,8 @@ button.edit:hover {
   background: transparent;
   borderbrush: transparent;
   border: 0;
-  padding: 0; }
+  padding: 0;
+  vertical-align: top; }
 
 .cancel:hover {
   cursor: pointer;
@@ -519,7 +525,7 @@ button.edit:hover {
   color: rgba(255, 255, 255, 0.6);
   text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
   float: right;
-  margin-right: 3px; }
+  margin-right: 1px; }
 
 #signout:hover {
   color: white; }
@@ -578,7 +584,7 @@ td#description {
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(34, 2, 0, 0.6); }
 
-#tooltip, #validation, #devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database, #confirmation {
+#tooltip, #validation, #devise_validation, #devise_validation_en, #devise_validation_ua, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_email_2, #devise_validation_password_en, #devise_validation_password_ua, #devise_validation_password_2_en, #devise_validation_password_2_ua, #devise_validation_retype_en, #devise_validation_retype_ua, #devise_validation_didntmatch_en, #devise_validation_didntmatch_ua, #not_found_in_database, #confirmation {
   position: absolute;
   height: 4px;
   line-height: 5px;
@@ -594,7 +600,7 @@ td#description {
   box-shadow: rgba(0, 0, 0, 0.09804) 1px 1px 2px 0px;
   z-index: 10; }
 
-#tooltip:after, #validation:after, #devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after, #confirmation:after {
+#tooltip:after, #validation:after, #devise_validation:after, #devise_validation_en:after, #devise_validation_ua:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_email_2:after, #devise_validation_password_en:after, #devise_validation_password_ua:after, #devise_validation_password_2_en:after, #devise_validation_password_2_ua:after, #devise_validation_retype_en:after, #devise_validation_retype_ua:after, #devise_validation_didntmatch_en:after, #devise_validation_didntmatch_ua:after, #not_found_in_database:after, #confirmation:after {
   width: 0;
   height: 0;
   content: "";
@@ -606,22 +612,22 @@ td#description {
   border-style: solid;
   border-color: rgba(17, 17, 17, 0.7) transparent transparent transparent; }
 
-#tooltip.top:after, .top#validation:after, .top#devise_validation:after, .top#devise_validation_resend_1:after, .top#devise_validation_resend_2:after, .top#devise_validation_email_1:after, .top#devise_validation_password_1:after, .top#devise_validation_password_2:after, .top#devise_validation_retype:after, .top#devise_validation_didntmatch:after, .top#not_found_in_database:after, .top#confirmation:after {
+#tooltip.top:after, .top#validation:after, .top#devise_validation:after, .top#devise_validation_en:after, .top#devise_validation_ua:after, .top#devise_validation_resend_1:after, .top#devise_validation_resend_2:after, .top#devise_validation_email_1:after, .top#devise_validation_email_2:after, .top#devise_validation_password_en:after, .top#devise_validation_password_ua:after, .top#devise_validation_password_2_en:after, .top#devise_validation_password_2_ua:after, .top#devise_validation_retype_en:after, .top#devise_validation_retype_ua:after, .top#devise_validation_didntmatch_en:after, .top#devise_validation_didntmatch_ua:after, .top#not_found_in_database:after, .top#confirmation:after {
   border-top-color: transparent;
   border-bottom: 10px solid #111111;
   top: -20px;
   bottom: auto; }
 
-#tooltip.left:after, .left#validation:after, .left#devise_validation:after, .left#devise_validation_resend_1:after, .left#devise_validation_resend_2:after, .left#devise_validation_email_1:after, .left#devise_validation_password_1:after, .left#devise_validation_password_2:after, .left#devise_validation_retype:after, .left#devise_validation_didntmatch:after, .left#not_found_in_database:after, .left#confirmation:after {
+#tooltip.left:after, .left#validation:after, .left#devise_validation:after, .left#devise_validation_en:after, .left#devise_validation_ua:after, .left#devise_validation_resend_1:after, .left#devise_validation_resend_2:after, .left#devise_validation_email_1:after, .left#devise_validation_email_2:after, .left#devise_validation_password_en:after, .left#devise_validation_password_ua:after, .left#devise_validation_password_2_en:after, .left#devise_validation_password_2_ua:after, .left#devise_validation_retype_en:after, .left#devise_validation_retype_ua:after, .left#devise_validation_didntmatch_en:after, .left#devise_validation_didntmatch_ua:after, .left#not_found_in_database:after, .left#confirmation:after {
   left: 10px;
   margin: 0; }
 
-#tooltip.right:after, .right#validation:after, .right#devise_validation:after, .right#devise_validation_resend_1:after, .right#devise_validation_resend_2:after, .right#devise_validation_email_1:after, .right#devise_validation_password_1:after, .right#devise_validation_password_2:after, .right#devise_validation_retype:after, .right#devise_validation_didntmatch:after, .right#not_found_in_database:after, .right#confirmation:after {
+#tooltip.right:after, .right#validation:after, .right#devise_validation:after, .right#devise_validation_en:after, .right#devise_validation_ua:after, .right#devise_validation_resend_1:after, .right#devise_validation_resend_2:after, .right#devise_validation_email_1:after, .right#devise_validation_email_2:after, .right#devise_validation_password_en:after, .right#devise_validation_password_ua:after, .right#devise_validation_password_2_en:after, .right#devise_validation_password_2_ua:after, .right#devise_validation_retype_en:after, .right#devise_validation_retype_ua:after, .right#devise_validation_didntmatch_en:after, .right#devise_validation_didntmatch_ua:after, .right#not_found_in_database:after, .right#confirmation:after {
   right: 10px;
   left: auto;
   margin: 0; }
 
-#validation, #devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database, #confirmation {
+#validation, #devise_validation, #devise_validation_en, #devise_validation_ua, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_email_2, #devise_validation_password_en, #devise_validation_password_ua, #devise_validation_password_2_en, #devise_validation_password_2_ua, #devise_validation_retype_en, #devise_validation_retype_ua, #devise_validation_didntmatch_en, #devise_validation_didntmatch_ua, #not_found_in_database, #confirmation {
   background: rgba(239, 76, 62, 0.6);
   height: 7px;
   padding: 8px;
@@ -633,7 +639,7 @@ td#description {
   border-radius: 4px;
   z-index: 10; }
 
-#validation:after, #devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after, #confirmation:after {
+#validation:after, #devise_validation:after, #devise_validation_en:after, #devise_validation_ua:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_email_2:after, #devise_validation_password_en:after, #devise_validation_password_ua:after, #devise_validation_password_2_en:after, #devise_validation_password_2_ua:after, #devise_validation_retype_en:after, #devise_validation_retype_ua:after, #devise_validation_didntmatch_en:after, #devise_validation_didntmatch_ua:after, #not_found_in_database:after, #confirmation:after {
   left: 50%;
   top: 100%;
   bottom: -10px;
@@ -641,16 +647,19 @@ td#description {
   border-style: solid;
   border-color: rgba(239, 76, 62, 0.6) transparent transparent transparent; }
 
-#devise_validation, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_password_1, #devise_validation_password_2, #devise_validation_retype, #devise_validation_didntmatch, #not_found_in_database, #confirmation {
+#devise_validation, #devise_validation_en, #devise_validation_ua, #devise_validation_resend_1, #devise_validation_resend_2, #devise_validation_email_1, #devise_validation_email_2, #devise_validation_password_en, #devise_validation_password_ua, #devise_validation_password_2_en, #devise_validation_password_2_ua, #devise_validation_retype_en, #devise_validation_retype_ua, #devise_validation_didntmatch_en, #devise_validation_didntmatch_ua, #not_found_in_database, #confirmation {
   border-radius: 0px; }
 
-#devise_validation:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_password_1:after, #devise_validation_password_2:after, #devise_validation_retype:after, #devise_validation_didntmatch:after, #not_found_in_database:after, #confirmation:after {
+#devise_validation:after, #devise_validation_en:after, #devise_validation_ua:after, #devise_validation_resend_1:after, #devise_validation_resend_2:after, #devise_validation_email_1:after, #devise_validation_email_2:after, #devise_validation_password_en:after, #devise_validation_password_ua:after, #devise_validation_password_2_en:after, #devise_validation_password_2_ua:after, #devise_validation_retype_en:after, #devise_validation_retype_ua:after, #devise_validation_didntmatch_en:after, #devise_validation_didntmatch_ua:after, #not_found_in_database:after, #confirmation:after {
   left: 108.5%;
   top: 35%;
   bottom: -10px;
   border-width: 4px;
   border-style: solid;
   border-color: transparent transparent transparent rgba(239, 76, 62, 0.6); }
+
+#devise_validation_ua:after {
+  left: 103.9%; }
 
 #devise_validation_resend_1:after {
   left: 108%;
@@ -664,20 +673,39 @@ td#description {
   left: 113%;
   top: 34%; }
 
-#devise_validation_password_1:after {
+#devise_validation_email_2:after {
+  left: 105.5%;
+  top: 34%; }
+
+#devise_validation_password_en:after {
   left: 106.5%;
   top: 34%; }
 
-#devise_validation_password_2:after {
+#devise_validation_password_ua:after {
+  left: 107%;
+  top: 34%; }
+
+#devise_validation_password_2_en:after {
   left: 102%;
   top: 34%; }
 
-#devise_validation_retype:after {
+#devise_validation_password_2_ua:after {
+  left: 102.4%;
+  top: 34%; }
+
+#devise_validation_retype_en:after, #devise_validation_retype_ua:after {
   left: 106%;
   top: 34%; }
 
-#devise_validation_didntmatch:after {
+#devise_validation_retype_ua:after {
+  left: 105.4%; }
+
+#devise_validation_didntmatch_en:after {
   left: 105%;
+  top: 34%; }
+
+#devise_validation_didntmatch_ua:after {
+  left: 103.7%;
   top: 34%; }
 
 #not_found_in_database, #confirmation {

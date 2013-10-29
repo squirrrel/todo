@@ -1,13 +1,19 @@
-<div style='width: 310px; height:28px;margin-left: 500px; position: fixed;z-index: 20; float: top: 0px; right: 4px;'><span id='current_user'><%= current_user.email%></span>
-<ul id='main-ul'>
+<div style='height:35px;margin-left: 500px; position: fixed;z-index: 20; float: top: 0px; right: 0px;'>
+<table style='float:left;'><tbody><tr></tr><td><span id='current_user' style='float:left;'><%= current_user.email%></span></td></tbody></table>
+<table style='width: 162px;cellspacing="0";float:right;'>
+<tbody><tr style="height: 35px;">
+<td style='width:47px;'><ul id='main-ul'>
   <li id='main-li'>
    <img src="<%=I18n.locale == :en ? '/assets/images/GB.png' : '/assets/images/ukrainian.png'%>" id='first-flag'>
     <ul id='secondary-ul'>
       <li class='secondary-li' onclick="translate_app(this)"> <img src="<%=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
     </ul>
   </li>
- </ul>												
-<%= link_to t(:views)[:signed_out_link], '/todo/user/signout', method: :delete, id: 'signout' %></div>
+ </ul></td>												
+<td style='width:50px;'><%= link_to t(:views)[:signed_out_link], '/todo/user/signout', method: :delete, id: 'signout', style: I18n.locale == :ua ? 'margin-right: 11px;' : '' %></td>
+</tr></tbody>
+</table>
+</div>
 <span class='tooltip_3'>reopen</span>
 <div class='shadow'>
 <div id='notification_container'></div>
@@ -32,7 +38,7 @@
 <%=render partial: 'active_tasks_grid', local: {priorities: @priorities, tasks: @tasks}%>
 </div>
 </li>
-<li id= 'second_item'>	
+<li id= 'second_item' style='float:left; list-style:none; width:1000px;padding-left:121px;'>	
 <div id= 'to-be-removed-by-filter-selection' style='margin-top: 0px;'>
 </div>
 </li>

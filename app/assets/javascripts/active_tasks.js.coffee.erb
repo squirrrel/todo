@@ -7,17 +7,43 @@ do completed_tasks = ->
 
 @trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
 	$('div#description' + task_id).attr('contenteditable','true')
+	priority_field =  $('div#priority' + task_id)
+	if priority_field.parent().attr('class').match(/низька|висока|середня/)	
+		high = 'висока'
+		medium = 'середня'
+		low = 'низька'	
+	else
+		high = 'high'
+		medium = 'medium'
+		low = 'low'		
+	switch priority_field.text() 
+		when 'high' then h = 'selected'
+		when 'висока' then h = 'selected'
+		when 'medium'  then m = 'selected'
+		when 'середня' then m = 'selected'
+		when 'low' then l = 'selected'
+		when 'низька' then l = 'selected'		
+	priority_field.replaceWith('<select class="embedded">'+ "<option #{h} >" + 
+		"#{high}</option>"+"<option #{m} >"+"#{medium}</option>" + 
+		"<option #{l}>"+"#{low}</option></select>")	
 	
-	$('div#priority' + task_id).replaceWith('<select class="embedded"><option>' + 
-		'high</option><option>medium</option>' + 
-		'<option>low</option></select>')
-	$('div#status' + task_id).replaceWith('<select class="embedded"><option>open</option>' +
-		'<option>in progress</option></select>')
+	status_field =  $('div#status' + task_id)
+	if status_field.parent().attr('class').match(/в процесі|активна/)	
+		open = 'активна'
+		inprogress = 'в процесі'
+	else
+		open = 'open'
+		inprogress = 'in progress'	
+	switch status_field.text() 
+		when 'open', 'активна' then o = 'selected'
+		when 'in progress', 'в процесі' then i = 'selected'
+	status_field.replaceWith('<select class="embedded">'+"<option #{o}>"+"#{open}</option>" +
+		"<option #{i}>"+"#{inprogress}</option></select>")
 		 
 	$('tr.' + task_id).removeAttr('onmouseout')
 	$(obj).attr('disabled','disabled')
 	$('.okay' + task_id).show()
-	$('#' + dropdown).show()
+	$("button.#{dropdown}").show()
 
 	
 @trigger_on_ok = trigger_on_ok = (obj, task_id, dropdown)->
@@ -25,15 +51,21 @@ do completed_tasks = ->
 	
 	description = $('div#description' + task_id).text()
 	priority = $('select :selected').slice(1,2).text()
+	console.log priority
 	status = $('select :selected').slice(2,3).text() 
 	
+	console.log description
+	console.log priority
+	console.log status
+
 	$('select').slice(1,2).replaceWith('<div>' + priority + '</div>') 
 	$('select').slice(1,2).replaceWith('<div>' + status + '</div>')
 	
 	$(obj).hide()
-	$('#'+ dropdown).hide()
-
-	### HERE WE HAVE TO ADD ONMOUSEOUT SCRIPT CALL AGAIN TO MAKE ICON SYMBOLS DISSAPEAR OR APPLY ANY OTHER METHOD TO DO IT ###      
+	$("button.#{dropdown}").hide()
+	$("#for_edit_#{task_id}").find('.items').css('font-weight', 'lighter')
+	$("tr.#{task_id}").attr('onmouseout', "hide_actions(#{task_id}), unbold(this)")
+	$(".#{task_id}_action").removeAttr('disabled')    
 
 	$.ajax({
 		type: "POST",
@@ -61,6 +93,9 @@ do completed_tasks = ->
 	
 	$(obj).hide()
 	$('.okay' + task_id).hide()
+	$("#for_edit_#{task_id}").find('.items').css('font-weight', 'lighter')
+	$("tr.#{task_id}").attr('onmouseout', "hide_actions(#{task_id}), unbold(this)")
+	$(".#{task_id}_action").removeAttr('disabled')
 
 
 @set_noneditable = set_noneditable = (obj)->  

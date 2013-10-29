@@ -49,6 +49,9 @@ input#new_description
 	background: rgba(255, 255, 255, 0.7)	
 	border-radius: 0px
 	width: 400px
+	margin-top: 0px
+	position: absolute
+
 
 input#new_description:hover
 	outline: none
@@ -88,8 +91,8 @@ select:before
 
 select#new_priority
 	@include dropdown_sample
-	width: 50px
-	height: 30px
+	width: 60px
+	height: 33px
 	margin-bottom: 0px
 	background: rgba(255, 255, 255, 0.7)
 	-webkit-appearance: none
@@ -127,7 +130,7 @@ select#new_priority:select
 
 select.embedded
 	@include dropdown_sample
-	margin-left: 25%
+	margin-left: 32%
 	background: no-repeat 60px center
 	font-family: "Courier New", Courier, monospace
 	-webkit-appearance: none
@@ -141,7 +144,7 @@ select.embedded
 	height: auto
 	width: auto
 	float: left
-	text-align: center	
+	text-align: center		
 
 select.embedded:after	
 	content: ""
@@ -237,7 +240,7 @@ div.headers_container
 div#new_tasks_form
 	margin:
 		top: 0px
-		left: 550px
+		left: 545px
 		width: 400px
 
 div#new_tasks_form form 
@@ -287,7 +290,7 @@ div#notification_container
 	width: 40px		
 	cursor: pointer
 	float: left
-	margin-top: 22px
+	margin-top: 4px
 	margin-bottom: 4px
 	-webkit-border-radius: 1px
 	-moz-border-radius: 1px
@@ -349,7 +352,6 @@ p#copyright
 		weight: bold
 		size: 20px
 		align: center	
-	float: center
 	padding-bottom: 26px
 	border-bottom-right-radius: 2px
 	border-top-right-radius: 2px
@@ -357,6 +359,9 @@ p#copyright
 	text-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px
 	box-shadow: rgba(17, 17, 17, 0.4) 1px 1px 1px
 	outline: none
+	margin-top: 0px
+	position: absolute
+	margin-left: 410px
 
 .add_me:hover
 	cursor: pointer	
@@ -478,6 +483,7 @@ button.edit:hover
 	borderbrush: transparent
 	border: 0 
 	margin-top: 2px
+	vertical-align: text-bottom
 
 .okay:hover
 	cursor: pointer	
@@ -490,6 +496,7 @@ button.edit:hover
 	borderbrush: transparent
 	border: 0 
 	padding: 0
+	vertical-align: top
 
 .cancel:hover
 	cursor: pointer
@@ -537,7 +544,7 @@ button.edit:hover
 	color: rgba(255, 255, 255, 0.6)
 	text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px
 	float: right
-	margin-right: 3px
+	margin-right: 1px
 
 #signout:hover
 	color: rgb(255, 255, 255)
@@ -678,6 +685,19 @@ td#description
 	border-style: solid
 	border-color: transparent transparent transparent rgba(239, 76, 62, 0.6)
 
+#devise_validation_en
+	@extend #devise_validation
+
+#devise_validation_en:after
+	@extend #devise_validation:after
+
+#devise_validation_ua
+	@extend #devise_validation
+
+#devise_validation_ua:after
+	@extend #devise_validation:after
+	left: 103.9%	
+
 #devise_validation_resend_1
 	@extend #devise_validation			
 
@@ -700,38 +720,77 @@ td#description
 #devise_validation_email_1:after
 	@extend #devise_validation:after
 	left: 113% 
-	top: 34%		
+	top: 34%	
 
-#devise_validation_password_1
+#devise_validation_email_2
 	@extend #devise_validation
 
-#devise_validation_password_1:after
+#devise_validation_email_2:after
+	@extend #devise_validation:after
+	left: 105.5% 
+	top: 34%	
+
+#devise_validation_password_en
+	@extend #devise_validation
+
+#devise_validation_password_en:after
 	@extend #devise_validation:after
 	left: 106.5% 
 	top: 34%		
 
-#devise_validation_password_2
+#devise_validation_password_ua
 	@extend #devise_validation
 
-#devise_validation_password_2:after
+#devise_validation_password_ua:after
+	@extend #devise_validation:after
+	left: 107% 
+	top: 34%		
+
+#devise_validation_password_2_en
+	@extend #devise_validation
+
+#devise_validation_password_2_en:after
 	@extend #devise_validation:after
 	left: 102% 
 	top: 34%		
 
-#devise_validation_retype
+#devise_validation_password_2_ua
 	@extend #devise_validation
 
-#devise_validation_retype:after
+#devise_validation_password_2_ua:after
+	@extend #devise_validation:after
+	left: 102.4% 
+	top: 34%	
+
+#devise_validation_retype_en
+	@extend #devise_validation
+
+#devise_validation_retype_en:after
 	@extend #devise_validation:after
 	left: 106% 
 	top: 34%		
 
-#devise_validation_didntmatch
+#devise_validation_retype_ua
+	@extend #devise_validation_retype_en
+
+#devise_validation_retype_ua:after	
+	@extend #devise_validation_retype_en:after
+	left: 105.4%
+
+#devise_validation_didntmatch_en
 	@extend #devise_validation
 
-#devise_validation_didntmatch:after
+#devise_validation_didntmatch_en:after
 	@extend #devise_validation:after
 	left: 105% 
+	top: 34%
+
+#devise_validation_didntmatch_ua
+	@extend #devise_validation
+
+#devise_validation_didntmatch_ua:after
+	@extend #devise_validation:after
+	left: 103.7% 
 	top: 34%
 
 #not_found_in_database

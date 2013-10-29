@@ -35,7 +35,13 @@
 
 * Complete description windows functionality and css IN PROGRESS
 
+* Multithreading for email sending IN PROGRESS
+
+* Read about ActionDispatch, Rack, Rails config, Nginx, Heroku
+
 * Add user name at the top on the left DONE
+
+* Style email bodies
 
 * Fix the issue with the wrong old style 404 rendering when not found
 
