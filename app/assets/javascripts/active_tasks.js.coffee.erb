@@ -5,24 +5,40 @@ do completed_tasks = ->
 		url: "http://localhost:3000/todo/completed_tasks/"})
 	)
 
+do set_dropdownbox_background = ->
+	$(document).ready(()-> 
+		priority_box = $('select#new_priority')
+		priority_box.find('option[value=high], option[value=високий]').each(()-> $(this).css('background-color',"#FFE5B4"))
+		priority_box.find('option[value=medium], option[value=середній]').each(()-> $(this).css('background-color',"#FFF8C6"))
+		priority_box.find('option[value=low], option[value=низький]').each(()-> $(this).css('background-color',"rgba(255, 255, 233, 0.8)"))
+		priority_box.change(()-> 
+			priority = $(this).find('option:selected').text()
+			background = switch priority 
+				when 'high','високий' then "#FFE5B4"
+				when 'medium', 'середній' then "#FFF8C6"
+				when 'low','низький' then "rgba(255, 255, 233, 0.8)"
+			$(this).css('background', background)	
+		)
+	)
+
 @trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
 	$('div#description' + task_id).attr('contenteditable','true')
 	priority_field =  $('div#priority' + task_id)
-	if priority_field.parent().attr('class').match(/низька|висока|середня/)	
-		high = 'висока'
-		medium = 'середня'
-		low = 'низька'	
+	if priority_field.parent().attr('class').match(/низький|високий|середній/)	
+		high = 'високий'
+		medium = 'середній'
+		low = 'низький'	
 	else
 		high = 'high'
 		medium = 'medium'
 		low = 'low'		
 	switch priority_field.text() 
 		when 'high' then h = 'selected'
-		when 'висока' then h = 'selected'
+		when 'високий' then h = 'selected'
 		when 'medium'  then m = 'selected'
-		when 'середня' then m = 'selected'
+		when 'середній' then m = 'selected'
 		when 'low' then l = 'selected'
-		when 'низька' then l = 'selected'		
+		when 'низький' then l = 'selected'		
 	priority_field.replaceWith('<select class="embedded">'+ "<option #{h} >" + 
 		"#{high}</option>"+"<option #{m} >"+"#{medium}</option>" + 
 		"<option #{l}>"+"#{low}</option></select>")	

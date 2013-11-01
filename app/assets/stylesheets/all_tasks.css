@@ -95,7 +95,7 @@ select#new_priority, select#elapsed_time, select#priority_set {
   width: 60px;
   height: 33px;
   margin-bottom: 0px;
-  background: rgba(255, 255, 255, 0.7);
+  background: #ffe5b4;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -123,9 +123,6 @@ select#new_priority:focus, select#elapsed_time:focus, select#priority_set:focus 
   border: none;
   background: rgba(255, 255, 255, 0.9);
   cursor: pointer; }
-
-select#new_priority:select, select#elapsed_time:select, select#priority_set:select {
-  background: transparent no-repeat 60px center; }
 
 select.embedded {
   font-family: "Courier New", Courier, monospace;
@@ -228,13 +225,13 @@ td#description div {
 tr.completed {
   background-color: lightcyan; }
 
-tr.high, tr.висока {
+tr.high, tr.високий {
   background-color: #ffe5b4; }
 
-tr.medium, tr.середня {
+tr.medium, tr.середній {
   background-color: #fff8c6; }
 
-tr.low, tr.низька {
+tr.low, tr.низький {
   background-color: rgba(255, 255, 233, 0.8); }
 
 div.headers_container {
@@ -285,7 +282,7 @@ div.shadow {
 div#notification_container {
   margin: 10px auto;
   padding: 10px 0 0 0;
-  width: 250px;
+  width: 350px;
   height: 25px; }
 
 div#complete_for_checkbox, div#delete_for_checkbox, div#reopen_for_checkbox {

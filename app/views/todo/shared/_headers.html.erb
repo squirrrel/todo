@@ -1,5 +1,5 @@
 <% dynamic_header = @completed == true ? (['completed_at']) : (['status','created_at'])
 flag = @completed == true ? ('completed') : 'active' %>
 <% ['checkbox','description', 'priority'].concat(dynamic_header).each do |header|%>
-<th class= "headers <%=header%>" id = '<%='description_th' if header=='description' && @completed == true%>'><div class='headers_container arrow_down' <%='hidden' if header=='checkbox'%> style= <%= "display:table-cell;" unless header == 'checkbox'%>   id= "<%=header%>" onclick="sort_table_by(this, '<%=flag%>')"><%= t(:views)[:headers][:"#{header}"]%></div></th>
+<th class= "headers <%=header%>" id = '<%='description_th' if header=='description' && @completed == true%>'><div class='headers_container arrow_down' <%='hidden' if header=='checkbox'%> style= "display:table-cell;"  id= '<%=header%>' onclick="sort_table_by(this, '<%=flag%>', '<%=I18n.locale%>')"><%= t(:views)[:headers][:"#{header}"]%></div></th>
 <%end%>

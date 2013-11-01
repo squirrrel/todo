@@ -46,6 +46,7 @@
 <div id='completed_tasks_container'>
 <table cellspacing="0">
 <tbody> 
+<% cache "completed_task_rows" + @current_user_id, skip_digest: true do %>
 <%@tasks.each do |task|%>
 <%if task == nil%>
 <%'do nothing'%>
@@ -56,12 +57,13 @@
 <% %w{description priority completed_at}.each do |attr|%>
 <% value = task.send attr %>
 <%get_translated(attr, value)%>
-<td id='<%=attr%>' class='items'><div><%= @res %></div></td>
+<td id='<%=attr%>' class='items'><div <%='onclick=show_detailed_description(this)' if attr == 'description'%>><%= @res %></div></td>
 <%end%>
 <td style = 'width: 50px;'><%= link_to '↺', reopen_todo_completed_task_path(task.id), method: :patch, class: "reopen #{task.id}_action", style: 'display: none', remote: true %></td>
 <td style = 'width: 20px;'><span style = 'display: none' class='pipe<%=task.id%> separator' >❘</span></td>
 <td style = 'width: 50px;'><%= button_to '✘', "/todo/completed_tasks/#{task.id}", method: :delete, class: "delete #{task.id}_action", style: 'display: none',remote: true %></td>
 </tr>
+<%end%>
 <%end%>
 <%end%>
 </tbody>

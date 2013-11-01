@@ -33,17 +33,21 @@
 
 * Implement advanced Filter RELEASE 2
 
-* Complete description windows functionality and css IN PROGRESS
+* Complete description windows functionality and css DONE
 
-* Multithreading for email sending IN PROGRESS
+* Multithreading for email sending DONE
 
 * Read about ActionDispatch, Rack, Rails config, Nginx, Heroku
 
 * Add user name at the top on the left DONE
 
-* Style email bodies
+* Style email bodies DONE
 
 * Fix the issue with the wrong old style 404 rendering when not found
+
+* Set max-length for description input of the new_task for
+
+* Add checkbox that automatically checks all the related on teh left so that user won't have to check them all  manually
 
 * Think of appling security actions to prevent user read internal server files and actions, look at http://guides.rubyonrails.org/security.html, may be devise could help, render 401 page
 

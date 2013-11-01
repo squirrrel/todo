@@ -5,6 +5,7 @@ class Todo::ActiveTasksController < ApplicationController
 	before_action :authenticate_user!	
 
 	def index
+		@current_user_id = current_user.id.to_s
 		@priorities = set_priorities
 		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')
 		#BasicTask.where(type:'ActiveTask').order('created_at DESC')
@@ -37,7 +38,8 @@ class Todo::ActiveTasksController < ApplicationController
 				res
 			end
 		end
-		row = "<tr>#{(localised_items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
+		expire_fragment("active_task_rows#{current_user.id}")
+		#row = "<tr>#{(localised_items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
 		notification = t(:notifications)[:created]
 		render js: "! function(){ 
 						$.ajax({type: 'GET', url:'http://localhost:3000/todo/'});
@@ -53,6 +55,7 @@ class Todo::ActiveTasksController < ApplicationController
 	 	subject = ActiveTask.find(params[:id])
 	 	subject.update_attributes({description: params['description'], 
 	 								priority: params['priority'], status: params['status']})
+		expire_fragment("active_task_rows#{current_user.id}")
 	 	notification = t(:notifications)[:updated]
 	 	render js: "! function(){ 
 	 					$.ajax({type: 'GET', url:'http://localhost:3000/todo/'});
@@ -61,7 +64,9 @@ class Todo::ActiveTasksController < ApplicationController
 
 	def complete
 		ActiveTask.complete_task params[:id]
+		%w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
 		@notification = t(:notifications)[:completed]
+		@controller = params[:controller]
 	    respond_to do |format|
 		    format.js{ render '/todo/shared/remove.js.erb' }
       	end	
@@ -71,7 +76,9 @@ class Todo::ActiveTasksController < ApplicationController
 		ActiveTask.transaction do
 			params[:id].each{ |id| ActiveTask.complete_task(id)}
 		end
+		%w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
 		@notification = t(:notifications)[:completed]
+		@controller = params[:controller]
 		respond_to do |format|
 		    format.js{ render '/todo/shared/mass_remove.js.erb' }
       	end

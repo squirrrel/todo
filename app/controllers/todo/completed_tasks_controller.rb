@@ -5,6 +5,7 @@ class Todo::CompletedTasksController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
+		@current_user_id = current_user.id.to_s	
 	  	@time_filter = set_time_filter_options
 	 	@priorities = set_priorities
 	 	@default_option = DefaultTime
@@ -13,20 +14,24 @@ class Todo::CompletedTasksController < ApplicationController
 	end	
 
 	def reopen
-	  CompletedTask.reopen_task(params[:id])
-	  @notification = t(:notifications)[:reopened]  
-	  respond_to do |format|
-	  	format.js{ render '/todo/shared/remove.js.erb'}
-	  end	
+	  	CompletedTask.reopen_task(params[:id])
+		%w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
+ 		@notification = t(:notifications)[:reopened]
+		@controller = params[:controller]
+	  	respond_to do |format|
+	  		format.js{ render '/todo/shared/remove.js.erb'}
+	  	end	
 	end	 
 
 	def mass_reopen
 		CompletedTask.transaction do
 			params[:id].each{|id| CompletedTask.reopen_task(id) }
 		end
+		%w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }		
 		@notification = t(:notifications)[:reopened]
+		@controller = params[:controller]
 		respond_to do |format|
-	  	format.js{ render '/todo/shared/mass_remove.js.erb'}
+	 	 	format.js{ render '/todo/shared/mass_remove.js.erb'}
 	  end	
 	end	
 

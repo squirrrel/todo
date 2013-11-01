@@ -6,9 +6,9 @@ module ApplicationHelper
 				value == 'open' ? t(:views)[:status][:open] : t(:views)[:status][:in_progress] 
  			when 'priority' then
 				val = case value
-					when 'high', 'висока' then 'high'
-					when 'medium', 'середня' then 'medium'
-					when 'low', 'низька'  then 'low'
+					when 'high', 'високий' then 'high'
+					when 'medium', 'середній' then 'medium'
+					when 'low', 'низький'  then 'low'
 				end	
 				t(:priorities)[:"#{val}"]
 	 		when 'created_at','completed_at' then

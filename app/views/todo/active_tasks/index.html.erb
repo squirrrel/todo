@@ -35,7 +35,7 @@
 </tbody>
 </table>
 <div id='toberemovedbyactive' style='height: 580px;'>
-<%=render partial: 'active_tasks_grid', local: {priorities: @priorities, tasks: @tasks}%>
+<%=render partial: 'active_tasks_grid', local: {priorities: @priorities, tasks: @tasks, current_user_id: @current_user_id}%>
 </div>
 </li>
 <li id= 'second_item' style='float:left; list-style:none; width:1000px;padding-left:121px;'>	

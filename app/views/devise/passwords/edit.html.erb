@@ -1,16 +1,17 @@
-<h2>Change your password</h2>
-
+<div id='newpass_wrapper'>
+<div id='sign-in-wrapper'>
+<%= render "devise/shared/locales" %>
+<h1>#TODO</h1>
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
-
-  <div><%= f.label :password, "New password" %><br />
-  <%= f.password_field :password, :autofocus => true %></div>
-
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Change my password" %></div>
+  <%= f.password_field :password,  placeholder: t(:devise)[:forms][:newpass_placeholder], class: 'sign-in-input', id: "register_pass" %>
+  <%= f.password_field :password_confirmation, placeholder: t(:devise)[:forms][:confirm_newpass_placeholder], class: 'sign-in-input', id: "user_password_confirmation" %></br></br>
+  <%= f.submit t(:devise)[:forms][:change_password], class: 'sign-in-submit', id: 'resend-pass-submit'  %>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+</div></div>
+<div id="devise_validation_password_<%= I18n.locale == :ua ? 'ua' : 'en'%>" class='empty_password' style='display:none;'><%= t(:devise)[:failure][:please_specify_password]%></div></br>
+<div id="devise_validation_retype_<%= I18n.locale == :ua ? 'ua' : 'en'%>" class= 'confirm_pass' style='display:none;'><%= t(:devise)[:failure][:please_confirm_password]%></div></br>
+<div id='devise_validation_didntmatch_<%= I18n.locale == :ua ? 'ua' : 'en'%>' class= 'dont_match' style='display:none;'><%= t(:devise)[:failure][:please_didntmatch_password]%></div></br>
+<div id='devise_validation_password_2_<%= I18n.locale == :ua ? 'ua' : 'en'%>' class='invalid_password' style='display:none;'><%= t(:devise)[:failure][:please_invalid_password]%></div></br>

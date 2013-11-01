@@ -1,2 +1,1 @@
-$('#to-be-removed-by-filter-selection').html("<%= escape_javascript(render :partial => "tasks_grid.html.erb", :locals => {:tasks => @tasks, :time_filter => @time_filter, :priorities => @priorities}) %>")
-
+$('#to-be-removed-by-filter-selection').html("<%= escape_javascript(render :partial => "tasks_grid.html.erb", :locals => {:tasks => @tasks, :time_filter => @time_filter, :priorities => @priorities, :current_user_id => @current_user_id}) %>")

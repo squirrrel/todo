@@ -1,1 +1,1 @@
-$('#toberemovedbyactive').html("<%= escape_javascript(render :partial => "active_tasks_grid.html.erb", :locals => {:tasks => @tasks, :priorities => @priorities}) %>")
+$('#toberemovedbyactive').html("<%= escape_javascript(render :partial => "active_tasks_grid.html.erb", :locals => {:tasks => @tasks, :priorities => @priorities,current_user_id: @current_user_id}) %>")

@@ -34,9 +34,9 @@ ua:
     created: "задачу створено"
     updated: "зміни збережено"
   priorities:
-    high: "висока"
-    medium: "середня"
-    low: "низька"
+    high: "високий"
+    medium: "середній"
+    low: "низький"
   time_filter:
     today: "сьогодні"
     last_7_days: "за останні 7 днів"
@@ -64,7 +64,7 @@ ua:
       active_tasks: "активні задачі"
       completed_tasks: "виконані задачі"
       add_new_task: "додати нову задачу"
-      select_priority: "вибрати пріорітетність"
+      select_priority: "вибрати пріорітет"
       complete_marked_items: "відмітити як виконані задачі"
       delete_marked_items: "видалити відмічені задачі"
       reopen_marked_items: "додати до активних відмічені задачі"
@@ -72,7 +72,7 @@ ua:
       edit: "змінити"
       complete: "відмітити як виконану"
       reopen: "відмітити як активну"
-      priority_filter: "фільтрувати за пріорітетністю"
+      priority_filter: "фільтрувати за пріорітетом"
       time_filter: "фільтрувати за датою"
     time:
       months: "{Jan: 'Січ', Feb: 'Лют', Mar: 'Бер', Apr: 'Кві', May: 'Тра', June: 'Черв', July: 'Лип', Aug: 'Серп', Sept: 'Вер', Oct: 'Жовт', Nov: 'Лист', Dec: 'Гру'}"
@@ -87,6 +87,9 @@ ua:
       pass_placeholder: "Пароль"
       conf_pass_plcholder: "Підтвердити пароль"
       email_placeholder: "Адреса eлектронної пошти"
+      newpass_placeholder: "Новий пароль"
+      confirm_newpass_placeholder: "Підтвердіть новий пароль" 
+      change_password: "Змінити мій пароль"     
       send_instructions: "Відправити мені інструкцію для зміни пароля"
     failure:
       already_authenticated: 'Ви вже увійшли.'

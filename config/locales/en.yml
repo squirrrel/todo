@@ -88,6 +88,9 @@ en:
       pass_placeholder: "Password"
       conf_pass_plcholder: "Confirm password" 
       email_placeholder: "Email"
+      newpass_placeholder: "New Password"
+      confirm_newpass_placeholder: "Confirm New Password"
+      change_password: "Change my password"
       send_instructions: "Send me reset password instructions"
     confirmations:
       confirmed: "Your account was successfully confirmed."

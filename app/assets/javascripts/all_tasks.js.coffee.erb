@@ -149,6 +149,53 @@ do validate_password_registration = ->
 
 	)
 
+do validate_new_password = ->
+	$(document).ready(
+		()-> $("div#newpass_wrapper form").submit((e)=>
+			$('.empty_password, .invalid_password').attr('style', 'display:none;')
+			dom_target = document.getElementById('register_pass') 
+			query_target = $("input#register_pass")
+			if dom_target.value.match(/^\w{8,}\d{2,}$/)
+				true
+			else	
+				validation = if dom_target.value.match(/^\s*$/)
+					'empty_password'
+				else
+					'invalid_password'	
+				$("div.#{validation}").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.#{validation}").outerWidth()- 4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false	
+		)
+
+	)	
+
+do confirm_password_registration = ->
+	$(document).ready(
+		()-> $("div#newpass_wrapper form").submit((e)=>
+			$('#devise_validation_retype_ua, #devise_validation_retype_en, .dont_match').attr('style', 'display:none;')
+			dom_target = document.getElementById('user_password_confirmation') 
+			dom_target_2 = document.getElementById('register_pass') 
+			query_target = $("input#user_password_confirmation")
+			if dom_target.value.match(/^\s*$/)
+				$("div.confirm_pass").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+							     	.css('left', "#{query_target.offset().left - $("div.confirm_pass").outerWidth()-4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false
+			else if dom_target_2.value isnt dom_target.value
+				$("div.dont_match").css('top', "#{query_target.offset().top + query_target.height()/5}px")
+						       		.css('left', "#{query_target.offset().left - $("div.dont_match").outerWidth()-4}px")
+		  							.css('display','table')
+				e.preventDefault 
+				false 		
+			else	
+				true
+		)
+
+	)	
+
 do confirm_password_registration = ->
 	$(document).ready(
 		()-> $("div#registration_wrapper form").submit((e)=>
@@ -194,6 +241,12 @@ do read_dates = ->
 do remove_class = ->
 	$(document).ready(()->
 		$('th.checkbox').each(()-> $(this).removeClass('headers'))
+	)	
+
+do set_ua_priority_text_size = ->
+	$(document).ready(()->
+		priority_header = $('th div#priority')
+		if priority_header.text() is 'Пріорітет' then priority_header.css('font-size','12px') else true 
 	)		
 			
 @show_actions = show_actions = (task_id)->
@@ -219,8 +272,6 @@ do remove_class = ->
 
 @show_boxes = show_boxes = (task_id)->
 	$("input[type='checkbox']").show()
-	console.log $('#complete_for_checkbox').offset().top
-	console.log $('.shadow').offset().top
 
 @hide_boxes = hide_boxes = (task_id)->
 	box = "input[type='checkbox']"	
@@ -261,29 +312,29 @@ do remove_class = ->
   	})
 
 
-@sort_table_by = sort_table_by = (obj, flag)->
-	$('.headers_container').each(()-> $(this).css('font-weight', 'lighter')
+@sort_table_by = sort_table_by = (obj, flag, language)->
+	container = if flag is 'active' then 'table#1' else 'table#blue_table'
+	$("#{container} .headers_container").each(()-> $(this).css('font-weight', 'lighter')
 								.css('color', '#848484')
 								.find('span').remove()							
 	)
 
 	if $(obj).hasClass('arrow_down')
+		$('div.headers_container').addClass('arrow_down')
 		$(obj).append("<span class='filtered'> ⌃</span>")
 		$(obj).css('font-weight', 'bold')
 				.css('color', 'rgba( 34, 2, 0, 0.8)')
 				.removeClass('arrow_down')
-
-		sort_tr(obj, flag, 'asc')				
+		sort_tr(obj, flag, 'asc', language)				
 	else
 		$(obj).append("<span class='unfiltered'> ⌵</span>")
 		$(obj).css('font-weight', 'bold')
 				.css('color', 'rgba(34, 2, 0, 0.8)')
-				.addClass('arrow_down')
-
-		
-		sort_tr(obj, flag, 'desc')  	
+				.addClass('arrow_down')		
+		sort_tr(obj, flag, 'desc', language)  	
 	  		  
-@sort_tr = sort_tr = (obj, flag, order)->
+@sort_tr = sort_tr = (obj, flag, order, language)->
+	console.log language
 	collection = new Array
 	subject = $(obj).attr('id')
 	container = if flag is 'completed' then 'div#completed_tasks_container' else 'div#tasks_container'
@@ -292,9 +343,9 @@ do remove_class = ->
 		$(container).find("td##{subject} div").each(()-> td_text = $(this).text(); collection.push(td_text))
 		collection.sort()		
 	else if subject is 'priority'
-		['high', 'medium', 'low']
+		if language is 'en' then ['high', 'medium', 'low'] else ['високий','середній','низький']
 	else if subject is 'status'
-		['in progress','open']	
+		if language is 'en' then ['in progress','open'] else ['в процесі','активна']	
 	else if subject is 'created_at'
 		active_dates
 	else if subject is 'completed_at'
@@ -306,12 +357,16 @@ do remove_class = ->
 			$(container).find("td:contains('#{value}')").parent().prependTo("#{container} tbody") for value in collection
 
 @show_detailed_description = show_detailed_description = (obj)->
-	$('div#in-detail-description').remove()
-	$('div#tasks_container').attr('style', 'overflow-y:hidden;')
 	text = $(obj).text()
-	subject_height = $(obj).parent().offset().top - $(obj).parent().outerHeight(true)
-	subject_left = $(obj).offset().left
-	$('body').append("<div id='in-detail-description' style='top:#{subject_height}px; left:#{subject_left}px' onclick='hide_detailed_description(this)'><span>#{text}</span></div>")
+	if text.length > 50
+		$('div#in-detail-description').remove()
+		$('div#tasks_container').attr('style', 'overflow-y:hidden;')
+		
+		subject_height = $(obj).parent().offset().top - $(obj).parent().outerHeight(true)
+		subject_left = $(obj).offset().left
+		$('body').append("<div id='in-detail-description' style='top:#{subject_height}px; left:#{subject_left}px' onclick='hide_detailed_description(this)'><span>#{text}</span></div>")
+	else
+		true	
 	
 
 @hide_detailed_description = hide_detailed_description = (obj)->
