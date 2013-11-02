@@ -46,6 +46,8 @@ group :custom do
 	gem 'protected_attributes'
 	gem 'state_machine', '0.9.3'
 	gem 'devise'
+	gem 'dalli'
+	gem 'rack-cache'
 end
 
 # Use ActiveModel has_secure_password

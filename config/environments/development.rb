@@ -1,18 +1,31 @@
+require 'dalli'
+
 Todo::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = true
-  config.cache_store = :file_store, "tmp/cache/templates"
-
   # Do not eager load code on boot.
+  config.cache_classes = true
   config.eager_load = false
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local  = true
   config.action_controller.perform_caching = true
+  
+  mem_config = YAML.load_file("#{Rails.root}/config/memcached.yml") || {}
+  mem_config = mem_config[Rails.env]
+  mem_servers = mem_config['host'].split(' ').map{|h| "#{h}:#{mem_config['port']}"}
+  ENV['MEMCACHE_SERVERS'] = mem_servers.join(' ')
+  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"], :value_max_bytes => 10485760)
+  config.action_dispatch.rack_cache = {
+    metastore: client,
+    entitystore: client,
+    verbose: true,
+    allow_revalidate: true
+  }
+
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -30,7 +43,8 @@ Todo::Application.configure do
   # number of complex assets.
   config.assets.debug = false
 
-  # config.serve_static_assets = false
+   config.serve_static_assets = true
+   config.static_cache_control = "public, max-age=2592000"
 
   # # Compress JavaScripts and CSS
   config.assets.compress = true

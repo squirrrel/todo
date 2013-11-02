@@ -63,6 +63,7 @@ class Todo::ActiveTasksController < ApplicationController
 	 end
 
 	def complete
+		#p read_fragment("active_task_rows#{current_user.id}")
 		ActiveTask.complete_task params[:id]
 		%w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
 		@notification = t(:notifications)[:completed]
