@@ -11,7 +11,7 @@ Todo::Application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local  = true
+  config.consider_all_requests_local  = false
   config.action_controller.perform_caching = true
   
   mem_config = YAML.load_file("#{Rails.root}/config/memcached.yml") || {}
@@ -23,7 +23,7 @@ Todo::Application.configure do
     metastore: client,
     entitystore: client,
     verbose: true,
-    allow_revalidate: true
+    #allow_revalidate: true
   }
 
 

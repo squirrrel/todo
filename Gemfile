@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+#ruby '1.9.3', engine: 'jruby', engine_version: '1.7.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -37,10 +38,11 @@ group :doc do
   gem 'sdoc', require: false
 	gem 'execjs'
 	gem 'therubyracer' 
+	gem 'libv8'
 end
 
 group :custom do 
-	gem 'thin'
+	gem 'puma'
 	gem 'sprockets-rails', :require => 'sprockets/railtie'
 	gem 'actionpack-action_caching'
 	gem 'protected_attributes'

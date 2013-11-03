@@ -22,7 +22,8 @@ module Todo
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     #config.exceptions_app = self.routes
     config.cache_classes = true
-
+    config.assets.enabled = true
+    config.assets.version = '1.0'
     mem_config = YAML.load_file("#{Rails.root}/config/memcached.yml") || {}
     mem_config = mem_config[Rails.env]
     mem_servers = mem_config['host'].split(' ').map{|h| "#{h}:#{mem_config['port']}"}
@@ -32,7 +33,7 @@ module Todo
     config.active_record.observers = :cache_observer
 
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :en   #config.assets.enabled = true
+    config.i18n.default_locale = :en
     config.active_record.whitelist_attributes = false
     config.serve_static_assets = true
     config.log_level = :debug
