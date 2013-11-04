@@ -51,5 +51,8 @@
 
 * Think of appling security actions to prevent user read internal server files and actions, look at http://guides.rubyonrails.org/security.html, may be devise could help, render 401 page
 
+* RAILS_ENV=production jruby -S bundle exec puma -e production -C config/puma.rb  -b tcp://127.0.0.1:3000
+
+
 == There is sooo much #todo;)
 

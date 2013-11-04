@@ -26,7 +26,7 @@ Todo::Application.configure do
     #allow_revalidate: true
   }
 
-
+  #config.threadsafe!
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

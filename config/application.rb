@@ -32,12 +32,13 @@ module Todo
     config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS'], { namespace: 'app_cache', compress: true }
     config.active_record.observers = :cache_observer
 
+    config.encoding = "utf-8"
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     config.active_record.whitelist_attributes = false
     config.serve_static_assets = true
     config.log_level = :debug
-
+    #config.threadsafe!
     config.action_mailer.perform_deliveries = true
     config.action_mailer.raise_delivery_errors = true
     config.consider_all_requests_local = false

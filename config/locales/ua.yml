@@ -18,7 +18,7 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-## encoding: UTF-8
+#encoding: UTF-8
 ua:
   internal_server_error:
     message: "Сталася помилка при виконанні Вашого запиту. Спробуйте пізніше"
