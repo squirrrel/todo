@@ -6,7 +6,6 @@ class Todo::CompletedTasksController < ApplicationController
 
 	def index
 		@current_user_id = current_user.id.to_s	
-	  	p @current_user_id
 	  	@time_filter = set_time_filter_options
 	 	@priorities = set_priorities
 	 	@default_option = DefaultTime

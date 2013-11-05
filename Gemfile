@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-ruby '1.9.3', engine: 'jruby', engine_version: '1.7.6' #uncomment once decided to use jruby_puma group 
+ruby '2.0.0'
+#ruby '1.9.3', engine: 'jruby', engine_version: '1.7.6' #uncomment once decided to use jruby_puma group 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -29,10 +30,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 
 group :jruby_puma do
-	gem "activerecord-jdbcmysql-adapter"
-	gem 'jdbc-mysql'
-	gem 'puma'
-	gem 'therubyrhino' #MRI therubracer analog
+	#gem "activerecord-jdbcmysql-adapter"
+	#gem 'jdbc-mysql'
+	#gem 'puma'
+	#gem 'therubyrhino' #MRI therubracer analog
 end
 
 group :doc do
@@ -42,11 +43,12 @@ group :doc do
 end
 
 group :mri_unicorn do
-	#gem therubyracer
+	gem 'therubyracer'
 	#gem 'libv8'
 	#gem 'sqlite3'
-	#gem 'mysql2'
+	gem 'mysql2'
 	gem 'unicorn'
+	gem 'unicorn-rails'
 end	
 
 group :custom do 
