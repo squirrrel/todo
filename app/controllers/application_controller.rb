@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
         elsif params[:controller] == 'devise/registrations' && user_count == 0
           user_email = params[:user][:email]
           Rails.logger.info "NEWBIE REGISTERED AND SIGGNED IN"
-          Thread.new { UserMailer.welcome_registered(user_email).deliver } #so far there is no handling error in case invalid email is specified      
+          #Thread.new { UserMailer.welcome_registered(user_email).deliver } #so far there is no handling error in case invalid email is specified      
         elsif params[:controller] == 'devise/registrations' && user_count == 1
           flash[:error] = t(:custom_errors)[:mustbe_unique]
           Rails.logger.info "NEWBIE ENTERED AN EXISTING EMAIL ADDRESS AND FAILED TO REGISTER AT devise/registrations"
