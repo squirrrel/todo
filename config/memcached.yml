@@ -1,5 +1,5 @@
 production:
-  host: localhost
+  host: mc4.dev.ec2.memcachier.com
   port: 11211
 
 development:
