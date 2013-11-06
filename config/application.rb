@@ -29,7 +29,8 @@ module Todo
     mem_servers = mem_config['host'].split(' ').map{|h| "#{h}:#{mem_config['port']}"}
     ENV['MEMCACHE_SERVERS'] = mem_servers.join(' ')
     
-    config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS'], { namespace: 'app_cache', compress: true }
+    config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS'], { username: '5664af', password: '28eebde096',
+                                         namespace: 'app_cache', compress: true }
     config.active_record.observers = :cache_observer
 
     config.encoding = "utf-8"
