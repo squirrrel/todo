@@ -29,6 +29,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 
+#this one is for heroku
+gem 'rails_12factor', group: :production
+
 group :jruby_puma do
 	#gem "activerecord-jdbcmysql-adapter"
 	#gem 'jdbc-mysql'
