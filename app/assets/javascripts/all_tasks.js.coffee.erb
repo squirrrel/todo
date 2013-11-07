@@ -285,7 +285,7 @@ do set_ua_priority_text_size = ->
 			
 	$.ajax({
   		type: "POST",
-  		url: "http://localhost:3000/todo#{path_injection}mass_destroy",
+  		url: "/todo#{path_injection}mass_destroy",
   		data: { id: collection }
 		})
 
@@ -296,7 +296,7 @@ do set_ua_priority_text_size = ->
 	
 	$.ajax({
   		type: "POST",
-  		url: "http://localhost:3000/todo/mass_complete",
+  		url: "/todo/mass_complete",
   		data: { id: collection }
 		})
 
@@ -307,7 +307,7 @@ do set_ua_priority_text_size = ->
 	
 	$.ajax({
 	  	type: "POST",
-	  	url: "http://localhost:3000/todo/completed_tasks/mass_reopen",
+	  	url: "/todo/completed_tasks/mass_reopen",
 	  	data: { id: collection }
   	})
 
@@ -380,4 +380,4 @@ do set_ua_priority_text_size = ->
 	source_2 = flag_2.attr('src') 
 	flag_1.attr('src', source_2)
 	flag_2.attr('src', source_1)
-	$.ajax({type: "GET", url: "http://localhost:3000/todo/global_actions/translate", data:{ flag_path: source_2 }})
+	$.ajax({type: "GET", url: "/todo/global_actions/translate", data:{ flag_path: source_2 }})

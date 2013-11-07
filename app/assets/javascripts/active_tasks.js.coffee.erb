@@ -2,7 +2,7 @@ do completed_tasks = ->
 	$(document).ready(()->
 		$.ajax({
 			type: "GET",
-		url: "http://localhost:3000/todo/completed_tasks/"})
+		url: "/todo/completed_tasks/"})
 	)
 
 do set_dropdownbox_background = ->
@@ -85,7 +85,7 @@ do set_dropdownbox_background = ->
 
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:3000/todo/update_task",
+		url: "/todo/update_task",
 		data: { id: task_id, description: description, priority: priority, status: status }
 		}).done(()-> $.easyNotification(text: 'task updated'))
 

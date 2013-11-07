@@ -58,7 +58,7 @@ class Todo::ActiveTasksController < ApplicationController
 		expire_fragment("active_task_rows#{current_user.id}")
 	 	notification = t(:notifications)[:updated]
 	 	render js: "! function(){ 
-	 					$.ajax({type: 'GET', url:'http://localhost:3000/todo/'});
+	 					$.ajax({type: 'GET', url:'/todo/'});
 					}();"
 	 end
 

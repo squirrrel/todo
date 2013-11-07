@@ -1,7 +1,7 @@
 $('.<%=params[:id]%>').remove();
 <% if @controller =~ /active_tasks/%>
-$.ajax({type: "GET", url: "http://localhost:3000/todo/completed_tasks/"});
+$.ajax({type: "GET", url: "http://calm-caverns-6233.herokuapp.com/todo/completed_tasks/"});
 <%elsif @controller =~ /completed_tasks/%>
-$.ajax({type: "GET", url: "http://localhost:3000/todo/"});
+$.ajax({type: "GET", url: "http://calm-caverns-6233.herokuapp.com/todo/"});
 <%end%>
 $.easyNotification({text: '<%=@notification%>'});
