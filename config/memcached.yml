@@ -1,6 +1,8 @@
 production:
   host: mc4.dev.ec2.memcachier.com
   port: 11211
+  username: 5664af
+  password: 28eebde096
 
 development:
   host: localhost

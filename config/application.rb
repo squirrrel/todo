@@ -24,12 +24,15 @@ module Todo
     config.cache_classes = true
     config.assets.enabled = true
     config.assets.version = '1.0'
+    
     mem_config = YAML.load_file("#{Rails.root}/config/memcached.yml") || {}
     mem_config = mem_config[Rails.env]
     mem_servers = mem_config['host'].split(' ').map{|h| "#{h}:#{mem_config['port']}"}
     ENV['MEMCACHE_SERVERS'] = mem_servers.join(' ')
-    
-    config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS'], { username: '5664af', password: '28eebde096',
+    ENV['MEMCACHE_USERNAME'] = mem_config['username']
+    ENV['MEMCACHE_PASSWORD'] = mem_config['password']
+
+    config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS'], { username: ENV['MEMCACHE_USERNAME'], password: ENV['MEMCACHE_PASSWORD'],
                                          namespace: 'app_cache', compress: true }
     config.active_record.observers = :cache_observer
 

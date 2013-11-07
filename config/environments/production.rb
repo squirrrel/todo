@@ -20,7 +20,11 @@ Todo::Application.configure do
   mem_config = mem_config[Rails.env]
   mem_servers = mem_config['host'].split(' ').map{|h| "#{h}:#{mem_config['port']}"}
   ENV['MEMCACHE_SERVERS'] = mem_servers.join(' ')
-  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"], { username: '5664af', password: '28eebde096', value_max_bytes: 10485760})
+  ENV['MEMCACHE_USERNAME'] = mem_config['username']
+  ENV['MEMCACHE_PASSWORD'] = mem_config['password']
+
+  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"], { username: ENV['MEMCACHE_USERNAME'], password: ENV['MEMCACHE_PASSWORD'], 
+                                                          value_max_bytes: 10485760})
   config.action_dispatch.rack_cache = {
     metastore: client,
     entitystore: client,
@@ -86,7 +90,7 @@ Todo::Application.configure do
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true
   config.i18n.default_locale = :en
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :log

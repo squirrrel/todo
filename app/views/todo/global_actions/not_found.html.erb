@@ -3,6 +3,6 @@
 <div style='position:absolute; top:55%;left:15%;'> 
 <span id='ooopz'>404 - Ooopz!</span>&nbsp;&nbsp;<span class= 'explanation'>Looks like you were searching for a page that doesn't exist.</span><br>
 <span class='explanation'>In order to lend to the Awesome #TODO homepage, follow the below link:</span><br><br>
-<%= link_to 'http://calm-caverns-6233.herokuapp.com', todo_active_tasks_path, id: 'link_to_homepage'%>
+<%= link_to SETTINGS[ENV['RAILS_ENV']]['url'], todo_active_tasks_path, id: 'link_to_homepage'%>
 </div>
 </div>

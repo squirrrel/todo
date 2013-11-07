@@ -1,0 +1,5 @@
+production:
+  url: http://calm-caverns-6233.herokuapp.com
+
+development:
+  url: localhost
