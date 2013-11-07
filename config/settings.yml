@@ -1,5 +1,6 @@
 production:
   url: http://calm-caverns-6233.herokuapp.com
+  domain: calm-caverns-6233.herokuapp.com
 
 development:
   url: localhost

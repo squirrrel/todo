@@ -5,7 +5,6 @@ class Todo::ActiveTasksController < ApplicationController
 	before_action :authenticate_user!	
 
 	def index
-		puts "#{SETTINGS[ENV['RAILS_ENV']]['url']}"
 		@current_user_id = current_user.id.to_s
 		@priorities = set_priorities
 		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')

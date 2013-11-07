@@ -48,11 +48,11 @@ module Todo
     config.consider_all_requests_local = false
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
-      domain:               'example.com',
-      user_name:            'nina.moskalyk@gmail.com',
-      password:             'cheguevara1988',
+      address:              ENV['MAILGUN_SMTP_SERVER'],
+      port:                 ENV['MAILGUN_SMTP_PORT'],
+      domain:               SETTINGS[ENV['RAILS_ENV']]['domain'],
+      user_name:            ENV['MAILGUN_SMTP_LOGIN'],
+      password:             ENV['MAILGUN_SMTP_PASSWORD'],
       authentication:       'plain',
       enable_starttls_auto: true  }
   end
