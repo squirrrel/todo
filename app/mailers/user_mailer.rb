@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
 	layout 'mailer'  
-	default from: "from@example.com"
+	default from: '#TODO app'
 
 	def reset_instructions user_email
 		@user_email = user_email
