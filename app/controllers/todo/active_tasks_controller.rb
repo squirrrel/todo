@@ -22,6 +22,8 @@ class Todo::ActiveTasksController < ApplicationController
 	end
 
 	def create
+		p request.port
+		p request.host
 		new_task = ActiveTask.create(description: params[:new]['description'] , priority: params[:new]['priority'])
 		new_task.update_attribute(:user_id, current_user.id)
 		#new_task.type = new_task.class.name - no need as rails handles it on his own!!!		
