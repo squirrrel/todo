@@ -5,8 +5,6 @@ class Todo::ActiveTasksController < ApplicationController
 	before_action :authenticate_user!	
 
 	def index
-		p params
-		p I18n.locale
 		@current_user_id = current_user.id.to_s
 		@priorities = set_priorities
 		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')
@@ -44,7 +42,7 @@ class Todo::ActiveTasksController < ApplicationController
 		#row = "<tr>#{(localised_items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
 		notification = t(:notifications)[:created]
 		render js: "! function(){ 
-						$.ajax({type: 'GET', url:'http://localhost:3000/todo/'});
+						$.ajax({type: 'GET', url:'http://localhost:8089/todo/'});
 						$.easyNotification({text: '#{notification}'});
 					}();"
 	end
