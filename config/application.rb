@@ -55,5 +55,6 @@ module Todo
       password:             ENV['MAILGUN_SMTP_PASSWORD'],
       authentication:       'plain',
       enable_starttls_auto: true  }
+    config.action_mailer.default_url_options = { :host => "calm-caverns-6233.herokuapp.com" }  
   end
 end
