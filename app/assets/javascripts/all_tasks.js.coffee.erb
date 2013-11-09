@@ -90,7 +90,7 @@ do validate_email_onresend = ->
 			query_target = $("input#resend_email")
 			if dom_target.value.match(/^\w+\.?\w+\@\w+\.\w{2,3}$/)
 				true
-				$.easyNotification(text: 'hi')
+				### $.easyNotification(text: 'hi') ###
 			else	
 				validation = if dom_target.value.match(/^\s*$/)
 					'empty_email'
