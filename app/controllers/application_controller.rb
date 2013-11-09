@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
                            \n ---------------------- \n #{exception.backtrace[0..5]}
                            \n ----------------------"
  
-        render js: "$.errorMessanger({text: '#{t(:internal_server_error)[:message]}' });"
+        render js: "$.errorMessanger({text: '#{t(:internal_server_error)[:message]}'+ '#{exception.message}'+'#{exception.backtrace[0..5]}' });"
     end
 
     def log_and_send_email
