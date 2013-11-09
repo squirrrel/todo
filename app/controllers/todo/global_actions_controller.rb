@@ -4,11 +4,13 @@ class Todo::GlobalActionsController < ApplicationController
 	def translate
 		@referrer = request.env["HTTP_REFERER"]
 		if params['flag_path']
-			if params[:controller] == 'todo/active_tasks'
-				%w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
-			else
-				#donothing
-			end
+         if @referrer =~ /^#{SETTINGS[ENV['RAILS_ENV']]['url']}$/
+           %w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
+         else
+           #donothing
+         end
+			BasicTask.set_translation_flag= true 
+			p "TRANSLATION#{BasicTask.is_translated?}"
 			I18n.locale = /GB/.match(params[:flag_path]) ? :en : :ua 
 			flash[:error] = nil
 			@hack = true

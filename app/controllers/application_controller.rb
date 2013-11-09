@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   #respond_to :json, :html, :js
   #before_action :format_date
   helper :application
- # rescue_from Exception, with: :handle_and_file
+  rescue_from Exception, with: :handle_and_file
   before_filter :log_and_send_email, only: ['create', 'destroy']  
   
   private
@@ -34,11 +34,19 @@ class ApplicationController < ActionController::Base
         elsif params[:controller] == 'devise/sessions'
           if user_count == 1 && User.find_by_email(params[:user][:email]).valid_password?(params[:user][:password])
             Rails.logger.info "#{params[:user][:email]} SIGGNED IN"
-          else
+            if BasicTask.is_translated? == true
+              %w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
+              p "MANAGGGEEDDDD"
+            else
+              p 'FAILED'
+            end              
+          else  
             true #sessions/create redirects back to sessions/new with flash
           end
         end
-      elsif params[:action] == 'destroy'
+      elsif params[:action] == 'destroy' && params[:controller] == 'devise/sessions'
+        BasicTask.set_translation_flag= false
+        p "SIGNOUT#{BasicTask.is_translated?}"
         Rails.logger.info "ID:#{current_user.try(:id)} | #{current_user.try(:email)} SIGGNED OUT"
       else
         true
@@ -53,5 +61,5 @@ class ApplicationController < ActionController::Base
       [:"#{t(:time_filter)[:today]}", :"#{t(:time_filter)[:last_7_days]}",:"#{t(:time_filter)[:last_14_days]}", 
         :"#{t(:time_filter)[:last_30_days]}", :"#{t(:time_filter)[:last_3_months]}", :"#{t(:time_filter)[:last_6_months]}",
          :"#{t(:time_filter)[:last_year]}",:"#{t(:time_filter)[:forever]}"]
-    end 
+    end
 end

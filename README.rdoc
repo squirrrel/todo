@@ -53,7 +53,17 @@
 
 * RAILS_ENV=production jruby -S bundle exec puma -e production -C config/puma.rb  -b tcp://127.0.0.1:3000
 
-* May need to add -e $RAILS_ENV to procfile
+* Change domain to accept the settings.yml info somehow for smtp
+
+* Check production settings against their adequacy with ideal version
+
+* Fix translation
+
+* Fix 500 at resetting password
+
+* Customize error 500 for prod
+
+* Look what is wrong with caching
 
 == There is sooo much #todo;)
 
