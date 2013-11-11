@@ -2,10 +2,9 @@ class Todo::ActiveTasksController < ApplicationController
 	include Destroyable
 	
 	skip_before_filter :log_user, only: ['create', 'destroy']
-	before_action :authenticate_user!	
+	before_action :authenticate_user!
 
 	def index
-		p "INDEX#{BasicTask.is_translated?}"
 		@current_user_id = current_user.id.to_s
 		@priorities = set_priorities
 		@tasks = ActiveTask.where(user_id: "#{current_user.id}").order('created_at DESC')
@@ -23,7 +22,7 @@ class Todo::ActiveTasksController < ApplicationController
 	end
 
 	def create
-		dskjghl
+		#dskjghl
 		new_task = ActiveTask.create(description: params[:new]['description'] , priority: params[:new]['priority'])
 		new_task.update_attribute(:user_id, current_user.id)
 		#new_task.type = new_task.class.name - no need as rails handles it on his own!!!		

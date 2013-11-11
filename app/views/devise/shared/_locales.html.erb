@@ -2,8 +2,10 @@
   <li id='main-li'>
    <img src="<%=I18n.locale == :en ? '/assets/images/GB.png' : '/assets/images/ukrainian.png'%>" id='first-flag'>
     <ul id='secondary-ul'>
-      <li class='secondary-li' onclick="translate_app(this)"> <img src="<%=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
+      <li class='secondary-li'> <img src="<%=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
     </ul>
   </li>
  </ul>
  <%= I18n.locale %>
+<a onclick="translate_app(this)">GB</a>
+<a onclick="translate_app(this)">ua</a>

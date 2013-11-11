@@ -37,7 +37,7 @@ module Todo
     config.active_record.observers = :cache_observer
 
     config.encoding = "utf-8"
-    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     config.active_record.whitelist_attributes = false
     config.serve_static_assets = true

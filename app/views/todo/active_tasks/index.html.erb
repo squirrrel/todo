@@ -3,14 +3,16 @@
 <table style='float:left;'><tbody><tr></tr><td><span id='current_user' style='float:left;'><%= current_user.email%></span></td></tbody></table>
 <table style='width: 162px;cellspacing="0";float:right;'>
 <tbody><tr style="height: 35px;">
-<td style='width:47px;'><ul id='main-ul'>
-  <li id='main-li'>
-   <img src="<%=I18n.locale == :en ? '/assets/images/GB.png' : '/assets/images/ukrainian.png'%>" id='first-flag'>
+<td style='width:47px;'><!-- <ul id='main-ul'>
+ <li id='main-li'>
+   <img src="<%#=I18n.locale == :en ? '/assets/images/GB.png' : '/assets/images/ukrainian.png'%>" id='first-flag'>
     <ul id='secondary-ul'>
-      <li class='secondary-li' onclick="translate_app(this)"> <img src="<%=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
+      <li class='secondary-li'> <img src="<%#=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
     </ul>
   </li>
- </ul></td>												
+ </ul>--></td>
+ <a onclick="translate_app(this)">GB</a>
+<a onclick="translate_app(this)">ua</a>												
 <td style='width:50px;'><%= link_to t(:views)[:signed_out_link], '/todo/user/signout', method: :delete, id: 'signout', style: I18n.locale == :ua ? 'margin-right: 11px;' : '' %></td>
 </tr></tbody>
 </table>

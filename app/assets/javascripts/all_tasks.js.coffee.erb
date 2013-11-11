@@ -374,10 +374,5 @@ do set_ua_priority_text_size = ->
 	$('div#tasks_container').attr('style', 'overflow-y:auto;')
 
 @translate_app = translate_app = (obj)->
-	flag_1 = $('img#first-flag')
-	flag_2 = $('img#second-flag')
-	source_1 = flag_1.attr('src')
-	source_2 = flag_2.attr('src') 
-	flag_1.attr('src', source_2)
-	flag_2.attr('src', source_1)
-	$.ajax({type: "GET", url: "/todo/global_actions/translate", data:{ flag_path: source_2 }})
+	language = $(obj).text()
+	$.ajax({type: "GET", url: "/todo/global_actions/translate", data:{ language: language }})

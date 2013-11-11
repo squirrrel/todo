@@ -23,12 +23,12 @@ Todo::Application.configure do
   ENV['MEMCACHE_USERNAME'] = mem_config['username']
   ENV['MEMCACHE_PASSWORD'] = mem_config['password']
 
-  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"], { username: ENV['MEMCACHE_USERNAME'], password: ENV['MEMCACHE_PASSWORD'], 
+  client = Dalli::Client.new(ENV["MEMCACHE_SERVERS"], { username: ENV['MEMCACHE_USERNAME'], password: ENV['MEMCACHE_PASSWORD'], 
                                                           value_max_bytes: 10485760})
   config.action_dispatch.rack_cache = {
     metastore: client,
     entitystore: client,
-    verbose: true,
+    verbose: true
     #allow_revalidate: true
   }
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -40,7 +40,7 @@ Todo::Application.configure do
   config.serve_static_assets = true
   #vs.:
   #config.serve_static_assets = true
-  #config.static_cache_control = "public, max-age=2592000"
+  config.static_cache_control = "public, max-age=2592000"
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier

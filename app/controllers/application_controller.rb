@@ -7,14 +7,22 @@ class ApplicationController < ActionController::Base
   helper :application
   rescue_from Exception, with: :handle_and_file
   before_filter :log_and_send_email, only: ['create', 'destroy']  
-  
+ # before_action :set_user_language
+
   private
     def handle_and_file exception
     	Rails.logger.error "#{exception.class} | Message: #{exception.message}
                            \n ---------------------- \n #{exception.backtrace[0..5]}
                            \n ----------------------"
- 
-        render js: "$.errorMessanger({text: '#{t(:internal_server_error)[:message]}'+ '#{exception.message}'+'#{exception.backtrace[0..5]}' });"
+      if params[:controller] =~ /devise/                     
+        redirect_to(request.env["HTTP_REFERER"])
+        flash[:error] = t(:internal_server_error)[:message]
+      else
+        render js: "! function(){
+                      $('div#notification_container').css('width', '500px');
+                      $.errorMessanger({text: '#{t(:internal_server_error)[:message]}'});
+                  }();"   
+      end  
     end
 
     def log_and_send_email
@@ -62,4 +70,9 @@ class ApplicationController < ActionController::Base
         :"#{t(:time_filter)[:last_30_days]}", :"#{t(:time_filter)[:last_3_months]}", :"#{t(:time_filter)[:last_6_months]}",
          :"#{t(:time_filter)[:last_year]}",:"#{t(:time_filter)[:forever]}"]
     end
+
+     # def set_user_language
+     #   p "LANGUAGE#{::BasicTask.language_settings}"
+     #   I18n.locale = ::BasicTask.language_settings
+     # end  
 end

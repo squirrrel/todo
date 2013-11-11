@@ -3,5 +3,5 @@ window.location.pathname = "/todo/user/registration"
 <%elsif @referrer =~ /todo\/user\/password$/%>
 window.location.pathname = "/todo/user/password/new"
 <%else%>
-window.location= "<%= @referrer %>";
+window.location.reload();
 <%end%>

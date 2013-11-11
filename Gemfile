@@ -62,6 +62,7 @@ group :custom do
 	gem 'devise'
 	gem 'dalli'
 	gem 'rack-cache'
+	gem 'kgio'
 end
 
 # Use ActiveModel has_secure_password

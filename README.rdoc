@@ -1,7 +1,7 @@
 === BACKLOG
 
 
-* Add CSS IN PROGRESS
+* Add CSS DONE
 
 * Make fix-sized div containing the #index view  DONE
 
@@ -13,13 +13,13 @@
 
 * Choose an appropriate gem to handle authentication, roles and sessions DONE
 
-* Implement advanced caching
+* Implement advanced caching IN PROGRESS
 
 * Add checkbox-based 'mass-delete'/'mass-complete' functionality IN PROGRESS: style checkboxes, make task font bold when a corresponding checkbox is checked DONE
 
 * Add sorting functionality COMPLETED - TO REVIEW
 
-* Add black tooltips where needed IN PROGRESS
+* Add black tooltips where needed RELEASE 2
 
 * Add new_task form validations DONE
 
@@ -59,7 +59,7 @@
 
 * Fix translation
 
-* Fix 500 at resetting password
+* Fix 500 at resetting password DONE
 
 * Customize error 500 for prod
 

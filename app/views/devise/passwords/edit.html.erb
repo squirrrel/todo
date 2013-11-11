@@ -2,6 +2,7 @@
 <div id='sign-in-wrapper'>
 <%= render "devise/shared/locales" %>
 <h1>#TODO</h1>
+<div id='not_found_in_database' style="display: <%= flash[:error] ? 'inline' : 'none' %>; padding-bottom: 16px;padding-top: 4px;line-height: 10px;" ><%=flash[:error]%></div></br>
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= f.hidden_field :reset_password_token %>
   <%= f.password_field :password,  placeholder: t(:devise)[:forms][:newpass_placeholder], class: 'sign-in-input', id: "register_pass" %>
