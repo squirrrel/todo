@@ -24,7 +24,7 @@ Todo::Application.configure do
   ENV['MEMCACHE_PASSWORD'] = mem_config['password']
 
   client = Dalli::Client.new(ENV["MEMCACHE_SERVERS"], { username: ENV['MEMCACHE_USERNAME'], password: ENV['MEMCACHE_PASSWORD'], 
-                                                          value_max_bytes: 10485760})
+                                                          value_max_bytes: 15728640})
   config.action_dispatch.rack_cache = {
     metastore: client,
     entitystore: client,
