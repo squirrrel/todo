@@ -65,5 +65,7 @@
 
 * Look what is wrong with caching
 
+* use Rack::Static, :urls => ["*.png", "*.jpg", "*.js", "*.css"], :root => "public" did not improve the app speed
+
 == There is sooo much #todo;)
 
