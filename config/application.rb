@@ -33,7 +33,7 @@ module Todo
     ENV['MEMCACHE_PASSWORD'] = mem_config['password']
 
     config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS'], { username: ENV['MEMCACHE_USERNAME'], password: ENV['MEMCACHE_PASSWORD'],
-                                         namespace: 'app_cache', compress: true, value_max_bytes: 20971520 }
+                                         namespace: 'app_cache', compress: true }
     config.active_record.observers = :cache_observer
 
     config.encoding = "utf-8"
