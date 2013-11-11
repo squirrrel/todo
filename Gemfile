@@ -63,6 +63,7 @@ group :custom do
 	gem 'dalli'
 	gem 'rack-cache'
 	gem 'kgio'
+	gem 'memcachier'
 end
 
 # Use ActiveModel has_secure_password

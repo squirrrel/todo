@@ -29,7 +29,6 @@ Todo::Application.configure do
     metastore: client,
     entitystore: client,
     verbose: true
-    #allow_revalidate: true
   }
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
