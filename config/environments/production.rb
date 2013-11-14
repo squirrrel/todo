@@ -36,10 +36,10 @@ Todo::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true
-  #vs.:
-  #config.serve_static_assets = true
+  config.serve_static_assets = false #TESTING
   config.static_cache_control = "public, max-age=2592000"
+  config.assets.enabled = true
+  config.assets.version = '1.0'
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -57,7 +57,7 @@ Todo::Application.configure do
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx TESTING
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -83,19 +83,19 @@ Todo::Application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  #config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
-  config.i18n.fallbacks = true
-  config.i18n.default_locale = :en
+  config.i18n.fallbacks = false
+  #config.i18n.default_locale = :en
   #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Send deprecation notices to registered listeners.
-  config.active_support.deprecation = :log
+  #config.active_support.deprecation = :log
 
   # Disable automatic flushing of the log to improve performance.
-  # config.autoflush_log = false
+  config.autoflush_log = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new

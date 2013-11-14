@@ -1,71 +1,30 @@
-=== BACKLOG
+=== BACKLOG:
+
+==RELEASE II
+
+* As a user I should be able to filter all of my completed tasks by time/priority
+* As a user I shouldn't be able to create a task with tooooo large number of characters
+* As a user I should get all of the tasks selected by checking only the upper checkbox, before the description header
+* As a user I should be able to delete my account along with my credentials from #ToDo
+* As a user I should see the 404 page when entering /#{heroku_host_name}/gibberish. Now it's rendering only an empty page. Use the usual pattern with the squirrrel
+* As a user I should be able to see some tooltips attached to some of the key elements to get better understanding of their purpose
 
 
-* Add CSS DONE
+* Replace MySQLDB with CouchDB for storing tasks and see if its performance is better
+* Reopen devise and send 'reset instructions' email using Thread.new
+* As an admin I would expect my web application to be secure
+* As an admin I would expect my app to contain a test pack
 
-* Make fix-sized div containing the #index view  DONE
+= did not improve the app speed so far, but may be useful in the future, since Rack middleware can handle requests without ever hitting Rails app
+use Rack::Static, :urls => ["*.png", "*.jpg", "*.js", "*.css"], :root => "public" 
 
-* Put active_tasks/completed_tasks #index together using liquid-carousel-jquery kind of thing DONE
+= To run #ToDo on puma, use the following command:
+RAILS_ENV=production jruby -S bundle exec puma -e production -C config/puma.rb  -b tcp://127.0.0.1:3000
 
-* Make scroll semitransparent-black DONE
-
-* Set up logging DONE   
-
-* Choose an appropriate gem to handle authentication, roles and sessions DONE
-
-* Implement advanced caching IN PROGRESS
-
-* Add checkbox-based 'mass-delete'/'mass-complete' functionality IN PROGRESS: style checkboxes, make task font bold when a corresponding checkbox is checked DONE
-
-* Add sorting functionality COMPLETED - TO REVIEW
-
-* Add black tooltips where needed RELEASE 2
-
-* Add new_task form validations DONE
-
-* 500 error notification handler DONE
-
-* Refactor coffee files DONE
-
-* Calculate validation height based on the target height DONE
-
-* Fix post-create CSS, add complete/reopen items to corresponding table using jquery DONE
-
-* Implement advanced Filter RELEASE 2
-
-* Complete description windows functionality and css DONE
-
-* Multithreading for email sending DONE
-
-* Read about ActionDispatch, Rack, Rails config, Nginx, Heroku
-
-* Add user name at the top on the left DONE
-
-* Style email bodies DONE
-
-* Fix the issue with the wrong old style 404 rendering when not found
-
-* Set max-length for description input of the new_task for
-
-* Add checkbox that automatically checks all the related on teh left so that user won't have to check them all  manually
-
-* Think of appling security actions to prevent user read internal server files and actions, look at http://guides.rubyonrails.org/security.html, may be devise could help, render 401 page
-
-* RAILS_ENV=production jruby -S bundle exec puma -e production -C config/puma.rb  -b tcp://127.0.0.1:3000
-
-* Change domain to accept the settings.yml info somehow for smtp
-
-* Check production settings against their adequacy with ideal version
-
+* Add sorting functionality COMPLETED - TO REVIEW UKRAINIAN VERSION
+* Read about ActionDispatch, Rack, Rails config, Nginx, Heroku, Web socket
 * Fix translation
-
-* Fix 500 at resetting password DONE
-
-* Customize error 500 for prod
-
-* Look what is wrong with caching
-
-* use Rack::Static, :urls => ["*.png", "*.jpg", "*.js", "*.css"], :root => "public" did not improve the app speed
-
-== There is sooo much #todo;)
-
+* Check production settings against their adequacy with ideal version
+* Make /completed_tasks/ load after signin to prevent 401
+* Read about nginx and if it is appropriate to use it with my app unicorn
+* Set up new domain

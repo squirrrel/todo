@@ -15,15 +15,12 @@ module Todo
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'UTC +02:00' 
     # config.generators do |g|
     #    g.template_engine :haml
     # end
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     #config.exceptions_app = self.routes
-    config.cache_classes = true
-    config.assets.enabled = true
-    config.assets.version = '1.0'
     
     mem_config = YAML.load_file("#{Rails.root}/config/memcached.yml") || {}
     mem_config = mem_config[Rails.env]
@@ -40,12 +37,9 @@ module Todo
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     config.active_record.whitelist_attributes = false
-    config.serve_static_assets = true
-    config.log_level = :debug
     #config.threadsafe!
     config.action_mailer.perform_deliveries = true
-    config.action_mailer.raise_delivery_errors = true
-    config.consider_all_requests_local = false
+    config.action_mailer.raise_delivery_errors = false
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       address:              ENV['MAILGUN_SMTP_SERVER'],
