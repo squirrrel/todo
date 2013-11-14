@@ -24,6 +24,7 @@ do set_dropdownbox_background = ->
 		)
 	)
 
+
 @trigger_on_edit = trigger_on_edit = (task_id, dropdown, obj)->
 	$('div#description' + task_id).attr('contenteditable','true')
 	priority_field =  $('div#priority' + task_id)
@@ -112,6 +113,8 @@ do set_dropdownbox_background = ->
 	$("#for_edit_#{task_id}").find('.items').css('font-weight', 'lighter')
 	$("tr.#{task_id}").attr('onmouseout', "hide_actions(#{task_id}), unbold(this)")
 	$(".#{task_id}_action").removeAttr('disabled')
+	$.ajax({ type: "GET", url: "/"})
+
 
 
 @set_noneditable = set_noneditable = (obj)->  

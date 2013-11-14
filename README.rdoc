@@ -27,7 +27,5 @@ RAILS_ENV=development bundle exec unicorn -c config/unicorn.rb -p 3000
 * Add sorting functionality COMPLETED - TO REVIEW UKRAINIAN VERSION
 * Read about ActionDispatch, Rack, Rails config, Nginx, Heroku, Web socket
 * Fix translation
-* Check production settings against their adequacy with ideal version DONE
-* Make /completed_tasks/ load after signin to prevent 401
 * Read about nginx and if it is appropriate to use it with my app unicorn
 * Set up new domain

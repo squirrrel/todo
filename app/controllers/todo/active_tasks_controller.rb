@@ -43,6 +43,7 @@ class Todo::ActiveTasksController < ApplicationController
 		#row = "<tr>#{(localised_items.map{|itm| '<td>' +itm.to_s+ '</td>'}).join('')}</tr>"
 		notification = t(:notifications)[:created]
 		render js: "! function(){ 
+						document.getElementById('new_form').reset();
 						$.ajax({type: 'GET', url:'/todo/'});
 						$.easyNotification({text: '#{notification}'});
 					}();"
