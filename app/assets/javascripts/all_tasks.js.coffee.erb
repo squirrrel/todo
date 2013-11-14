@@ -229,6 +229,10 @@ do arrows_onclick = ->
 			$('th.checkbox').removeClass('headers')
 			window.completed_dates = new Array
 			$('div#completed_tasks_container').find("td#completed_at div").each(()-> td_text = $(this).text(); completed_dates.push(td_text))
+			if $(this).attr('class') is 'jcarousel-next'
+				$.ajax({ type: "GET", url: "/todo/completed_tasks/"})
+			else
+				true	
 		)
 	)
 
