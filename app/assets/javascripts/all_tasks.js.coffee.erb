@@ -229,10 +229,6 @@ do arrows_onclick = ->
 			$('th.checkbox').removeClass('headers')
 			window.completed_dates = new Array
 			$('div#completed_tasks_container').find("td#completed_at div").each(()-> td_text = $(this).text(); completed_dates.push(td_text))
-			if $(this).attr('class') is 'jcarousel-next'
-				$.ajax({ type: "GET", url: "/todo/completed_tasks/"})
-			else
-				true	
 		)
 	)
 
@@ -338,7 +334,6 @@ do set_ua_priority_text_size = ->
 		sort_tr(obj, flag, 'desc', language)  	
 	  		  
 @sort_tr = sort_tr = (obj, flag, order, language)->
-	console.log language
 	collection = new Array
 	subject = $(obj).attr('id')
 	container = if flag is 'completed' then 'div#completed_tasks_container' else 'div#tasks_container'

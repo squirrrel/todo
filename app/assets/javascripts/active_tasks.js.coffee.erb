@@ -1,3 +1,13 @@
+do completed_tasks = ->
+	$(document).ready(()->
+		if $('a#signout').length > 0
+			$.ajax({
+				type: "GET",
+				url: "/todo/completed_tasks/"})
+		else
+			true
+	)
+
 do set_dropdownbox_background = ->
 	$(document).ready(()-> 
 		priority_box = $('select#new_priority')
@@ -60,12 +70,9 @@ do set_dropdownbox_background = ->
 	
 	description = $('div#description' + task_id).text()
 	priority = $('select :selected').slice(1,2).text()
-	console.log priority
+
 	status = $('select :selected').slice(2,3).text() 
 	
-	console.log description
-	console.log priority
-	console.log status
 
 	$('select').slice(1,2).replaceWith('<div>' + priority + '</div>') 
 	$('select').slice(1,2).replaceWith('<div>' + status + '</div>')

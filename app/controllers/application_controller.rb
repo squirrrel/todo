@@ -44,9 +44,8 @@ class ApplicationController < ActionController::Base
             Rails.logger.info "#{params[:user][:email]} SIGGNED IN"
             if BasicTask.is_translated? == true
               %w{active_task_rows completed_task_rows }.each{|candidate| expire_fragment(candidate + current_user.id.to_s) }
-              p "MANAGGGEEDDDD"
             else
-              p 'FAILED'
+              true
             end              
           else  
             true #sessions/create redirects back to sessions/new with flash
@@ -54,7 +53,6 @@ class ApplicationController < ActionController::Base
         end
       elsif params[:action] == 'destroy' && params[:controller] == 'devise/sessions'
         BasicTask.set_translation_flag= false
-        p "SIGNOUT#{BasicTask.is_translated?}"
         Rails.logger.info "ID:#{current_user.try(:id)} | #{current_user.try(:email)} SIGGNED OUT"
       else
         true

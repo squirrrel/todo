@@ -21,6 +21,9 @@ use Rack::Static, :urls => ["*.png", "*.jpg", "*.js", "*.css"], :root => "public
 = To run #ToDo on puma, use the following command:
 RAILS_ENV=production jruby -S bundle exec puma -e production -C config/puma.rb  -b tcp://127.0.0.1:3000
 
+= To run #ToDo on unicorn, use the following command:
+RAILS_ENV=development bundle exec unicorn -c config/unicorn.rb -p 3000
+
 * Add sorting functionality COMPLETED - TO REVIEW UKRAINIAN VERSION
 * Read about ActionDispatch, Rack, Rails config, Nginx, Heroku, Web socket
 * Fix translation
