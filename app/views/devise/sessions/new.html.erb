@@ -1,7 +1,7 @@
 <div id='sessions_wrapper'>
 <div id='notification_container'></div>
 <div id='sign-in-wrapper'>
-<%= render "devise/shared/locales" %>
+<%#= render "devise/shared/locales" %>
 <h1>#TODO</h1>
 <div id="<%=flash[:alert] || flash[:error] ? 'not_found_in_database' : 'confirmation'%>" style="display:<%=flash[:alert] =~ /Invalid|Ви вказали невірну/ || flash[:notice] =~ /instructions/ || flash[:error] =~/wrong|пізніше/ ? 'inline' : 'none' %>;<%= I18n.locale == :ua || flash[:error] =~ /wrong|пізніше/ ? 'padding-bottom: 16px;padding-top: 4px;line-height: 10px;' : '' %>"><%=flash[:alert] ? flash[:alert] : flash[:notice]%></div>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {id: 'sign-in-form'}) do |f| %>

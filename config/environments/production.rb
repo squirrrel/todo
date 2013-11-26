@@ -36,7 +36,7 @@ Todo::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false #TESTING
+  config.serve_static_assets = true
   config.static_cache_control = "public, max-age=2592000"
   config.assets.enabled = true
   config.assets.version = '1.0'

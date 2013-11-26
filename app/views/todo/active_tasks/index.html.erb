@@ -10,9 +10,7 @@
       <li class='secondary-li'> <img src="<%#=I18n.locale == :en ? '/assets/images/ukrainian.png' : '/assets/images/GB.png'%>" id='second-flag' ></li>
     </ul>
   </li>
- </ul>--></td>
- <a onclick="translate_app(this)">GB</a>
-<a onclick="translate_app(this)">ua</a>												
+ </ul>--></td>											
 <td style='width:50px;'><%= link_to t(:views)[:signed_out_link], '/todo/user/signout', method: :delete, id: 'signout', style: I18n.locale == :ua ? 'margin-right: 11px;' : '' %></td>
 </tr></tbody>
 </table>

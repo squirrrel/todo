@@ -78,6 +78,7 @@ ua:
       months: "{Jan: 'Січ', Feb: 'Лют', Mar: 'Бер', Apr: 'Кві', May: 'Тра', June: 'Черв', July: 'Лип', Aug: 'Серп', Sept: 'Вер', Oct: 'Жовт', Nov: 'Лист', Dec: 'Гру'}"
       week: "{Mon: 'Пн', Tue: 'Вт', Wed: 'Ср', Thu: 'Чт', Fri: 'Пт', Sat: 'Сб', Sun: 'Нд'}"
     promo: '#TODO це зручний додаток для занотовування Ваших повсякденних завдянь:)'
+    compatibility: 'Застосовуйте Google Chrome для роботи з цим додатком'
     copyright: "Ніна Москалик - Серпень..Жовтень 2013"
   devise:
     forms:

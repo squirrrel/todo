@@ -1,7 +1,7 @@
 <div id='registration_wrapper'>
 <div id='notification_container'></div>
 <div id='sign-in-wrapper'>
-<%= render "devise/shared/locales" %>
+<%#= render "devise/shared/locales" %>
 <h1>#TODO</h1>
 <div id='not_found_in_database' style="display: <%= flash[:error] ? 'inline' : 'none' %>; padding-bottom: 16px;padding-top: 4px;line-height: 10px;" ><%=flash[:error]%></div></br>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -12,7 +12,8 @@
 <% end %>
 </br>
 <%= render "devise/shared/links" %>
-<span id = 'promo'><%=t(:views)[:promo]%></span>
+<span id = 'promo'><%=t(:views)[:promo]%></span></br>
+<span id = 'promo'><%=t(:views)[:compatibility]%></span>
 <p id="copyright">&copy <%= t(:views)[:copyright]%></p>
 </div>
 </div>

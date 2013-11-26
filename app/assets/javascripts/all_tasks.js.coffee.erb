@@ -45,7 +45,7 @@ do validate_email_onsignin = ->
 			$('.empty_email, .invalid_email').attr('style', 'display:none;')
 			dom_target = document.getElementById('user_email') 
 			query_target = $("input#user_email")
-			if dom_target.value.match(/^\w+\.?\w+\@\w+\.\w{2,3}$/)
+			if dom_target.value.match(/^\w+\.*\w+\.*\w+@\w+\.\w{2,3}$/)
 				true
 			else	
 				validation = if dom_target.value.match(/^\s*$/)
@@ -88,7 +88,7 @@ do validate_email_onresend = ->
 			$('input#resend_email').trigger('blur')
 			dom_target = document.getElementById('resend_email') 
 			query_target = $("input#resend_email")
-			if dom_target.value.match(/^\w+\.?\w+\@\w+\.\w{2,3}$/)
+			if dom_target.value.match(/^\w+\.*\w+\.*\w+@\w+\.\w{2,3}$/)
 				true
 				### $.easyNotification(text: 'hi') ###
 			else	
@@ -111,7 +111,7 @@ do validate_email_registration = ->
 			$('.empty_email, .invalid_email').attr('style', 'display:none;')
 			dom_target = document.getElementById('register_email') 
 			query_target = $("input#register_email")
-			if dom_target.value.match(/^\w+\.?\w+\@\w+\.\w{2,3}$/)
+			if dom_target.value.match(/^\w+\.*\w+\.*\w+@\w+\.\w{2,3}$/)
 				true
 			else	
 				validation = if dom_target.value.match(/^\s*$/)

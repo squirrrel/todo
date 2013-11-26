@@ -78,6 +78,7 @@ en:
       months: "{Jan: 'Jan', Feb: 'Feb', Mar: 'Mar', Apr: 'Apr', May: 'May', June: 'June', July: 'July', Aug: 'Aug', Sept: 'Sept', Oct: 'Oct', Nov: 'Nov', Dec: 'Dec'}"
       week: "{Mon: 'Mon', Tue: 'Tue', Wed: 'Wed', Thu: 'Thu', Fri: 'Fri', Sat: 'Sat', Sun: 'Sun' }"
     promo: '#TODO list will help you manage your daily tasks:)'
+    compatibility: 'so far worked best with Google Chrome'
     copyright: "Nina Moskalyk - August..October 2013"
   devise:
     forms:
@@ -105,7 +106,7 @@ en:
       please_empty_email: "Email cannot be blank"
       please_specify_password: "Please specify your password"
       please_confirm_password: "Please retype your password here"
-      please_invalid_password: "Please specify a valid password. It should contain no less than 8 letters characters and at least 2 digits"
+      please_invalid_password: "Please specify a valid password. It should contain no less than 8 letters and at least 2 digits"
       please_didntmatch_password: "Password didn't match. Please try again" 
       locked: "Your account is locked."
       not_found_in_database: "Invalid email or password"

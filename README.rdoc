@@ -22,10 +22,11 @@ use Rack::Static, :urls => ["*.png", "*.jpg", "*.js", "*.css"], :root => "public
 RAILS_ENV=production jruby -S bundle exec puma -e production -C config/puma.rb  -b tcp://127.0.0.1:3000
 
 = To run #ToDo on unicorn, use the following command:
-RAILS_ENV=development bundle exec unicorn -c config/unicorn.rb -p 3000
+RAILS_ENV=production bundle exec unicorn -c config/unicorn.rb -p 3000
 
 * Add sorting functionality COMPLETED - TO REVIEW UKRAINIAN VERSION
 * Read about ActionDispatch, Rack, Rails config, Nginx, Heroku, Web socket
 * Fix translation
+* Fix email field regex
 * Read about nginx and if it is appropriate to use it with my app unicorn
 * Set up new domain

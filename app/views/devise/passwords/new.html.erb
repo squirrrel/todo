@@ -1,7 +1,7 @@
 <div id = 'resend_wrapper'>
 <div id='notification_container'></div>
 <div id='sign-in-wrapper'>
-<%= render "devise/shared/locales" %>
+<%#= render "devise/shared/locales" %>
 <h1>#TODO</h1>
 <div id='not_found_in_database' style="display: <%= flash[:error] ? 'inline' : 'none' %>; <%= I18n.locale == :ua || flash[:error] =~ /wrong|пізніше/ ? 'padding-bottom: 16px;padding-top: 4px;line-height: 10px;' : '' %>" ><%=flash[:error]%></div></br>
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, style: "height: 50px;" }) do |f| %>
